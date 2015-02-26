@@ -16,7 +16,7 @@ table.striped.hoverable
         td = link_to channel.source_url, channel.source_url
         td = link_to 'Show', channel
         td = link_to 'Edit', edit_channel_path(channel)
-        td = link_to 'Destroy', channel, data: {:confirm => 'Are you sure?'}, method: :delete
+        td = link_to 'Destroy', channel, data: {confirm: 'Are you sure?'}, method: :delete
 
 br
 
