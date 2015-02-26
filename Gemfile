@@ -36,6 +36,8 @@ gem 'rails-i18n'
 # gem 'russian'
 
 gem 'slim-rails'
+gem 'materialize-sass'
+
 gem 'mechanize'
 gem 'hirb', group: :development
 gem 'devise'

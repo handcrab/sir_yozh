@@ -130,6 +130,8 @@ GEM
     lumberjack (1.0.9)
     mail (2.6.3)
       mime-types (>= 1.16, < 3)
+    materialize-sass (0.95.2)
+      sass (~> 3.1)
     mechanize (2.7.3)
       domain_name (~> 0.5, >= 0.5.1)
       http-cookie (~> 1.0)
@@ -304,6 +306,7 @@ DEPENDENCIES
   hirb
   jbuilder (~> 2.0)
   jquery-rails
+  materialize-sass
   mechanize
   puma
   rails (= 4.2.0)
