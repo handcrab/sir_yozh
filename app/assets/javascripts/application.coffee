@@ -15,3 +15,6 @@
 # = require materialize-sprockets
 # = require turbolinks
 # = require_tree .
+
+# $ ->
+#   $(".button-collapse").sideNav()

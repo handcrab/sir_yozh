@@ -1,6 +1,6 @@
-h1 Listing channels
+h1 Channels
 
-table
+table.striped.hoverable
   thead
     tr
       th Title
@@ -13,11 +13,14 @@ table
     - @channels.each do |channel|
       tr
         td = channel.title
-        td = channel.source_url
+        td = link_to channel.source_url, channel.source_url
         td = link_to 'Show', channel
         td = link_to 'Edit', edit_channel_path(channel)
-        td = link_to 'Destroy', channel, data: {:confirm => 'Are you sure?'}, :method => :delete
+        td = link_to 'Destroy', channel, data: {:confirm => 'Are you sure?'}, method: :delete
 
 br
 
-= link_to 'New Channel', new_channel_path
+= link_to new_channel_path, class: 'btn waves-effect waves-light' do
+  | New Channel
+  i.mdi-content-add.left
+

@@ -10,4 +10,19 @@ html
     = csrf_meta_tags
 
 body
-  = yield
+  header
+    nav
+      .container
+        .nav-wrapper
+          = link_to 'SirYozh', root_path, class: 'brand-logo'
+          
+          ul#nav-mobile.right.hide-on-med-and-down
+            li= link_to 'Channels', '#'
+            li= link_to 'About', '#'
+
+  main.container
+    .row
+      .col.s8.offset-s2
+        = yield
+
+  footer

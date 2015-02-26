@@ -1,12 +1,16 @@
 p#notice = notice
+article.card
+  .card-content
+    span.card-title.black-text= @channel.title
+    p
+      = link_to @channel.source_url, @channel.source_url
 
-p
-  strong Title:
-  = @channel.title
-p
-  strong Source url:
-  = @channel.source_url
-
-= link_to 'Edit', edit_channel_path(@channel)
-'|
-= link_to 'Back', channels_path
+  .card-action
+    = link_to 'Edit', edit_channel_path(@channel)
+    = link_to @channel, data: {:confirm => 'Are you sure?'}, method: :delete do
+      i.mdi-content-clear
+      | Destroy
+            
+= link_to channels_path, class: "waves-effect waves-teal btn-flat"
+  | Back
+  i.mdi-navigation-arrow-back.left
