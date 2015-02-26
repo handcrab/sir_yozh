@@ -1,0 +1,12 @@
+p#notice = notice
+
+p
+  strong Title:
+  = @channel.title
+p
+  strong Source url:
+  = @channel.source_url
+
+= link_to 'Edit', edit_channel_path(@channel)
+'|
+= link_to 'Back', channels_path

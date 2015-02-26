@@ -1,0 +1,15 @@
+= form_for @channel do |f|
+  - if @channel.errors.any?
+    #error_explanation
+      h2 = "#{pluralize(@channel.errors.count, "error")} prohibited this channel from being saved:"
+      ul
+        - @channel.errors.full_messages.each do |message|
+          li = message
+
+  .field
+    = f.label :title
+    = f.text_field :title
+  .field
+    = f.label :source_url
+    = f.text_field :source_url
+  .actions = f.submit
