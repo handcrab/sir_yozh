@@ -16,13 +16,32 @@ body
         .nav-wrapper
           = link_to 'SirYozh', root_path, class: 'brand-logo'
           
+          
+
           ul#nav-mobile.right.hide-on-med-and-down
-            li= link_to 'Channels', '#'
+                     
+            li= link_to 'Channels', channels_path
             li= link_to 'About', '#'
+
+            - if user_signed_in?
+              li
+                = link_to edit_user_registration_path(current_user) do
+                  i.mdi-action-account-box.left
+                  - #current_user.display_name.capitalize
+                  | Profile
+
+              li= link_to t('menu.sign_out'), destroy_user_session_path, method: :delete 
+            - else
+              li= link_to t('menu.sign_in'),  new_user_session_path, class: 'sign-in'
+              li= link_to t('menu.sign_up'),  new_user_registration_path, class: 'sign-up' 
+
 
   main.container
     .row
       .col.s8.offset-s2
+        .notice= notice if notice
+        .alert= alert if alert
+
         = yield
 
   footer

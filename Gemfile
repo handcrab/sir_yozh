@@ -41,6 +41,7 @@ gem 'materialize-sass'
 gem 'mechanize'
 gem 'hirb', group: :development
 gem 'devise'
+gem 'devise-i18n-views'
 
 gem 'puma'
 
