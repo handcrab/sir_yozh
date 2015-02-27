@@ -1,0 +1,9 @@
+.col.s4
+  article.card
+    .card-content    
+      span.card-title.black-text= link_to post.title, post.source_url
+      p= formatted_date post.published_at
+      p
+      .post-cover= image_tag display_image(post.picture_url)
+      p= post.price
+      p= post.description

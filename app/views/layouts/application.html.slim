@@ -14,8 +14,8 @@ body
     nav
       .container
         .nav-wrapper
-          = link_to 'SirYozh', root_path, class: 'brand-logo'
-
+          = image_tag 'yozh-logo.svg', class: 'logo'
+          = link_to 'Sir Yozh', root_path, class: 'brand-logo'
           ul#nav-mobile.right.hide-on-med-and-down
                      
             li= link_to 'Channels', channels_path

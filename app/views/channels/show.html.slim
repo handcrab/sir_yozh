@@ -10,7 +10,12 @@ article.card
     = link_to @channel, data: {:confirm => 'Are you sure?'}, method: :delete do
       i.mdi-content-clear
       | Destroy
-            
+
+.row
+  - @channel.posts.each do |post|
+    = render post
+
+
 = link_to channels_path, class: "waves-effect waves-teal btn-flat"
   | Back
   i.mdi-navigation-arrow-back.left
