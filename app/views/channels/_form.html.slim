@@ -8,11 +8,11 @@
 
   .input-field
     = f.text_field :title
-    = f.label :title
+    = f.label :title, class: "#{'active' if @channel.title}"
   .input-field
-    i.mdi-content-link.prefix
+    i.mdi-content-link.prefix.active
     = f.url_field :source_url, autofocus: true
-    = f.label :source_url 
+    = f.label :source_url, class: 'active'
   
   .actions.valign-wrapper
     = link_to channels_path, class: "waves-effect waves-teal btn-flat"

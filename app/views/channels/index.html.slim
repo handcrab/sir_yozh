@@ -1,26 +1,30 @@
 h1 Channels
 
+= link_to new_channel_path, class: 'btn waves-effect waves-light' do
+  | New Channel
+  i.mdi-content-add.left
+
 table.striped.hoverable
   thead
     tr
       th Title
-      th Source url
-      th
-      th
-      th
+      th Tags
+      th(colspan="3")
 
   tbody
     - @channels.each do |channel|
       tr
-        td = channel.title
-        td = link_to channel.source_url, channel.source_url
+        td = link_to channel.title, channel.source_url
+        td tags ...
         td = link_to 'Show', channel
-        td = link_to 'Edit', edit_channel_path(channel)
-        td = link_to 'Destroy', channel, data: {confirm: 'Are you sure?'}, method: :delete
+        td = link_to edit_channel_path channel do
+          | Edit
+          i.mdi-content-create.left
+        td = link_to channel, data: {confirm: 'Are you sure?'}, method: :delete do
+          | Destroy
+          i.mdi-content-clear.left
 
 br
 
-= link_to new_channel_path, class: 'btn waves-effect waves-light' do
-  | New Channel
-  i.mdi-content-add.left
+
 

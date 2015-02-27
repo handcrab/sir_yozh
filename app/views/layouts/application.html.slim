@@ -15,8 +15,6 @@ body
       .container
         .nav-wrapper
           = link_to 'SirYozh', root_path, class: 'brand-logo'
-          
-          
 
           ul#nav-mobile.right.hide-on-med-and-down
                      
@@ -34,7 +32,6 @@ body
             - else
               li= link_to t('menu.sign_in'),  new_user_session_path, class: 'sign-in'
               li= link_to t('menu.sign_up'),  new_user_registration_path, class: 'sign-up' 
-
 
   main.container
     .row
