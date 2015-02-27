@@ -13,6 +13,8 @@ class ChannelsController < ApplicationController
   # GET /channels/1.json
   def show
     @channel = Channel.find params[:id]
+    posts = @channel.fetch
+    @channel.posts.create posts unless posts.empty?
   end
 
   # GET /channels/new

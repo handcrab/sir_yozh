@@ -1,11 +1,16 @@
 class Channel < ActiveRecord::Base
   belongs_to :user
   has_many :posts, dependent: :destroy
-  
+
   validates :source_url, presence: true
   validate :source_url, :is_uri_valid
 
   before_save :generate_title
+
+  def fetch
+    crawler = Crawler.new source_url    
+    crawler.run if crawler
+  end
 
   private
   def generate_title
