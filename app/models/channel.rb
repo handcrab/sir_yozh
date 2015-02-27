@@ -7,9 +7,23 @@ class Channel < ActiveRecord::Base
 
   before_save :generate_title
 
-  def fetch
-    crawler = Crawler.new source_url    
-    crawler.run if crawler
+  # => posts
+  def fetch 
+    crawler = Crawler.new source_url, cache: cached_post    
+    if crawler
+      crawler.run 
+    else
+      []
+    end
+  end
+
+  def cached_post
+    # offset_date = Time.now - channel.shift_days.to_i.days
+    # cache = self.where(channel_id: channel.id).last
+    # cache ||= self.new published_at: offset_date
+    # cache.published_at = offset_date if cache.published_at < offset_date      
+    # cache
+    posts.last
   end
 
   private

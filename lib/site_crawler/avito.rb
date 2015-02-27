@@ -1,3 +1,7 @@
+# require 'mechanize'
+# require 'active_support/all' # date helpers
+# require 'byebug'
+
 module SiteCrawler
   class Avito
     HOST_NAME = 'http://www.avito.ru'
@@ -45,19 +49,38 @@ module SiteCrawler
         parsed_page_items << parsed_item
       end
 
-      parsed_page_items
+      parsed_page_items.sort_by {|item| item[:published_at] }.reverse
     end
 
     # current_page = agent.page
     # => array of hashes
     # Recursion
-    def parse_pages current_page, args={}    
+    def parse_pages current_page, args={}, cache=nil    
       default_args = {paginate: true, cooldown: 1, items: []}
       args = default_args.merge args
+
+      # if item.is_newer(cache)
+      # item.is_new = true 
 
       parsed_items = args[:items]
       parsed_items += parse_items current_page
       
+      # check_cache
+      if cache
+        tmp = []
+        parsed_items.each do |item|
+          # TODO опубликованы в одно время (см title)
+          if item[:published_at] <= cache.published_at
+            puts "------------------------------------"
+            puts "CACHE FOUND: new page items #{tmp.size}"
+            puts "------------------------------------" 
+            return tmp
+          else
+            tmp << item
+          end
+        end
+      end
+
       # next_button_selector = '.b-paginator .next'    
       next_btn = current_page.link_with text: /Следующ/i, class: 'pagination__page'
 
@@ -67,6 +90,9 @@ module SiteCrawler
         # ☢ Рекурсия ☢
         parse_pages @agent_smith.page, items: parsed_items
       else
+        puts "------------------------------------"
+        puts " items found: #{parsed_items.size}"
+        puts "------------------------------------" 
         return parsed_items
       end
       # puts 'last: ', parsed_items.size

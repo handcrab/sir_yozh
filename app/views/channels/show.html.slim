@@ -12,7 +12,7 @@ article.card
       | Destroy
 
 .row
-  - @channel.posts.each do |post|
+  - @channel.posts.order(published_at: :desc).each do |post|
     = render post
 
 

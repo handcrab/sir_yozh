@@ -14,7 +14,7 @@ class ChannelsController < ApplicationController
   def show
     @channel = Channel.find params[:id]
     posts = @channel.fetch
-    @channel.posts.create posts unless posts.empty?
+    @channel.posts.create posts.sort_by{|post| post[:published_at]} unless posts.empty?
   end
 
   # GET /channels/new

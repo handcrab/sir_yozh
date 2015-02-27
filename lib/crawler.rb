@@ -1,6 +1,3 @@
-# require 'mechanize'
-# require 'active_support/all' # date helpers
-# require 'byebug'
 class Crawler
   def initialize url, options={}
     agent = Mechanize.new
@@ -11,16 +8,17 @@ class Crawler
       # '404. Page not found'
       return nil
     end
-
+    @cache = options[:cache]
     # определяем парсер по домену  
     @engine = case agent.page.uri.host
     when /avito/i
       SiteCrawler::Avito.new
-    end
+    end    
   end
 
   def run options={}
-    @engine.parse_pages @page, options
+    return [] unless @engine
+    @engine.parse_pages @page, options, @cache
   end
 end
 
