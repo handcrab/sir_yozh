@@ -9,6 +9,11 @@ class ChannelsController < ApplicationController
     @channels = Channel.all
   end
 
+  def personal
+    @channels = current_user.channels
+    render :index
+  end
+
   # GET /channels/1
   # GET /channels/1.json
   def show
