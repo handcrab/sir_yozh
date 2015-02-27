@@ -1,0 +1,24 @@
+h2= t('.sign_up', default: "Sign up")
+= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f|
+  = devise_error_messages!
+  
+  .input-field
+    = f.email_field :email, class: 'validate', required: true
+    = f.label :email
+
+  .input-field
+    = f.password_field :password, required: true
+    = f.label :password
+  
+  .input-field
+    = f.password_field :password_confirmation, required: true
+    = f.label :password_confirmation 
+
+  br
+  .actions
+    button.btn-large.waves-effect.waves-light(type="submit" name="commit") 
+      = t('.sign_up', default: "Sign up") 
+      i.mdi-social-person-add.right
+    - # f.submit t('.sign_up', :default => "Sign up")
+
+= render "devise/shared/links"

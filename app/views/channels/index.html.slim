@@ -16,7 +16,11 @@ table.striped.hoverable
       tr
         td = link_to channel.title, channel.source_url
         td tags ...
-        td = link_to 'Posts', channel
+        td 
+          = link_to channel do          
+            | Posts
+            span.badge #{display_post_count channel}
+            i.mdi-action-view-list.left
         td = link_to edit_channel_path channel do
           | Edit
           i.mdi-content-create.left

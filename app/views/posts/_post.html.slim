@@ -1,9 +1,15 @@
-.col.s6
-  article.card
+.col.s4
+  article.card(itemscope itemtype="http://schema.org/Product")
     .card-content    
-      span.card-title.black-text= link_to post.title, post.source_url
+      span.card-title.black-text
+      p(itemprop="name")= link_to post.title, post.source_url
+      
       p= formatted_date post.published_at
-      p
       .post-cover= image_tag display_image(post.picture_url)
-      p= post.price
-      p= post.description
+      p(itemprop="offers" itemscope itemtype="http://schema.org/Offer")
+        = number_to_currency post.price
+        meta(itemprop="price" content="#{post.price}")
+        meta(itemprop="priceCurrency" content="RUB")
+      p(itemprop="description")= post.description
+
+

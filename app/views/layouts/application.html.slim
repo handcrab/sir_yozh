@@ -18,7 +18,8 @@ body
           = link_to 'Sir Yozh', root_path, class: 'brand-logo'
           ul#nav-mobile.right.hide-on-med-and-down
                      
-            li= link_to 'Channels', channels_path
+            li(class="#{'active' if current_page?(root_path) || current_page?(channels_path)}")
+              = link_to 'Channels', channels_path
             li= link_to 'About', '#'
 
             - if user_signed_in?

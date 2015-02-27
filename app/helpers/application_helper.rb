@@ -6,4 +6,9 @@ module ApplicationHelper
   def formatted_date date
     l date, format: :short
   end
+
+  def display_post_count channel
+    count = channel.posts.count
+    count.zero? ? '' : count.to_s
+  end
 end

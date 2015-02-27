@@ -1,0 +1,24 @@
+h2= t('.sign_in', default: "Sign in")
+= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f|
+  
+  .input-field
+    = f.email_field :email, class: 'validate', required: true
+    = f.label :email
+
+  .input-field
+    = f.password_field :password, required: true
+    = f.label :password
+  
+  - if devise_mapping.rememberable?
+    .input-field
+      = f.check_box :remember_me
+      = f.label :remember_me
+      
+  br
+  .actions
+    button.btn-large.waves-effect.waves-light(type="submit" name="commit") 
+      = t('.sign_in', default: "Sign in")
+      i.mdi-action-lock-open.right
+    - # f.submit t('.sign_in', :default => "Sign in")
+
+= render "devise/shared/links"

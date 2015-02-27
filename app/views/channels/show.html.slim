@@ -1,9 +1,7 @@
 p#notice = notice
 article.card
   .card-content
-    span.card-title.black-text= @channel.title
-    p
-      = link_to @channel.source_url, @channel.source_url
+    span.card-title.black-text= link_to @channel.title, @channel.source_url
 
   .card-action
     = link_to 'Edit', edit_channel_path(@channel)

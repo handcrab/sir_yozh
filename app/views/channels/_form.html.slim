@@ -11,7 +11,7 @@
     = f.label :title, class: "#{'active' if @channel.title}"
   .input-field
     i.mdi-content-link.prefix.active
-    = f.url_field :source_url, autofocus: true
+    = f.url_field :source_url, autofocus: true, class: 'validate'
     = f.label :source_url, class: 'active'
   
   .actions.valign-wrapper
