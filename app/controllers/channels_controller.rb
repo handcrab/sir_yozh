@@ -6,7 +6,14 @@ class ChannelsController < ApplicationController
   # GET /channels
   # GET /channels.json
   def index
-    @channels = Channel.all
+    # params[:tag]
+    # User.tagged_with("same"
+      if params[:tag]
+        @tag = params[:tag]
+        @channels = Channel.tagged_with params[:tag]
+      else
+        @channels = Channel.all
+      end
   end
 
   def personal
@@ -81,7 +88,7 @@ class ChannelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def channel_params
-      params.require(:channel).permit(:title, :source_url)
+      params.require(:channel).permit(:title, :source_url, :tag_list)
     end
 
     def authorize_user

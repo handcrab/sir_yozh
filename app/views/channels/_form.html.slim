@@ -9,6 +9,12 @@
   .input-field
     = f.text_field :title
     = f.label :title, class: "#{'active' if @channel.title}"
+  
+  .input-field
+    = f.label :tag_list, t('.tags', default: 'tags')    
+    = f.text_field :tag_list
+    - # text_field_tag 'channel[tag_list]', @channel.tag_list.join(',')
+
   .input-field
     i.mdi-content-link.prefix.active
     = f.url_field :source_url, autofocus: true, class: 'validate'

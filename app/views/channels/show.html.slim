@@ -1,7 +1,8 @@
 p#notice = notice
 article.card
   .card-content
-    span.card-title.black-text= link_to @channel.title, @channel.source_url
+    span.card-title.black-text= link_to @channel.title, @channel.source_url    
+    = render partial: 'tags', locals: {tags: @channel.tags}    
 
   .card-action
     = link_to 'Edit', edit_channel_path(@channel)

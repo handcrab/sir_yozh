@@ -43,6 +43,8 @@ gem 'hirb', group: :development
 gem 'devise'
 gem 'devise-i18n-views'
 
+gem 'acts-as-taggable-on', '~> 3.4'
+
 gem 'puma'
 
 group :development, :test do

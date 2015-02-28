@@ -1,7 +1,8 @@
 class Channel < ActiveRecord::Base
   belongs_to :user
   has_many :posts, dependent: :destroy
-
+  acts_as_taggable
+  
   validates :source_url, presence: true
   validate :source_url, :is_uri_valid
 
