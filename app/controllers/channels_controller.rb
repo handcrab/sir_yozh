@@ -33,7 +33,10 @@ class ChannelsController < ApplicationController
   # GET /channels/new
   def new
     @channel = current_user.channels.build
+    # @setup = @channel.setup.new
     #Channel.new
+    @channel.build_setup
+    #.setup = Setting.new
   end
 
   # GET /channels/1/edit
@@ -98,7 +101,8 @@ class ChannelsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def channel_params
-      params.require(:channel).permit(:title, :source_url, :public, :tag_list)
+      params.require(:channel).permit(:title, :source_url, :public, :tag_list, 
+        setup_attributes: [:max_price, :shift_days])
     end
 
     def authorize_user

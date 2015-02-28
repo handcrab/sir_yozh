@@ -3,7 +3,14 @@ article.card
   .card-content
     span.card-title.black-text= link_to @channel.title, @channel.source_url    
     = render partial: 'tags', locals: {tags: @channel.tags}    
- 
+  
+  .settings-report 
+    | <
+    = number_to_currency @channel.setup.max_price
+    |, 
+    | не позднее 
+    = @channel.setup.shift_days
+    | дней
   .card-action
     - if @channel.user == current_user
       = link_to toggle_public_channel_path(@channel), method: :patch do

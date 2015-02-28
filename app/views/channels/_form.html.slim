@@ -22,7 +22,7 @@
       | Public
 
   .input-field
-    = f.label :tag_list, t('.tags', default: 'tags')    
+    = f.label :tag_list, t('.tags', default: 'tags'), class: "#{'active' unless @channel.tag_list.empty?}"
     - # f.text_field :tag_list, @channel.tag_list
     = text_field_tag 'channel[tag_list]', @channel.tag_list.join(', ')
 
@@ -31,6 +31,22 @@
     = f.url_field :source_url, autofocus: true, class: 'validate'
     = f.label :source_url, class: 'active'
   
+  / SETTINGS
+  br
+  br
+  hr
+  = f.fields_for :setup do |s_f|
+    .input-field
+      = s_f.number_field :max_price
+      = s_f.label :max_price, class: 'active'
+
+    .input-field
+      = s_f.number_field :shift_days
+      = s_f.label :shift_days, class: 'active'
+
+    .input-field
+      -# f.check_box :force_fetch
+
   .actions.valign-wrapper
     = link_to channels_path, class: "waves-effect waves-teal btn-flat"
       | Back

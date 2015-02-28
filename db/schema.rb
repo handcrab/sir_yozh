@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150228115430) do
+ActiveRecord::Schema.define(version: 20150228170341) do
 
   create_table "channels", force: :cascade do |t|
     t.string   "title"
@@ -38,6 +38,17 @@ ActiveRecord::Schema.define(version: 20150228115430) do
   end
 
   add_index "posts", ["channel_id"], name: "index_posts_on_channel_id"
+
+  create_table "settings", force: :cascade do |t|
+    t.string   "max_price",    default: "5000"
+    t.integer  "shift_days",   default: 5
+    t.integer  "tunable_id"
+    t.string   "tunable_type"
+    t.datetime "created_at",                    null: false
+    t.datetime "updated_at",                    null: false
+  end
+
+  add_index "settings", ["tunable_type", "tunable_id"], name: "index_settings_on_tunable_type_and_tunable_id"
 
   create_table "taggings", force: :cascade do |t|
     t.integer  "tag_id"

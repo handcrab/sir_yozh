@@ -1,6 +1,9 @@
 class Channel < ActiveRecord::Base
   belongs_to :user
   has_many :posts, dependent: :destroy
+  has_one :setup, as: :tunable, class_name: 'Setting'
+  accepts_nested_attributes_for :setup
+
   acts_as_taggable
   
   validates :source_url, presence: true
