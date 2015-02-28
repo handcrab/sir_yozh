@@ -1,0 +1,18 @@
+article.channel.row  
+  .actions
+    .action
+      = link_to_edit channel
+    .action
+      = link_to_delete channel
+
+  h5.title= link_to channel.title, channel.source_url
+
+  - #.col.s9
+  .col.s3.posts-badge
+    = link_to channel do          
+      | Posts
+      i.mdi-action-view-list.left
+      span.right.badge #{display_post_count channel}
+  .col.s12
+    = render partial: 'tags', locals: {tags: channel.tags}
+

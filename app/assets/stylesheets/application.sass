@@ -14,6 +14,18 @@
  
 @import "materialize"
 
+@mixin links
+  @extend .red
+  @extend .accent-2
+
+header
+  nav
+    @extend .lime
+    @extend .darken-1
+
+.btn
+  @include links
+
 .logo
   height: 80px
   
@@ -24,9 +36,55 @@
   //   display: block
   //   float: left    
   // margin-top: 50px
-  
+  .action
+    display: inline-block
 
 .post-cover
   height: 100px
   img
     height: 100%
+
+.channel
+  // border: 1px solid black
+  @extend .z-depth-1
+  padding: 20px
+
+  .tags
+    padding: 10px 0
+
+  .actions
+    // border-top: 1px dotted silver
+    // padding-top: 10px
+    // justify-content: flex-end
+    float: right
+    a
+      margin: 10px
+
+.posts-badge
+  // max-width: 
+  // width: 20%
+  .badge, a
+    display: inline-block
+    float: left
+
+.tags
+  a
+    // @include links      
+    @extend .white-text
+    background-color: $link-color
+    padding: 5px
+    display: inline-block
+    margin-bottom: 5px
+
+  i
+    opacity: 0.2
+
+a[href^="http://www.avito.ru"], a[href^="https://www.avito.ru"]
+  &:before 
+    display: inline-block
+    width: 16px
+    height: 16px
+    margin-right: 5px
+    content: ""
+    background: url("logo-avito-small.svg") no-repeat 0 0
+    background-size: 100%

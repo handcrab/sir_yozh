@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   width="83.100006"
+   height="83.099998"
+   viewBox="0 0 83.100006 83.099998"
+   id="svg3017"
+   version="1.1"
+   inkscape:version="0.48.5 r10040"
+   sodipodi:docname="logo-avito-small.svg">
+  <metadata
+     id="metadata3047">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <dc:title></dc:title>
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3045" />
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1024"
+     inkscape:window-height="705"
+     id="namedview3043"
+     showgrid="false"
+     inkscape:zoom="2.7763975"
+     inkscape:cx="118.25845"
+     inkscape:cy="41"
+     inkscape:window-x="-8"
+     inkscape:window-y="-8"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3017"
+     fit-margin-top="0"
+     fit-margin-left="0"
+     fit-margin-right="0"
+     fit-margin-bottom="0" />
+  <circle
+     style="fill:#97cf26"
+     sodipodi:ry="22.450001"
+     sodipodi:rx="22.450001"
+     sodipodi:cy="60.549999"
+     sodipodi:cx="60.650002"
+     d="M 83.100002,60.549999 C 83.100002,72.948792 73.048795,83 60.650002,83 48.251208,83 38.200001,72.948792 38.200001,60.549999 c 0,-12.398793 10.051207,-22.450001 22.450001,-22.450001 12.398793,0 22.45,10.051208 22.45,22.450001 z"
+     id="circle3021"
+     r="22.450001"
+     cy="60.549999"
+     cx="60.650002"
+     transform="translate(0,0.10000038)" />
+  <circle
+     style="fill:#cf6cf7"
+     sodipodi:ry="10.45"
+     sodipodi:rx="10.45"
+     sodipodi:cy="60.549999"
+     sodipodi:cx="18.450001"
+     d="m 28.900001,60.549999 c 0,5.771376 -4.678625,10.45 -10.45,10.45 -5.771376,0 -10.45,-4.678624 -10.45,-10.45 0,-5.771375 4.678624,-10.45 10.45,-10.45 5.771375,0 10.45,4.678625 10.45,10.45 z"
+     id="circle3023"
+     r="10.45"
+     cy="60.549999"
+     cx="18.450001"
+     transform="translate(0,0.10000038)" />
+  <circle
+     style="fill:#ff6163"
+     sodipodi:ry="14.45"
+     sodipodi:rx="14.45"
+     sodipodi:cy="18.35"
+     sodipodi:cx="60.650002"
+     d="m 75.100001,18.35 c 0,7.980515 -6.469485,14.45 -14.449999,14.45 -7.980515,0 -14.45,-6.469485 -14.45,-14.45 0,-7.980514 6.469485,-14.4499994 14.45,-14.4499994 7.980514,0 14.449999,6.4694854 14.449999,14.4499994 z"
+     id="circle3025"
+     r="14.45"
+     cy="18.35"
+     cx="60.650002"
+     transform="translate(0,0.10000038)" />
+  <circle
+     style="fill:#00aaff"
+     sodipodi:ry="18.450001"
+     sodipodi:rx="18.450001"
+     sodipodi:cy="18.35"
+     sodipodi:cx="18.450001"
+     d="m 36.900002,18.35 c 0,10.189654 -8.260347,18.450001 -18.450001,18.450001 C 8.2603467,36.800001 0,28.539654 0,18.35 0,8.1603463 8.2603467,-0.10000038 18.450001,-0.10000038 c 10.189654,0 18.450001,8.26034668 18.450001,18.45000038 z"
+     id="circle3027"
+     r="18.450001"
+     cy="18.35"
+     cx="18.450001"
+     transform="translate(0,0.10000038)" />
+</svg>

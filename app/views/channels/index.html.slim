@@ -1,9 +1,8 @@
 h1 Channels
 - if @tag
-  .tag.col.s4
+  h4
     i.mdi-maps-local-offer.left
     = @tag
-
 = link_to new_channel_path, class: 'btn waves-effect waves-light' do
   | New Channel
   i.mdi-content-add.left
@@ -20,19 +19,14 @@ table.striped.hoverable
       tr
         td = link_to channel.title, channel.source_url
         td = render partial: 'tags', locals: {tags: channel.tags}
-        td 
+        td.posts-badge 
           = link_to channel do          
             | Posts
-            span.badge #{display_post_count channel}
             i.mdi-action-view-list.left
-        td = link_to edit_channel_path channel do
-          | Edit
-          i.mdi-content-create.left
-        td = link_to channel, data: {confirm: 'Are you sure?'}, method: :delete do
-          | Destroy
-          i.mdi-content-clear.left
+          
+          span.badge #{display_post_count channel}
+        td = link_to_edit channel
+        td = link_to_delete channel
 
 br
-
-
-
+- #render @channels
