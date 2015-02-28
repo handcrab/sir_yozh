@@ -1,20 +1,24 @@
 class Channel < ActiveRecord::Base
   belongs_to :user
   has_many :posts, dependent: :destroy
-  has_one :setup, as: :tunable, class_name: 'Setting'
+  has_one :setup, as: :tunable, class_name: 'Setting', dependent: :destroy
+  # ??? association callbacks
+  #, after_add: :destroy_posts_on_setup_change
   accepts_nested_attributes_for :setup
 
+  # ??? reject in-valid attributes for has_many association
+  # accepts_nested_attributes_for :posts, reject_if: -> {Post.new(attributes).valid?}
   acts_as_taggable
   
   validates :source_url, presence: true
   validate :source_url, :is_uri_valid
 
   before_save :generate_title
-  before_update :destroy_posts_on_source_url_change
+  after_update :destroy_posts_on_source_url_change 
+  # after_update :destroy_posts_on_setup_change
 
   scope :published, -> { where public: true }
   # scope :published_and_personal_for, ->(user) {}
-
   def self.published_and_personal_for user
     where 'public = ? OR (user_id = ? AND public = ?)', true, user, false
   end
@@ -30,12 +34,16 @@ class Channel < ActiveRecord::Base
   end
 
   def cached_post
-    # offset_date = Time.now - channel.shift_days.to_i.days
-    # cache = self.where(channel_id: channel.id).last
-    # cache ||= self.new published_at: offset_date
-    # cache.published_at = offset_date if cache.published_at < offset_date      
-    # cache
-    posts.last
+    cache = posts.last 
+    offset_date = Time.now - setup.shift_days.to_i.days
+    # если posts.last.nil? пропустить записи старше offset_date
+    tmp_post = Post.new published_at: offset_date
+    cache ||= tmp_post
+
+    # если posts.last в кэше, но старше offset_date
+    # ??? сразу вернуть tmp_post
+    cache = tmp_post if offset_date > cache.published_at    
+    cache
   end
 
   private
@@ -57,7 +65,14 @@ class Channel < ActiveRecord::Base
       errors.add(:source_url, "Invalid URI")
   end
 
-  def destroy_posts_on_source_url_change
-    self.posts.destroy_all unless source_url_was == source_url
+  def destroy_posts
+    posts.destroy_all
   end
+
+  def destroy_posts_on_source_url_change
+    destroy_posts unless source_url_was == source_url
+  end
+
+  # def destroy_posts_on_setup_change
+  # end
 end

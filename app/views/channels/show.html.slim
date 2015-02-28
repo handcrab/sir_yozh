@@ -11,6 +11,7 @@ article.card
     | не позднее 
     = @channel.setup.shift_days
     | дней
+    = @channel.posts.size
   .card-action
     - if @channel.user == current_user
       = link_to toggle_public_channel_path(@channel), method: :patch do
