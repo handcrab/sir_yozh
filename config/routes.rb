@@ -2,7 +2,10 @@ Rails.application.routes.draw do
   devise_for :users
     
   get 'channels/personal' => 'channels#personal'
-  resources :channels
+  resources :channels do
+    patch 'toggle_public', on: :member
+  end
+  
   root 'channels#index'
   
   get 'tags/:tag', to: 'channels#index', as: :tag

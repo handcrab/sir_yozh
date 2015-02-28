@@ -8,6 +8,13 @@ class Channel < ActiveRecord::Base
 
   before_save :generate_title
 
+  scope :published, -> { where public: true }
+  # scope :published_and_personal_for, ->(user) {}
+
+  def self.published_and_personal_for user
+    where 'public = ? OR (user_id = ? AND public = ?)', true, user, false
+  end
+
   # => posts
   def fetch 
     crawler = Crawler.new source_url, cache: cached_post    

@@ -3,12 +3,18 @@ article.card
   .card-content
     span.card-title.black-text= link_to @channel.title, @channel.source_url    
     = render partial: 'tags', locals: {tags: @channel.tags}    
-
+ 
   .card-action
-    = link_to 'Edit', edit_channel_path(@channel)
-    = link_to @channel, data: {:confirm => 'Are you sure?'}, method: :delete do
-      i.mdi-content-clear
-      | Destroy
+    - if @channel.user == current_user
+      = link_to toggle_public_channel_path(@channel), method: :patch do
+        - if @channel.public
+          i.mdi-action-visibility
+        - else
+          i.mdi-action-visibility-off
+      = link_to 'Edit', edit_channel_path(@channel)
+      = link_to @channel, data: {confirm: 'Are you sure?'}, method: :delete do
+        i.mdi-content-clear
+        | Destroy
 
 .row
   - @channel.posts.order(published_at: :desc).each do |post|

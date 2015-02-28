@@ -10,10 +10,21 @@
     = f.text_field :title
     = f.label :title, class: "#{'active' if @channel.title}"
   
+  - #.input-field
+  - # f.check_box :public
+  - # f.label :public    
+  .switch
+    label
+      | Private
+      - #i.mdi-action-visibility-off
+      = f.check_box :public
+      span.lever
+      | Public
+
   .input-field
     = f.label :tag_list, t('.tags', default: 'tags')    
-    = f.text_field :tag_list
-    - # text_field_tag 'channel[tag_list]', @channel.tag_list.join(',')
+    - # f.text_field :tag_list, @channel.tag_list
+    = text_field_tag 'channel[tag_list]', @channel.tag_list.join(', ')
 
   .input-field
     i.mdi-content-link.prefix.active

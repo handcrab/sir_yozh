@@ -11,14 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150227223514) do
+ActiveRecord::Schema.define(version: 20150228115430) do
 
   create_table "channels", force: :cascade do |t|
     t.string   "title"
-    t.text     "source_url", limit: 2000, null: false
-    t.datetime "created_at",              null: false
-    t.datetime "updated_at",              null: false
+    t.text     "source_url", limit: 2000,                null: false
+    t.datetime "created_at",                             null: false
+    t.datetime "updated_at",                             null: false
     t.integer  "user_id"
+    t.boolean  "public",                  default: true
   end
 
   add_index "channels", ["source_url"], name: "index_channels_on_source_url"
