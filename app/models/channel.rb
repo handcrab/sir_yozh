@@ -7,6 +7,7 @@ class Channel < ActiveRecord::Base
   validate :source_url, :is_uri_valid
 
   before_save :generate_title
+  before_update :destroy_posts_on_source_url_change
 
   scope :published, -> { where public: true }
   # scope :published_and_personal_for, ->(user) {}
@@ -51,5 +52,9 @@ class Channel < ActiveRecord::Base
       URI source_url    
     rescue
       errors.add(:source_url, "Invalid URI")
+  end
+
+  def destroy_posts_on_source_url_change
+    self.posts.destroy_all unless source_url_was == source_url
   end
 end
