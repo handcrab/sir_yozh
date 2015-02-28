@@ -26,11 +26,13 @@ class Channel < ActiveRecord::Base
   # => posts
   def fetch 
     crawler = Crawler.new source_url, cache: cached_post    
-    if crawler
+    posts = if crawler
       crawler.run 
     else
       []
     end
+
+    self.posts.create posts.sort_by{|post| post[:published_at]} unless posts.empty?
   end
 
   def cached_post

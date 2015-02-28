@@ -20,7 +20,7 @@ table.striped.hoverable
         td = link_to channel.title, channel.source_url
         td = render partial: 'tags', locals: {tags: channel.tags}
         td.posts-badge 
-          = link_to channel do          
+          = link_to channel, class: 'show-posts' do          
             | Posts
             i.mdi-action-view-list.left
           

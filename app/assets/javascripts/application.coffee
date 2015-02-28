@@ -16,5 +16,27 @@
 # = require turbolinks
 # = require_tree .
 
-# $ ->
-#   $(".button-collapse").sideNav()
+showProgressBar = -> $('.progress').show()
+hideProgressBar = -> $('.progress').hide()
+
+# history change
+# window.onpopstate = (event)->     
+#   hideProgressBar()
+$(document).on 'page:restore', ->
+  hideProgressBar()
+
+init = ->
+  # $(".button-collapse").sideNav()
+  $('.fetch').on 'click', ->
+    showProgressBar() #.toggleClass('hide')
+  $('.show-posts').on 'click', ->
+    showProgressBar()
+  $('.tags a').on 'click', ->
+    showProgressBar()
+
+  $('.progress').hide()
+
+$(document).ready init
+$(document).on 'page:load', ->
+  init()
+  # $('.progress').hide()
