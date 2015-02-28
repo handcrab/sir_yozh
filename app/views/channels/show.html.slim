@@ -5,13 +5,10 @@ article.card
     = render partial: 'tags', locals: {tags: @channel.tags}    
   
   .settings-report 
-    | <
-    = number_to_currency @channel.setup.max_price
-    |, 
-    | не позднее 
-    = @channel.setup.shift_days
-    | дней
-    = @channel.posts.size
+    = setup_report_str @channel
+    
+    span.badge #{ @channel.posts.count }
+    
   .card-action
     - if @channel.user == current_user
       = link_to toggle_public_channel_path(@channel), method: :patch do

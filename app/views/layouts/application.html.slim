@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title SirYozh
+    title SirYozh α
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -20,7 +20,7 @@ body
                      
             li(class="#{'active' if current_page? channels_personal_path }")
               = link_to 'My Channels', channels_personal_path
-            li= link_to 'About', '#'
+            li= link_to 'My Posts', posts_path
 
             - if user_signed_in?
               li

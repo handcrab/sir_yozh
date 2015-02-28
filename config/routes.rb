@@ -1,4 +1,6 @@
 Rails.application.routes.draw do
+  get 'posts/index'
+
   devise_for :users
     
   get 'channels/personal' => 'channels#personal'
@@ -8,8 +10,9 @@ Rails.application.routes.draw do
   
   root 'channels#index'
   
-  get 'tags/:tag', to: 'channels#index', as: :tag
-  
+  get 'tags/:tag', to: 'channels#index', as: :tag  
+  get 'posts' => 'posts#index'
+
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

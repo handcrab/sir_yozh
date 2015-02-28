@@ -15,4 +15,8 @@ module ChannelsHelper
     end if channel.user == current_user
   end
 
+  def setup_report_str channel
+    "≤ #{number_to_currency channel.setup.max_price}, 
+    не более #{channel.setup.shift_days} дней назад"
+  end
 end
