@@ -9,7 +9,7 @@ module ChannelsHelper
   end
 
   def link_to_delete channel
-    link_to channel, data: {confirm: 'Are you sure?'}, method: :delete do
+    link_to channel, data: {confirm: t('.confirm.destroy', channel: channel.title) }, method: :delete do
       #| Destroy
       content_tag :i, '', class: 'mdi-content-clear'
     end if channel.user == current_user

@@ -1,7 +1,7 @@
 doctype html
 html
   head
-    title SirYozh α
+    title= content_for?(:title) ? yield(:title) : t('.appname', default: 'Sir Yozh α')
 
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
@@ -15,19 +15,19 @@ body
       .container
         .nav-wrapper
           = image_tag 'yozh-logo.svg', class: 'logo'
-          = link_to 'Sir Yozh', root_path, class: 'brand-logo'
+          = link_to t('.appname', default: 'Sir Yozh'), root_path, class: 'brand-logo'
           ul#nav-mobile.right.hide-on-med-and-down
                      
-            li(class="#{'active' if current_page? channels_personal_path }")
-              = link_to 'My Channels', channels_personal_path
-            li= link_to 'My Posts', posts_path
+            li(class="#{'active' if current_page? channels_personal_path}")
+              = link_to t('.menu.my_channels'), channels_personal_path
+            li(class="#{'active' if current_page? posts_path}")= link_to t('.menu.my_posts'), posts_path
 
             - if user_signed_in?
               li
                 = link_to edit_user_registration_path(current_user) do
                   i.mdi-action-account-box.left
                   - #current_user.display_name.capitalize
-                  | Profile
+                  = t('.menu.user_profile')
 
               li= link_to t('menu.sign_out'), destroy_user_session_path, method: :delete 
             - else

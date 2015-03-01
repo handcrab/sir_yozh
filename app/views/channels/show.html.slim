@@ -16,10 +16,10 @@ article.card
           i.mdi-action-visibility
         - else
           i.mdi-action-visibility-off
-      = link_to 'Edit', edit_channel_path(@channel)
-      = link_to @channel, data: {confirm: 'Are you sure?'}, method: :delete do
+      = link_to t('.edit'), edit_channel_path(@channel)
+      = link_to @channel, data: {confirm: t('.confirm.destroy')}, method: :delete do
         i.mdi-content-clear
-        | Destroy
+        = t('.destroy')
 
 .row
   - @channel.posts.order(published_at: :desc).each do |post|
@@ -27,5 +27,5 @@ article.card
 
 
 = link_to channels_path, class: "waves-effect waves-teal btn-flat"
-  | Back
+  = t('.back')
   i.mdi-navigation-arrow-back.left

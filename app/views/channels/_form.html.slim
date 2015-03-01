@@ -1,7 +1,7 @@
 = form_for @channel do |f|
   - if @channel.errors.any?
     #error_explanation
-      h2 = "#{pluralize(@channel.errors.count, "error")} prohibited this channel from being saved:"
+      h4= t 'errors.template.header', model: t('activerecord.models.channel.one'), count: @channel.errors.count
       ul
         - @channel.errors.full_messages.each do |message|
           li = message
@@ -15,14 +15,14 @@
   - # f.label :public    
   .switch
     label
-      | Private
+      = t('.private')
       - #i.mdi-action-visibility-off
       = f.check_box :public
       span.lever
-      | Public
+      = t('.public')
 
   .input-field
-    = f.label :tag_list, t('.tags', default: 'tags'), class: "#{'active' unless @channel.tag_list.empty?}"
+    = f.label :tag_list, t('.tag_list'), class: "#{'active' unless @channel.tag_list.empty?}"
     - # f.text_field :tag_list, @channel.tag_list
     = text_field_tag 'channel[tag_list]', @channel.tag_list.join(', ')
 
@@ -31,9 +31,9 @@
     = f.url_field :source_url, autofocus: true, class: 'validate'
     = f.label :source_url, class: 'active'
   
-  / SETTINGS
   br
-  hr
+  h4= Channel.human_attribute_name :setup
+  br
   = f.fields_for :setup do |s_f|
     .input-field
       = s_f.number_field :max_price
@@ -43,16 +43,16 @@
       = s_f.number_field :shift_days
       = s_f.label :shift_days, class: 'active'
 
-    .input-field
-      -# f.check_box :force_fetch
+    - #.input-field
+    - # f.check_box :force_fetch
 
   .actions.valign-wrapper
     = link_to channels_path, class: "waves-effect waves-teal btn-flat"
-      | Back
+      = t('.back')
       i.mdi-navigation-arrow-back.left
 
     button.btn-large.waves-effect.waves-light(type="submit" name="commit") 
-      | submit
+      = t('.submit')
       i.mdi-content-send.right
 
 

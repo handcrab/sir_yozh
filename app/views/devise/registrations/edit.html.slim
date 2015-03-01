@@ -9,7 +9,7 @@ h2= t('.title', resource: resource_class.model_name.human , default: "Edit #{res
 
   .input-field
     = f.email_field :email, class: 'validate'
-    = f.label :email
+    = f.label :email, class: 'active'
 
 
   - if devise_mapping.confirmable? && resource.pending_reconfirmation?

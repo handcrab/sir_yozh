@@ -1,0 +1,135 @@
+# http://unicode.org/repos/cldr-tmp/trunk/diff/supplemental/language_plural_rules.html#ru
+# one   > 1, 21, 31, 41, 51, 61...  n mod 10 is 1 and n mod 100 is not 11;
+# few   > 2-4, 22-24, 32-34... n mod 10 in 2..4 and n mod 100 not in 12..14;
+# many  > 0, 5-20, 25-30, 35-40... n mod 10 is 0 or n mod 10 in 5..9 or n mod 100 in 11..14;
+# other > 1.2, 2.07, 5.94... everything else
+
+ru:
+  title: Ёж деловой
+  error: Ошибка
+
+  layouts:
+    application:
+      appname: Ёж деловой
+      menu:
+        user_profile: Профиль
+        my_channels: Мои подписки
+        my_posts: Мои предложения
+  
+  # VIEWS
+  channels:
+    index:
+      title: Подписки
+      edit: Изменить
+      destroy: Удалить
+      new_channel: Добавить подписку
+      feed: rss-лента
+      confirm:
+        destroy: 'Удалить подписку "%{channel}"?'
+    edit:
+      title: Изменение подписки
+      back: Отмена
+      confirm:
+        destroy: Удалить эту подписку?    
+    new:
+      title: Добавление подписки
+      back: Отмена
+    show:
+      confirm:
+        destroy: Удалить эту подписку?
+      edit: Изменить
+      destroy: Удалить
+      back: Назад
+
+    form:
+      tag_list: Теги (через запятую)
+      public: Публично
+      private: Приватно
+      back: Отмена
+      submit: Сохранить
+  
+  posts:
+    index:
+      title: Мои предложения
+      fetch: Запросить
+      
+  activerecord:
+    models:
+      channel: 
+        one: Подписка
+        few: Подписки
+        many: Подписок
+        other: Подписки
+      post: 
+        one: Предложение
+        few: Предложений
+        many: Предложений
+        other: Предложения
+
+      user: Профиль
+
+    attributes:
+      channel:
+        title: Метка
+        source_url: Ссылка
+        tag_list: Теги
+        posts: Предложения
+        setup: Настройки
+        public: Видимо всем
+
+      setting:
+        max_price: Цена (максимум)
+        shift_days: Новизна (дней)
+
+      post:
+        title: Заголовок
+        source_url: Источник
+        picture_url: Обложка
+        published_at: Опубликовано
+        price: Цена
+        description: Описание
+
+      user:
+        name: 'Имя'
+        email: 'Эл. почта'
+        password: 'Пароль'
+        password_confirmation: 'Подтверждение пароля'
+        current_password: 'Текущий пароль'
+        remember_me: 'запомнить меня'        
+  
+
+
+
+
+
+
+
+  forms:
+    messages:
+      success: "Операция прошла успешно!"
+      confirm: 'Вы уверены?'
+      not_found: 'Ошибка: Запись не найдена'      
+    buttons:
+      edit: "Изменить"
+      submit: "Подтвердить"
+      delete: "Удалить"
+      cancel: 'Отмена'
+      back: 'К списку'
+      not_owned: 'Исполнено!'
+      owned: 'Исполнено'
+      public: 'Опубликовать/Скрыть'      
+  menu:
+    new_wish: 'Добавить желание'
+    owned_wishes: 'Исполненные'
+    all_wishes: 'Мои желания'
+    sign_in: 'Вход'
+    sign_up: 'Регистрация'
+    sign_out: 'Выход'
+    user_profile: 'Профиль'
+  wishes:
+    index:
+      title: "Список желаний"
+    edit:
+      title: "Изменить желание"
+    new:
+      title: "Новое желание"

@@ -1,17 +1,17 @@
-h1 Channels
+h1= t('.title')
 - if @tag
   h4
     i.mdi-maps-local-offer.left
     = @tag
 = link_to new_channel_path, class: 'btn waves-effect waves-light' do
-  | New Channel
+  = t('.new_channel')
   i.mdi-content-add.left
 
 table.striped.hoverable
   thead
     tr
-      th Title
-      th Tags
+      th= Channel.human_attribute_name :title 
+      th= Channel.human_attribute_name :tag_list 
       th(colspan="3")
 
   tbody
@@ -21,7 +21,7 @@ table.striped.hoverable
         td = render partial: 'tags', locals: {tags: channel.tags}
         td.posts-badge 
           = link_to channel, class: 'show-posts' do          
-            | Posts
+            = Channel.human_attribute_name :posts
             i.mdi-action-view-list.left
           
           span.badge #{display_post_count channel}
