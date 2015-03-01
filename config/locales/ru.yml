@@ -15,7 +15,7 @@ ru:
         user_profile: Профиль
         my_channels: Мои подписки
         my_posts: Мои предложения
-  
+        all_channels: Все подписки
   # VIEWS
   channels:
     index:

@@ -8,8 +8,12 @@ Rails.application.routes.draw do
     patch 'toggle_public', on: :member
   end
   
-  root 'channels#index'
   
+  authenticated :user do
+    root to: 'channels#personal', as: :authenticated_root
+  end
+  root 'channels#index'
+
   get 'tags/:tag', to: 'channels#index', as: :tag  
   get 'tags/:tag/posts', to: 'posts#tagged', as: :tag_posts
   

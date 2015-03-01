@@ -23,6 +23,9 @@ body
             li(class="#{'active' if current_page? posts_path}")= link_to t('.menu.my_posts'), posts_path
 
             - if user_signed_in?
+              li(class="#{'active' if current_page? channels_path}")
+                = link_to t('.menu.all_channels'), channels_path
+
               li
                 = link_to edit_user_registration_path(current_user) do
                   i.mdi-action-account-box.left
