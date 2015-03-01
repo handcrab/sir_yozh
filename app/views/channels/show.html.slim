@@ -20,6 +20,11 @@ article.card
         i.mdi-content-clear
         = t('.destroy')
 
+- # TODO
+= link_to channel_posts_path(@channel, format: 'atom', fetch: true) do
+  = t(:feed)
+  i.mdi-maps-local-library.left
+
 .row
   - @channel.posts.order(published_at: :desc).each do |post|
     = render post
