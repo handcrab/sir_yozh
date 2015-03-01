@@ -50,7 +50,7 @@ ru:
   
   posts:
     index:
-      title: Мои предложения
+      title: Предложения
       fetch: Запросить
       
   activerecord:

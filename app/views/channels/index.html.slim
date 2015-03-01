@@ -1,11 +1,18 @@
 h1= t('.title')
 - if @tag
-  h4
-    i.mdi-maps-local-offer.left
+  h5
+    i.mdi-content-filter-list.left
     = @tag
+
+
 = link_to new_channel_path, class: 'btn waves-effect waves-light' do
   = t('.new_channel')
   i.mdi-content-add.left
+
+- if @tag 
+  = link_to tag_posts_path(@tag), class: "waves-effect waves-teal btn-flat" do
+    = Channel.human_attribute_name(:posts)
+    i.mdi-maps-local-offer.left 
 
 table.striped.hoverable
   thead
