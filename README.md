@@ -16,3 +16,4 @@
 - Фильтр предложений (просмотр)
 - rss
 - pagination
+- responsive

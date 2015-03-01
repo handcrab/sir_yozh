@@ -1,0 +1,18 @@
+ul(class="#{options[:class]}" id="#{options[:id]}")
+  li(class="#{'active' if current_page? channels_personal_path}")
+    = link_to t('layouts.application.menu.my_channels'), channels_personal_path
+  li(class="#{'active' if current_page? posts_path}")
+    = link_to t('layouts.application.menu.my_posts'), posts_path
+
+  - if user_signed_in?
+    li(class="#{'active' if current_page? channels_path}")
+      = link_to t('layouts.application.menu.all_channels'), channels_path
+    li
+      = link_to edit_user_registration_path(current_user) do
+        i.mdi-action-account-box.left
+        - #current_user.display_name.capitalize
+        = t('layouts.application.menu.user_profile')
+    li= link_to t('layouts.application.menu.sign_out'), destroy_user_session_path, method: :delete 
+  - else
+    li= link_to t('layouts.application.menu.sign_in'),  new_user_session_path, class: 'sign-in'
+    li= link_to t('layouts.application.menu.sign_up'),  new_user_registration_path, class: 'sign-up'

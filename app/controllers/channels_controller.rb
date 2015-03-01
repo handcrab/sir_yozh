@@ -6,15 +6,13 @@ class ChannelsController < ApplicationController
   # GET /channels
   # GET /channels.json
   def index
-    # params[:tag]
-    # User.tagged_with("same"
-      if params[:tag]
-        @tag = params[:tag]
-        # @channels = Channel.tagged_with params[:tag]
-        @channels = Channel.published_and_personal_for(current_user).tagged_with params[:tag]        
-      else
-        @channels = Channel.published
-      end
+    if params[:tag]
+      @tag = params[:tag]
+      # @channels = Channel.tagged_with params[:tag]
+      @channels = Channel.published_and_personal_for(current_user).tagged_with params[:tag]        
+    else
+      @channels = Channel.published
+    end
   end
 
   def personal
@@ -49,10 +47,9 @@ class ChannelsController < ApplicationController
   def create
     @channel = current_user.channels.build channel_params
     # Channel.new(channel_params)
-
     respond_to do |format|
       if @channel.save
-        format.html { redirect_to @channel, notice: 'Channel was successfully created.' }
+        format.html { redirect_to @channel, notice: t('flash.create.success') }
         format.json { render :show, status: :created, location: @channel }
       else
         format.html { render :new }
@@ -66,7 +63,7 @@ class ChannelsController < ApplicationController
   def update
     respond_to do |format|
       if @channel.update channel_params
-        format.html { redirect_to @channel, notice: 'Channel was successfully updated.' }
+        format.html { redirect_to @channel, notice: t('flash.update.success') }
         format.json { render :show, status: :ok, location: @channel }
       else
         format.html { render :edit }
@@ -78,9 +75,9 @@ class ChannelsController < ApplicationController
   # PATCH
   def toggle_public
     if @channel.update public: not(@channel.public)
-      redirect_to @channel, notice: t('forms.messages.success')
+      redirect_to @channel, notice: t('flash.update.success')
     else
-      redirect_to @channel, alert: t(:error)
+      redirect_to @channel, alert: t('flash.error')
     end
   end
 
@@ -89,7 +86,7 @@ class ChannelsController < ApplicationController
   def destroy
     @channel.destroy
     respond_to do |format|
-      format.html { redirect_to channels_url, notice: 'Channel was successfully destroyed.' }
+      format.html { redirect_to root_path, notice: t('flash.destroy.success') }
       format.json { head :no_content }
     end
   end

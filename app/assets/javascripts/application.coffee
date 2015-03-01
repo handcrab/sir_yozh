@@ -35,6 +35,16 @@ init = ->
     showProgressBar()
 
   $('.progress').hide()
+ 
+  $(".button-collapse").sideNav()
+  
+  # popup flash msg
+  $('#alert').ready -> 
+    msg = $('#alert .message').data('notice')
+    if msg
+      # console.log $('#alert').data('notice')
+      $('#alert').hide()
+      toast msg, 4000
 
 $(document).ready init
 $(document).on 'page:load', ->

@@ -6,16 +6,30 @@
 
 ru:
   title: Ёж деловой
-  error: Ошибка
+  
+  flash:
+    error: Ошибка
+    create:
+      success: Подписка создана
+    update:
+      success: Подписка сохранена
+    destroy:
+      success: Подписка удалена
 
   layouts:
     application:
       appname: Ёж деловой
       menu:
-        user_profile: Профиль
         my_channels: Мои подписки
         my_posts: Мои предложения
         all_channels: Все подписки
+        
+        user_profile: Профиль        
+        sign_in: 'Вход'
+        sign_up: 'Регистрация'
+        sign_out: 'Выход'
+        
+
   # VIEWS
   channels:
     index:
@@ -96,40 +110,3 @@ ru:
         password_confirmation: 'Подтверждение пароля'
         current_password: 'Текущий пароль'
         remember_me: 'запомнить меня'        
-  
-
-
-
-
-
-
-
-  forms:
-    messages:
-      success: "Операция прошла успешно!"
-      confirm: 'Вы уверены?'
-      not_found: 'Ошибка: Запись не найдена'      
-    buttons:
-      edit: "Изменить"
-      submit: "Подтвердить"
-      delete: "Удалить"
-      cancel: 'Отмена'
-      back: 'К списку'
-      not_owned: 'Исполнено!'
-      owned: 'Исполнено'
-      public: 'Опубликовать/Скрыть'      
-  menu:
-    new_wish: 'Добавить желание'
-    owned_wishes: 'Исполненные'
-    all_wishes: 'Мои желания'
-    sign_in: 'Вход'
-    sign_up: 'Регистрация'
-    sign_out: 'Выход'
-    user_profile: 'Профиль'
-  wishes:
-    index:
-      title: "Список желаний"
-    edit:
-      title: "Изменить желание"
-    new:
-      title: "Новое желание"

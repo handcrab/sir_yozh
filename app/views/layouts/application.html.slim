@@ -16,26 +16,11 @@ body
         .nav-wrapper
           = image_tag 'yozh-logo.svg', class: 'logo'
           = link_to t('.appname', default: 'Sir Yozh'), root_path, class: 'brand-logo'
-          ul#nav-mobile.right.hide-on-med-and-down
-                     
-            li(class="#{'active' if current_page? channels_personal_path}")
-              = link_to t('.menu.my_channels'), channels_personal_path
-            li(class="#{'active' if current_page? posts_path}")= link_to t('.menu.my_posts'), posts_path
-
-            - if user_signed_in?
-              li(class="#{'active' if current_page? channels_path}")
-                = link_to t('.menu.all_channels'), channels_path
-
-              li
-                = link_to edit_user_registration_path(current_user) do
-                  i.mdi-action-account-box.left
-                  - #current_user.display_name.capitalize
-                  = t('.menu.user_profile')
-
-              li= link_to t('menu.sign_out'), destroy_user_session_path, method: :delete 
-            - else
-              li= link_to t('menu.sign_in'),  new_user_session_path, class: 'sign-in'
-              li= link_to t('menu.sign_up'),  new_user_registration_path, class: 'sign-up' 
+          
+          = render partial: 'shared/nav_menu', locals: {options: {class: 'right hide-on-med-and-down', id: 'nav-mobile'}}
+          = render partial: 'shared/nav_menu', locals: {options: {class: 'side-nav', id: 'slide-out'}}
+          a.button-collapse(href="#" data-activates="slide-out")
+            i.mdi-navigation-menu
 
   main.container
     .row
@@ -44,8 +29,9 @@ body
         .progress.hide
           .indeterminate
 
-        .notice= notice if notice
-        .alert= alert if alert
+        - flash.each do |name, msg|
+          .card-panel.teal#alert.alert.alert-info
+            span.white-text.message(data-notice="#{msg}")= msg
 
         = yield
 
