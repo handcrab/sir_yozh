@@ -1,6 +1,13 @@
 h1 All my Posts
+- if @tag
+  h4
+    i.mdi-maps-local-offer.left
+    = @tag
+    
 span.badge= @posts.count
-= link_to({controller: 'posts', fetch: true}, { class: "fetch btn-large waves-effect waves-light" }) do  
+
+- action = @tag ? 'tagged' : 'index'
+= link_to({controller: 'posts', action: action, fetch: true}, {class: "fetch btn-large waves-effect waves-light"}) do  
   | Fetch
   i.mdi-action-autorenew.right
 br       

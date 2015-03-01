@@ -11,6 +11,8 @@ Rails.application.routes.draw do
   root 'channels#index'
   
   get 'tags/:tag', to: 'channels#index', as: :tag  
+  get 'tags/:tag/posts', to: 'posts#tagged', as: :tag_posts
+  
   get 'posts' => 'posts#index'
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".

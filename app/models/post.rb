@@ -3,6 +3,8 @@ class Post < ActiveRecord::Base
   # validates_presence_of :title
   validate :by_settings
 
+  scope :newest_on_top, -> {order published_at: :desc}
+
   private
   def by_settings
     if channel.setup
