@@ -6,6 +6,7 @@
 
 ru:
   title: Ёж деловой
+  feed: rss-лента
   
   flash:
     error: Ошибка
@@ -36,8 +37,7 @@ ru:
       title: Подписки
       edit: Изменить
       destroy: Удалить
-      new_channel: Добавить подписку
-      feed: rss-лента
+      new_channel: Добавить подписку      
       confirm:
         destroy: 'Удалить подписку "%{channel}"?'
     edit:

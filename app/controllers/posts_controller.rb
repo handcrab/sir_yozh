@@ -6,6 +6,11 @@ class PostsController < ApplicationController
       current_user.channels.each &:fetch
     end
     @posts = current_user.posts.order published_at: :desc
+
+    respond_to do |format|
+      format.html {}
+      format.atom { render layout: false }
+    end
   end
 
   # GET tags/:tag/posts

@@ -1,3 +1,6 @@
+- content_for :head do
+  = auto_discovery_link_tag(:atom, atom_link(request))
+
 h1= t('.title')
 - if @tag
   h4
@@ -5,10 +8,17 @@ h1= t('.title')
     = @tag
     
 span.badge= @posts.count
+br
 
 - action = @tag ? 'tagged' : 'index'
 = link_to({controller: 'posts', action: action, fetch: true}, {class: "fetch btn-large waves-effect waves-light"}) do  
   = t('.fetch')
   i.mdi-action-autorenew.right
-br       
+
+br
+- # TODO
+= link_to atom_link(request) do
+  = t(:feed)
+  i.mdi-maps-local-library.left
+br         
 = render @posts
