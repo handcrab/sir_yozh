@@ -11,6 +11,12 @@
 html 
   font-size: 80%
 
+  min-height: 100%
+  position: relative
+
+  body
+    height: 100%
+
 h1, h2, h3, h4, h5, h6
   font-weight: 200
 
@@ -31,8 +37,17 @@ footer
 .btn
   @include links
 
-.logo
-  height: 80px
+// .logo
+//   background-image: image_url('yozh-logo.svg')
+//   // height: 80px
+
+.nav-wrapper
+  background-image: image_url('yozh-logo.svg')
+  background-repeat: no-repeat  
+  background-position: -25px -8px  
+  
+  .brand-logo
+    margin-left: 60px
 
 body
   background-image: image_url('rsz_yozh.jpg')

@@ -15,7 +15,7 @@ body
     nav.top-nav
       - #.container
       .nav-wrapper
-        = image_tag 'yozh-logo.svg', class: 'logo'
+        - # image_tag 'yozh-logo.svg', class: 'logo'
         = link_to t('.appname', default: 'Sir Yozh').mb_chars.upcase, root_path, class: 'brand-logo left'      
 
         = render partial: 'shared/nav_menu', locals: {options: {class: 'right hide-on-med-and-down', id: 'nav-mobile'}}
