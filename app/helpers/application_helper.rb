@@ -17,9 +17,21 @@ module ApplicationHelper
     # request.original_url+'.atom'
     page = request.env['PATH_INFO']
     query = request.env['QUERY_STRING']
-    query = query.empty? ? '' : '?'+query
+    # query = query.empty? ? '' : '?'+query
+    # url.include?('?') ? '&' : '?'
+    query_str = '?'
+    query_str += query unless query.empty?
 
-    # raise request.inspect
-    "http://#{request.host_with_port}#{page}.atom#{query}"
+    if current_user
+      query_str += "&token=#{current_user.token}"
+    end
+
+    "http://#{request.host_with_port}#{page}.atom#{query_str}"
+  end
+
+  def get_token channel
+    # unless channel.public?
+    token = current_user.token if channel.user == current_user    
+    rescue nil 
   end
 end

@@ -20,8 +20,10 @@ class PostsController < ApplicationController
     # channels = current_user.channels.tagged_with(params[:tag]).pluck(:id)
     # @posts = Post.where('channel_id IN (?)', channels).newest_on_top
     @tag = params[:tag]
-    channels = Channel.published_and_personal_for(current_user).tagged_with(params[:tag]).pluck(:id)
+    # channels = Channel.published_and_personal_for(current_user).tagged_with(params[:tag]).pluck(:id)
+    channels = @channels.tagged_with(params[:tag]) #.pluck(:id)
     channels.each(&:fetch) if params[:fetch]
+    channels = channels.pluck(:id)
     @posts = Post.where('channel_id IN (?)', channels).newest_on_top
 
     render :index
@@ -31,27 +33,29 @@ class PostsController < ApplicationController
   def channel_index
     channel = @channels.find_by id: params[:id]
     # channel = Channel.published_and_personal_for(current_user).find_by id: params[:id]
-    # msg = t('devise.failure.unauthenticated')
-    # redirect_to root_path, alert: msg unless channel
+        
+    if channel
+      channel.fetch if params[:fetch]
+      @posts = channel.posts.newest_on_top
 
-    channel.fetch if params[:fetch]
-    @posts = channel.posts.newest_on_top
-    
-    # personal feed link
-    # unless channel.public?
-    #   @token = '' 
-    # end
-    render :index
+      render :index
+    else
+      msg = t('devise.failure.unauthenticated')
+      redirect_to root_path, alert: msg unless channel
+    end    
   end
 
   private
   def set_public_feed
     # channel = Channel.published_and_personal_for(current_user).find_by id: params[:id]
-    @channels = Channel.published_and_personal_for current_user
+    if params[:token]
+      user = User.find_by token: params[:token]
+    end
+    user ||= current_user
+    # all public channels
+    @channels = Channel.published_and_personal_for user
+
     msg = t('devise.failure.unauthenticated')
     redirect_to root_path, alert: msg if @channels.empty?
-    
-    # channel.fetch if params[:fetch]
-    # @posts = channel.posts.newest_on_top
   end
 end

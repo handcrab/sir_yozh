@@ -21,7 +21,7 @@ article.card
         = t('.destroy')
 
 - # TODO
-= link_to channel_posts_path(@channel, format: 'atom', fetch: true) do
+= link_to channel_posts_path(@channel, format: 'atom', fetch: true, token: get_token(@channel)) do
   = t(:feed)
   i.mdi-maps-local-library.left
 
