@@ -3,19 +3,42 @@
 @mixin links
   @extend .red
   @extend .accent-2
+  // @extend .deep-purple  
+  // @extend .accent-1
+  // @extend .blue 
+  // @extend .darken-4
+  
+html 
+  font-size: 80%
+
+h1, h2, h3, h4, h5, h6
+  font-weight: 200
 
 header
   nav
     @extend .lime
     // @extend .teal
-    @extend .darken-1
-
+    // @extend .darken-1
+    @extend .darken-3
+    
+    .brand-logo
+      font-weight: 300
+footer
+  .yozh
+    height: 100px
+    img
+      height: 100% 
 .btn
   @include links
 
 .logo
   height: 80px
-  
+
+body
+  background-image: url('rsz_yozh.jpg')
+  background-repeat: no-repeat
+  background-position: left bottom
+
 .actions 
   // clear: right
   justify-content: flex-start
@@ -25,6 +48,9 @@ header
   // margin-top: 50px
   .action
     display: inline-block
+
+.channel-destroy
+  @extend .red-text
 
 .post-cover
   height: 100px
@@ -84,7 +110,7 @@ a[href^="http://www.avito.ru"], a[href^="https://www.avito.ru"]
   display: none
 
 .progress.hide
-  @extend .teal
+  @extend .red
 
   .indeterminate
     @extend .lime

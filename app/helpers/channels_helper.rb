@@ -3,7 +3,7 @@ module ChannelsHelper
 
   def link_to_edit channel
     link_to edit_channel_path channel do
-      content_tag :i, '', class: 'mdi-content-create'
+      content_tag :i, '', class: 'mdi-content-create channel-edit'
       #| Edit      
     end if channel.user == current_user
   end
@@ -11,7 +11,7 @@ module ChannelsHelper
   def link_to_delete channel
     link_to channel, data: {confirm: t('.confirm.destroy', channel: channel.title) }, method: :delete do
       #| Destroy
-      content_tag :i, '', class: 'mdi-content-clear'
+      content_tag :i, '', class: 'mdi-content-clear channel-destroy'
     end if channel.user == current_user
   end
 

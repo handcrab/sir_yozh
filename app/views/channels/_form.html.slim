@@ -9,10 +9,7 @@
   .input-field
     = f.text_field :title
     = f.label :title, class: "#{'active' if @channel.title}"
-  
-  - #.input-field
-  - # f.check_box :public
-  - # f.label :public    
+    
   .switch
     label
       = t('.private')
@@ -54,6 +51,3 @@
     button.btn-large.waves-effect.waves-light(type="submit" name="commit") 
       = t('.submit')
       i.mdi-content-send.right
-
-
-  - # f.submit

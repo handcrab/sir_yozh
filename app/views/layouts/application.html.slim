@@ -12,16 +12,16 @@ html
 
 body
   header
-    nav
-      .container
-        .nav-wrapper
-          = image_tag 'yozh-logo.svg', class: 'logo'
-          = link_to t('.appname', default: 'Sir Yozh'), root_path, class: 'brand-logo'
-          
-          = render partial: 'shared/nav_menu', locals: {options: {class: 'right hide-on-med-and-down', id: 'nav-mobile'}}
-          = render partial: 'shared/nav_menu', locals: {options: {class: 'side-nav', id: 'slide-out'}}
-          a.button-collapse(href="#" data-activates="slide-out")
-            i.mdi-navigation-menu
+    nav.top-nav
+      - #.container
+      .nav-wrapper
+        = image_tag 'yozh-logo.svg', class: 'logo'
+        = link_to t('.appname', default: 'Sir Yozh').mb_chars.upcase, root_path, class: 'brand-logo left'      
+
+        = render partial: 'shared/nav_menu', locals: {options: {class: 'right hide-on-med-and-down', id: 'nav-mobile'}}
+        = render partial: 'shared/nav_menu', locals: {options: {class: 'side-nav', id: 'slide-out'}}
+        a.button-collapse(href="#" data-activates="slide-out")
+          i.mdi-navigation-menu
 
   main.container
     .row

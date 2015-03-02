@@ -1,12 +1,12 @@
 - content_for :head do
   = auto_discovery_link_tag(:atom, atom_link(request))
 
-h1= t('.title')
+h2= t('.title')
 - if @tag
-  h4
+  h5
     i.mdi-maps-local-offer.left
     = @tag
-    
+
 span.badge= @posts.count
 br
 
