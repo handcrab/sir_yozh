@@ -17,3 +17,4 @@
 - pagination
 - responsive
 - form errors
+- удалять старые предложения
