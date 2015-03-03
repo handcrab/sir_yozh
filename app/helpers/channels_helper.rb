@@ -19,4 +19,8 @@ module ChannelsHelper
     "≤ #{number_to_currency channel.setup.max_price}, 
     не более #{channel.setup.shift_days} дней назад"
   end
+
+  def atom_url channel
+    channel_posts_path channel, format: :atom, fetch: true, token: get_token(channel)
+  end 
 end

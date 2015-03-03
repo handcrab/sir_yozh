@@ -20,8 +20,7 @@ article.card
         i.mdi-content-clear
         = t('.destroy')
 
-- # TODO
-= link_to channel_posts_path(@channel, format: 'atom', fetch: true, token: get_token(@channel)) do
+= link_to atom_url(channel) do
   = t(:feed)
   i.mdi-maps-local-library.left
 
@@ -33,3 +32,6 @@ article.card
 = link_to channels_path, class: "waves-effect waves-teal btn-flat"
   = t('.back')
   i.mdi-navigation-arrow-back.left
+
+= content_for :head, {'data-foo' => 'bar'}} do
+  = auto_discovery_link_tag :atom, atom_url(channel)
