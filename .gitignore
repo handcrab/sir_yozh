@@ -49,3 +49,5 @@ config/secrets.yml
 bower.json
 
 *.sublime*
+# Ignore application configuration
+/config/application.yml
