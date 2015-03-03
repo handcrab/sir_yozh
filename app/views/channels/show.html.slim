@@ -24,7 +24,7 @@ article.card
   = t(:feed)
   i.mdi-maps-local-library.left
 
-.row
+.row#posts
   - @channel.posts.order(published_at: :desc).each do |post|
     = render post
 

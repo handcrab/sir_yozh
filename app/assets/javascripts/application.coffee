@@ -18,6 +18,10 @@
 
 showProgressBar = -> $('.progress').show()
 hideProgressBar = -> $('.progress').hide()
+# setCardsHeights = ->
+#   heights = $(".card").map -> $(@).height()
+#   max_height = Math.max.apply null, heights.get() 
+#   $(".card").height max_height
 
 # history change
 # window.onpopstate = (event)->     
@@ -38,6 +42,8 @@ init = ->
  
   $(".button-collapse").sideNav()
   
+  # setCardsHeights()
+
   # popup flash msg
   $('#alert').ready -> 
     msg = $('#alert .message').data('notice')
@@ -45,6 +51,15 @@ init = ->
       # console.log $('#alert').data('notice')
       $('#alert').hide()
       toast msg, 4000
+
+  # TODO
+  # $('#posts .col:nth-child(3n)').css({clear: 'left'})
+  # $(window).resize ->
+  #   viewportWidth = $(window).width()    
+  #   console.log viewportWidth    
+  # if viewportWidth <= 600 
+  # else if viewportWidth <= 992 and viewportWidth > 600
+  #   # $('#posts .col:nth-child(4n)').toggleClass 'clear-left'
 
 $(document).ready init
 $(document).on 'page:load', ->
