@@ -18,5 +18,4 @@
 - удалять старые предложения
 - Фильтр предложений (просмотр)
 - pagination
-- moblie/responsive
 - improve form errors
