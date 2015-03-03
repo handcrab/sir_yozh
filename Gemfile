@@ -47,6 +47,7 @@ gem 'devise-i18n-views'
 gem 'acts-as-taggable-on', '~> 3.4'
 
 gem 'puma'
+gem 'newrelic_rpm'
 
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
