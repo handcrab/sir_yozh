@@ -20,7 +20,7 @@ article.card
         i.mdi-content-clear
         = t('.destroy')
 
-= link_to atom_url(channel) do
+= link_to atom_url(@channel) do
   = t(:feed)
   i.mdi-maps-local-library.left
 
@@ -33,5 +33,5 @@ article.card
   = t('.back')
   i.mdi-navigation-arrow-back.left
 
-= content_for :head, {'data-foo' => 'bar'}} do
-  = auto_discovery_link_tag :atom, atom_url(channel)
+= content_for :head do
+  = auto_discovery_link_tag :atom, atom_url(@channel)
