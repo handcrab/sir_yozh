@@ -1,7 +1,7 @@
-atom_feed do |feed|
+atom_feed language: 'ru-RU' do |feed|
   feed.title t('posts.index.title')
   feed.updated @posts.maximum(:published_at)
-  feed.language 'ru-RU'
+  # I18n.locale
   @posts.each do |post|
     # configuration options for feed entry 
     feed_entry_options = {
@@ -15,13 +15,14 @@ atom_feed do |feed|
     feed.entry(post, feed_entry_options) do |entry|
       entry.title post.title
       # entry.url post.source_url
-      entry.content post.description, type: 'html' 
-      entry.content image_tag(display_image post.picture_url), type: 'html'
-      
-      entry.author do |author|
-        author.name "Avito"
-      end
+      # entry.content post.description, type: 'html' 
+      # entry.content image_tag(display_image post.picture_url), type: 'html'
+      content = image_tag(display_image post.picture_url) + '<br/>'.html_safe + post.description
+      entry.content content, type: 'html'
 
+      entry.author do |author|
+        author.name "Avito.ru"
+      end
     end
   end
 end
