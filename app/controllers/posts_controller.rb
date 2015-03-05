@@ -3,7 +3,11 @@ class PostsController < ApplicationController
   # before_action :fetch_posts
   before_action :set_public_feed, except: :index
 
-  def index 
+  def index
+    # if params[:fetch]     
+    #   Resque.enqueue FetchAllPostsJob 
+    #   flash.now[:notice] = 'Queued'
+    # end
     current_user.channels.each(&:fetch) if params[:fetch]    
     @posts = current_user.posts.newest_on_top
 
