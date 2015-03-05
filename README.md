@@ -18,3 +18,9 @@
 - Фильтр предложений (просмотр)
 - pagination
 - improve form errors
+
+# Запуск
+```bash
+bundle install
+foreman start -f Procfile.dev
+```
