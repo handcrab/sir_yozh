@@ -1,6 +1,7 @@
 # require 'mechanize'
 # require 'active_support/all' # date helpers
 # require 'byebug'
+# require 'active_support/core_ext/hash'
 
 module SiteCrawler
   class Avito
@@ -20,7 +21,7 @@ module SiteCrawler
       #parsed_item[:picture] = 'http:' + picture[:src] if picture
       parsed_item[:picture_url] = picture[:src] if picture
 
-      # TODO: price currency
+      # TODO: price with currency
       parsed_item[:price] = item.at('.description .about').text.strip
       parsed_item[:price] = parsed_item[:price].gsub(/[[:space:]]/, '').match(/[[:digit:]]*/)[0]
       parsed_item[:price] = parsed_item[:price].to_i
@@ -30,10 +31,10 @@ module SiteCrawler
       parsed_item[:published_at] = parse_date item.at('.date').text.strip    
 
       # TODO: parse tags
-      parsed_item[:description] = item.at('.description').text.strip
-      # parsed_item[:is_new] = false # default
+      parsed_item[:description] = item.at('.description').text.strip      
       # parsed_item[:is_pinned] = !!(item.attributes["class"].value =~ /premium/)
       
+      parsed_item[:sticked] = item.at('.vas-applied').present?      
       parsed_item
     end
     
@@ -49,103 +50,65 @@ module SiteCrawler
         parsed_page_items << parsed_item
       end
 
-      parsed_page_items.sort_by {|item| item[:published_at] }.reverse
+      parsed_page_items.sort_by {|item| item[:published_at]}.reverse
     end
 
     # current_page = agent.page
-    # => array of hashes
-    # Recursion
+    # => array of hashes    
     def parse_pages current_page, args={}, cache=nil    
       default_args = {paginate: true, cooldown: 1, items: []}
       args = default_args.merge args
 
-      # if item.is_newer(cache)
-      # item.is_new = true 
-
       parsed_items = args[:items]
-      parsed_items += parse_items current_page
       
-      # check_cache
+      current_page_items = parse_items current_page
+      
+      # CHECK CACHE
       if cache
         tmp = []
-        parsed_items.each do |item|
-          # TODO опубликованы в одно время (см title)
+        cache_found = false
+
+        # items on the current page ~ cache?
+        current_page_items.each do |item|
+          # TODO опубликованы в одно время (? см title, body)
           if item[:published_at] <= cache.published_at
+            next if item[:sticked] # sticked item cant be cached
+
             puts "------------------------------------"
+            puts "item[:published_at]: #{item[:published_at]}"
+            puts "cache.published_at: #{cache.published_at}"
             puts "CACHE FOUND: new page items #{tmp.size}"
-            puts "------------------------------------" 
-            return tmp
+            puts "------------------------------------"           
+            
+            cache_found = true
+            break # cache_found            
           else
             tmp << item
           end
         end
-      end
+
+        return drop_sticked_items(parsed_items+tmp, cache) if cache_found
+      end # /CHECK CACHE
+
+      # cache not found:
+      parsed_items += current_page_items
 
       # next_button_selector = '.b-paginator .next'    
       next_btn = current_page.link_with text: /Следующ/i, class: 'pagination__page'
 
+      # go to the next page?
       if args[:paginate] && next_btn
-        sleep args[:cooldown] # cd
+        sleep args[:cooldown] # saves from ban
         @agent_smith.click next_btn
         # ☢ Рекурсия ☢
-        parse_pages @agent_smith.page, items: parsed_items
-      else
-        puts "------------------------------------"
-        puts " items found: #{parsed_items.size}"
-        puts "------------------------------------" 
-        return parsed_items
+        parse_pages @agent_smith.page, args.merge({items: parsed_items}), cache
+      else        
+        return drop_sticked_items(parsed_items, cache)
       end
-      # puts 'last: ', parsed_items.size
       # byebug
       # parsed_items
     end
       
-    # def parse_pages current_page, paginate=true, cooldown=1
-    #   # for 1st time  next_btn=true
-    #   next_button_selector = '.b-paginator .next'
-    #   next_btn = current_page.at(next_button_selector) || true
-    #   parsed_items = []
-
-    #   while next_btn do
-    #     # items = agent.page.search('.item')
-    #     # parsed_page_items = []
-    #     # обработали страницу в parsed_page_items
-
-    #     # parsed_items << parse_page(current_page) 
-    #     items = current_page.search('.item')
-    #     items.each do |item|
-    #       parsed_items << parse_item(item)
-    #     end
-    #     # parsed_items << current_page.search('.item')
-    #     # # parse_page(agent.page)  
-    #     # parse_page(current_page).each do |item_hash| 
-    #     #   item = self.new item_hash.merge(channel_id: channel.id) 
-    #     #   parsed_page_items << item
-    #     # end
-    #     # Проверка КЭША
-    #     # if cache
-
-    #     # parsed_page_items.sort.reverse!                
-    #     # сортируем страницу, чтобы "нейтрализовать" прикрепленные      
-    #     #.sort_by &:published_at
-    #     # reverse: 1й - самый новый [today, yesterday] 
-
-
-    #     # next_btn = agent.page.at(next_button_selector)
-    #     break unless paginate
-    #     next_btn = current_page.at(next_button_selector)
-
-    #     if next_btn
-    #       sleep cooldown # cd
-    #       agent.click next_btn 
-    #       current_page = agent.page
-    #     end
-    #   end
-
-    #   parsed_items.flatten
-    # end
-
-
     # helpers
     # Public: Создает объект класса Time на основе содержащей дату строки.
     #
@@ -185,5 +148,19 @@ module SiteCrawler
       # год = текущий
       Time.new date.year, month, day, hour, minute
     end
+
+    def drop_sticked_items items, cache=nil
+      return items unless cache
+      
+      # drop old sticked items    
+      items.select do |item|
+        if item[:sticked]          
+          item[:published_at] > cache.published_at
+        else
+          true
+        end
+      end
+    end
+
   end
 end

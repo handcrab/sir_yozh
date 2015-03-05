@@ -32,7 +32,15 @@ class Channel < ActiveRecord::Base
       []
     end
 
-    self.posts.create posts.sort_by{|post| post[:published_at]} unless posts.empty?
+    # TODO
+    unless posts.empty?
+      # drop extra attributes
+      posts.map! do |post|
+        post.with_indifferent_access.slice *Post.attribute_names
+      end      
+      self.posts.create posts.sort_by{|post| post[:published_at]} #unless posts.empty?
+    end
+
   end
 
   def cached_post

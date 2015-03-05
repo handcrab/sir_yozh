@@ -1,0 +1,776 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://www.avito.ru/samarskaya_oblast?q=%D0%B5%D0%B6%D0%B8%D0%BA%20%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Accept-Encoding: gzip,deflate,identity
+      Accept: "*/*"
+      User-Agent: Mechanize/2.7.3 Ruby/2.1.5p273 (http://github.com/sparklemotion/mechanize/)
+      Accept-Charset: ISO-8859-1,utf-8;q=0.7,*;q=0.7
+      Accept-Language: en-us,en;q=0.5
+      Host: www.avito.ru
+      Connection: keep-alive
+      Keep-Alive: 300
+  response:
+    status: {code: 200, message: OK}
+    headers:
+      Server: nginx
+      Date: Wed, 04 Mar 2015 23:20:29 GMT
+      Content-Type: text/html; charset=utf-8
+      Transfer-Encoding: chunked
+      Connection: keep-alive
+      Keep-Alive: timeout=75
+      Cache-Control: no-store, no-cache, must-revalidate, post-check=0, pre-check=0
+      Set-Cookie:
+      - dfp_group=53; expires=Sat, 04-Apr-2015 23:20:29 GMT; Max-Age=2678400; path=/;
+        domain=.avito.ru
+      - sessid=f15c8e541715d4b58535e06bdbafc2ec.1425511229; expires=Thu, 05-Mar-2015
+        23:20:29 GMT; Max-Age=86400; path=/; domain=.avito.ru; httponly
+      - u=1x1rq98t.zlfkif.epuhtmzaks; expires=Fri, 03-Mar-2017 23:20:29 GMT; Max-Age=63072000;
+        path=/; domain=.avito.ru; httponly
+      - v=1425511229; expires=Wed, 04-Mar-2015 23:50:29 GMT; Max-Age=1800; path=/;
+        domain=.avito.ru; httponly
+      Strict-Transport-Security: max-age=3600; includeSubDomains
+    body:
+      encoding: UTF-8
+      string: "<!DOCTYPE html> <html class=\"no-js\"> <head> <meta charset=\"utf-8\">\n
+        \ <meta name=\"format-detection\" content=\"telephone=no\">     <title>ежик
+        африканский - Доска бесплатных объявлений от частных лиц и компаний в Самарской
+        области на Avito </title>\n <meta name=\"description\" content=\"Бесплатные
+        объявления на Avito - подать бесплатные объявления в Самарской области\"><meta
+        name=\"yandex-verification\" content=\"499bdc75d3636c55\" /><link rel=\"stylesheet\"
+        type=\"text/css\" href=\"//www.avito.st/s/cc/d5041c93d0c0f9ceaa7f5befada771975d7f9a1b.css?871f753\"
+        /><link rel=\"stylesheet\" type=\"text/css\" href=\"//www.avito.st/s/cc/3a3821abbdc5d2bdd3d637b832de725c9ddc9fc1.css?94aa952\"
+        /><link rel=\"apple-touch-icon-precomposed\" sizes=\"180x180\" href=\"//www.avito.st/s/common/touch-icons/common/apple-touch-icon-180x180-precomposed.png?8fe910b\"
+        /><link rel=\"apple-touch-icon-precomposed\" sizes=\"152x152\" href=\"//www.avito.st/s/common/touch-icons/common/apple-touch-icon-152x152-precomposed.png?e6cb1ea\"
+        /><link rel=\"apple-touch-icon-precomposed\" sizes=\"144x144\" href=\"//www.avito.st/s/common/touch-icons/common/apple-touch-icon-144x144-precomposed.png?149c515\"
+        /><link rel=\"apple-touch-icon-precomposed\" sizes=\"120x120\" href=\"//www.avito.st/s/common/touch-icons/common/apple-touch-icon-120x120-precomposed.png?2145796\"
+        /><link rel=\"apple-touch-icon-precomposed\" sizes=\"114x114\" href=\"//www.avito.st/s/common/touch-icons/common/apple-touch-icon-114x114-precomposed.png?86a87d9\"
+        /><link rel=\"apple-touch-icon-precomposed\" sizes=\"76x76\" href=\"//www.avito.st/s/common/touch-icons/common/apple-touch-icon-76x76-precomposed.png?f2d0719\"
+        /><link rel=\"apple-touch-icon-precomposed\" sizes=\"72x72\" href=\"//www.avito.st/s/common/touch-icons/common/apple-touch-icon-72x72-precomposed.png?108857f\"
+        /><link rel=\"apple-touch-icon-precomposed\" sizes=\"57x57\" href=\"//www.avito.st/s/common/touch-icons/common/apple-touch-icon-57x57-precomposed.png?02ef6db\"
+        /><meta name=\"msapplication-TileColor\" content=\"#000000\"><meta name=\"msapplication-TileImage\"
+        content=\"/s/common/touch-icons/common/mstile-144x144.png\"><meta name=\"msapplication-config\"
+        content=\"browserconfig.xml\" /><link href=\"//www.avito.st/favicon.ico?4dedf6e\"
+        rel=\"shortcut icon\" type=\"image/x-icon\" /><link href=\"//www.avito.st/ya-tableau-manifest-ru.json?285ccc0\"
+        rel=\"yandex-tableau-widget\" /><link href=\"//www.avito.st/open_search_ru.xml?c968cd1\"
+        rel=\"search\" type=\"application/opensearchdescription+xml\" title=\"Avito\"
+        /><link rel=\"canonical\" href=\"//www.avito.ru/samarskaya_oblast?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9\"/><link
+        rel=\"stylesheet\" type=\"text/css\" href=\"//www.avito.st/s/cc/d7e2acf66de78770e1cefc869e999c7080a26124.css?207aff6\"
+        /><link rel=\"stylesheet\" type=\"text/css\" href=\"//www.avito.st/s/cc/758e338bbde4b3c404d1f7744f1f60b952b01124.css?1e3cd53\"
+        /><link rel=\"stylesheet\" type=\"text/css\" href=\"//www.avito.st/s/cc/d125f24cfd163f9dc0369264b0591a1feb9db7c0.css?3b45a9c\"
+        /><link rel=\"stylesheet\" type=\"text/css\" href=\"//www.avito.st/s/cc/1d6bb951dd78c58656d19a895391eb5c349df740.css?1cf4ddb\"
+        /><script>var DC_BackgroundImageUrl=\"\",DC_BackgroundImageIndex=0;DC_startBackgroundImage=function(){var
+        e=parent.document.all?!0:!1;document.addEventListener&&0==e?parent.document.addEventListener(\"click\",DC_callback,!1):attachEvent(\"onclick\",DC_callback),e&&(parent.document.onmousedown=DC_callback)},DC_callback=function(e){var
+        n=e||window.event,a=parent.document.all?!0:!1,t=parent.document.body.clientWidth;a?(tempX=n.clientX+document.body.scrollLeft,tempY=n.clientY+document.body.scrollTop):(tempX=e.pageX,tempY=e.pageY);var
+        c=t/2-500,d=t/2+500;tempX<c||tempX>d?1==DC_BackgroundImageIndex?DC_BackgroundImageIndex=0:DC_BackgroundImageUrl.indexOf(\"http\")>=0&&(myWindow=window.open(DC_BackgroundImageUrl,\"\")):DC_BackgroundImageIndex=1};</script></head>
+        <body class=\"  \"\n  id=\"catalog\" > <div class=\"counters-invisible\">\n
+        \  <script>!function(){var e=\"F09828\",t=\"avito\",a=document.createElement(\"script\"),c=document.getElementsByTagName(\"script\")[0];a.src=\"//js.revsci.net/gateway/gw.js?auto=t&csid=\"+e+\"&bpid=\"+t,a.async=!0,c.parentNode.insertBefore(a,c)}();</script>
+        \   <script>var cb=new Date().getTime(),asiPqTag=false;try{document.write(\"<sc\"+\"ript
+        async='async' type='text/javascript' language='JavaScript' src='//pq-direct.revsci.net/pql?placementIdList=WmlWH3,bHZAbX,R7M4dd,Q6qfLa,WzXrYC&cb=\"+cb+\"'></sc\"+\"ript>\");}catch(err){}</script>
+        </div>\n    <script src=\"//www.avito.st/s/cc/86c525cd43e6b2cf1a1393cf5556986c539e8f53.js?ca7b9aa\"></script>
+        \ <script>function crtg_getCookie(e){var t,r,a,c=document.cookie.split(\";\");for(t=0;t<c.length;t++)if(r=c[t].substr(0,c[t].indexOf(\"=\")),a=c[t].substr(c[t].indexOf(\"=\")+1),r=r.replace(/^\\s+|\\s+$/g,\"\"),r==e)return
+        unescape(a);return\"\"}var crtg_nid=\"3713\",crtg_cookiename=\"crtg_rta\",crtg_varname=\"crtg_content\",crtg_content=crtg_getCookie(crtg_cookiename),crtg_rnd=Math.floor(99999999999*Math.random());!function(){var
+        e=location.protocol+\"//rtax.criteo.com/delivery/rta/rta.js?netId=\"+escape(crtg_nid);e+=\"&cookieName=\"+escape(crtg_cookiename),e+=\"&rnd=\"+crtg_rnd,e+=\"&varName=\"+escape(crtg_varname);var
+        t=document.createElement(\"script\");t.type=\"text/javascript\",t.src=e,t.async=!0,document.getElementsByTagName(\"head\").length>0?document.getElementsByTagName(\"head\")[0].appendChild(t):document.getElementsByTagName(\"body\").length>0&&document.getElementsByTagName(\"body\")[0].appendChild(t)}();</script>
+        \ <script src=\"//www.avito.st/s/cc/3218a6029786a948863c180179c2d7482e13419b.js?e8e95d1\"></script>
+        \ <script>var googletag=googletag||{};googletag.cmd=googletag.cmd||[],function(){var
+        t=document.createElement(\"script\");t.async=!0,t.type=\"text/javascript\";var
+        e=\"https:\"==document.location.protocol;t.src=(e?\"https:\":\"http:\")+\"//www.googletagservices.com/tag/js/gpt.js\";var
+        o=document.getElementsByTagName(\"script\")[0];o.parentNode.insertBefore(t,o)}();</script>
+        \ <script>if(window.dfp_Pv_session={},Modernizr.sessionstorage&&void 0!==window.JSON)try{window.dfp_Pv_session=JSON.parse(sessionStorage.getItem(\"dfp_views\")||\"{}\")}catch(e){}</script>
+        <script>\n banners = window.banners || {};\n googletag.cmd.push(function ()
+        {\n banners['ldr_low'] = {};\n banners['ldr_low'].dfpSlot = googletag.defineSlot('/7870/AR/SearchAll/Root/Search/ldr_low',
+        [[728,90],[1000,90],[1000,120],[970,90],[980,120]], 'ads_ldr_low').addService(googletag.pubads());\n
+        banners['ldr_low'].dfpSlotId = '/7870/AR/SearchAll/Root/Search/ldr_low';\n
+        banners['ldr_low'].rtbCounterSlot = '6_R-106253-109-rtb'.replace( 'R-',''
+        );\n banners['ldr_low'].rtbPageId = 'R-106253-109';    banners['ldr_top']
+        = {};\n banners['ldr_top'].dfpSlot = googletag.defineSlot('/7870/AR/SearchAll/Root/Search/ldr_top',
+        [[1000,120],[1000,200],[1000,90],[970,90],[728,90],[980,120],[960,90],[950,90],[1,1]],
+        'ads_ldr_top').addService(googletag.pubads());\n banners['ldr_top'].dfpSlotId
+        = '/7870/AR/SearchAll/Root/Search/ldr_top';\n banners['ldr_top'].rtbCounterSlot
+        = '6_R-110115-113-rtb'.replace( 'R-','' );\n banners['ldr_top'].rtbPageId
+        = 'R-110115-113';    banners['vr_low'] = {};\n banners['vr_low'].dfpSlot =
+        googletag.defineSlot('/7870/AR/SearchAll/Root/Search/vr_low', [[240,400],[300,250],[120,600],[160,600],[300,600],[240,133],[240,160],[240,145],[240,600],[250,250],[250,360],[240,200]],
+        'ads_vr_low').addService(googletag.pubads());\n banners['vr_low'].dfpSlotId
+        = '/7870/AR/SearchAll/Root/Search/vr_low';\n banners['vr_low'].rtbCounterSlot
+        = '6_R-110115-236-rtb'.replace( 'R-','' );\n banners['vr_low'].rtbPageId =
+        'R-110115-236';    banners['vr_top'] = {};\n banners['vr_top'].dfpSlot = googletag.defineSlot('/7870/AR/SearchAll/Root/Search/vr_top',
+        [[240,400],[300,250],[120,600],[160,600],[240,133],[240,160],[240,145],[250,250],[250,360],[300,600],[240,200]],
+        'ads_vr_top').addService(googletag.pubads());\n banners['vr_top'].dfpSlotId
+        = '/7870/AR/SearchAll/Root/Search/vr_top';\n banners['vr_top'].rtbCounterSlot
+        = '6_-rtb'.replace( 'R-','' );\n banners['vr_top'].rtbPageId = '';\n var pubads
+        = googletag.pubads();\n pubads.collapseEmptyDivs();\n  pubads.setTargeting(\"g_city\",
+        \"652560\");\n   pubads.setTargeting(\"g_country\", \"621540\");\n pubads.setTargeting(\"stlogin\",
+        [0]);\n pubads.setTargeting(\"Segment_jobpromo\", '');\n  pubads.setTargeting(\"Rub_idzone_atf\",
+        \"108012\");\n  pubads.setTargeting(\"Rub_nzone_atf\", \"SearchAll ATF\");\n
+        \ pubads.setTargeting(\"Rub_idzone_btf\", \"108016\");\n  pubads.setTargeting(\"Rub_nzone_btf\",
+        \"SearchAll BTF\");\n  \n pubads.setTargeting(\"g_reg\", \"652560\");\n pubads.setTargeting(\"ip\",
+        \"128.73.182.151\");\n  pubads.setTargeting(\"page_type\", \"root\");\n pubads.setTargeting(\"master_category\",
+        \"null\");\n       pubads.setTargeting(\"AudRandom\", '53');\n  window.segments
+        = avito.dfp && avito.dfp.getSegments() || '';\n if (window.segments) {\n googletag.pubads().setTargeting(\"AdRS\",
+        window.segments + '' );\n }googletag.pubads().setTargeting(\"keyword\", \"ежик
+        африканский\");\n if (window.dfp_Pv_session) {\n for (var code in window.dfp_Pv_session)
+        {\n pubads.setTargeting(\"PV_session_\" + code, window.dfp_Pv_session[code]
+        + '');\n }\n }\n  pubads.setTargeting(\"g_domofond_reg\", \"samarskaya_oblast-r56\");\n
+        \ pubads.setTargeting(\"phcodedesc\", \"\");\n   var crtg_split = (crtg_content
+        || '').split(';');\n for ( var i=1; i < crtg_split.length; i++ ) {\n pubads.setTargeting(\"\"
+        + (crtg_split[i-1].split('='))[0] + \"\", \"\" + (crtg_split[i-1].split('='))[1]
+        + \"\");\n }\n \n googletag.pubads().addEventListener( 'slotRenderEnded',
+        function( event ) {\n function triggerCallback() {\n if ( avito.slotRenderCallback
+        ) {\n avito.slotRenderCallback( event );\n }\n }\n if ( window.addEventListener
+        ) {\n window.addEventListener( 'load', triggerCallback );\n } else if ( window.attachEvent
+        ) {\n window.attachEvent( 'onload', triggerCallback );\n }\n });\n googletag.enableServices();\n
+        });\n </script>\n \n <script>\n var static_prefix = '//www.avito.st';\n </script>\n
+        \   <script>var dfpId=7870,asParam;adsRequestCounter=function(a,e,r){r=r||0,asParam=a.search(dfpId)>-1?\"asp\":\"as\",(new
+        Image).src=\"//www.avito.ru/stat/ad?k=\"+encodeURIComponent(asParam+\":\"+a+\";e:\"+e+\";i:\"+r)+\"&r=\"+Math.random()};</script>
+        <script>if(\"undefined\"!=typeof asiPlacements)for(var p in asiPlacements)window[\"ASPQ_\"+p]=asiPlacements[p][\"default\"]?\"PQ_\"+p+\"=T\":\"\",asiPlacements[p][\"default\"]&&googletag.pubads().setTargeting(\"PQ_\"+p,\"T\");</script>
+        \            <div class=\"b-header\"> <div class=\"header-service\"> <div
+        class=\"header-service__inner clearfix\">\n  <div class=\"header__profile
+        \"> <div class=\"header__profile-enter\"> <a class=\"header__profile-enter__link\"
+        href=\"//www.avito.ru/profile\">\n <i class=\"i i-profile\"></i><span class=\"fader\">Вход
+        и регистрация</span> </a> </div>\n  \n </div>\n    <div class=\"header__favorites
+        \ header__favorites_empty js-favorites-count__wrap\"> <a class=\"header__favorites__link\"
+        href=\"//www.avito.ru/favorites\"> <i class=\"i i-favorites\"></i> <i class=\"header__favorites__count
+        js-favorites-count\">0</i> </a> </div>\n  <ul class=\"header__service-nav\"><li
+        class=\"header__service-nav__item\">\n       <a class=\"header__service-nav__link\"
+        href=\"//www.avito.ru/samarskaya_oblast\" >Объявления</a> </li><li class=\"header__service-nav__item\">\n
+        \         <a class=\"header__service-nav__link\" href=\"//www.avito.ru/shops/samarskaya_oblast\"
+        >Магазины</a> </li><li class=\"header__service-nav__item\">\n    <a class=\"header__service-nav__link\"
+        href=\"//support.avito.ru/hc/ru\" >Помощь</a> </li></ul> </div> </div>\n  <div
+        class=\"header-basic js-header-2\"> <div class=\"header-basic__inner clearfix\">\n
+        \  \n <div class=\"header__logo\">\n <span class=\"b-logo\"> <span class=\"b-logo__img
+        \"></span>\n  <a class=\"b-logo__link\" href=\"//www.avito.ru/\" title=\"Avito
+        &mdash; сайт бесплатных объявлений\"></a>\n </span> </div>\n   \n <ul class=\"header__category-menu\"><li
+        class=\"header__category-menu__item \"> <a class=\"header__category-menu__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/transport\">Авто</a> </li><li class=\"header__category-menu__item
+        \"> <a class=\"header__category-menu__link\" href=\"//www.avito.ru/samarskaya_oblast/nedvizhimost\">Недвижимость</a>
+        </li><li class=\"header__category-menu__item \"> <a class=\"header__category-menu__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/rabota\">Работа</a> </li><li class=\"header__category-menu__item
+        \"> <a class=\"header__category-menu__link\" href=\"//www.avito.ru/samarskaya_oblast/uslugi\">Услуги</a>
+        </li><li class=\"header__category-menu__item header__category-menu__item_more\">
+        <a class=\"header__category-menu__link js-header__more\">ещё...</a> <div class=\"b-tooltip
+        b-tooltip-bottom js-header__more-popup\"> <div class=\"b-tooltip-arrow js-header__more-arrow\"></div>\n
+        \n <div class=\"header__all-category clearfix\"> <div class=\"header__all-category__all\">
+        <a href=\"//www.avito.ru/samarskaya_oblast\">Все категории</a> </div> <div
+        class=\"header__all-category__collumn-wrap\">\n  <div class=\"header__all-category__collumn\">\n
+        \ <ul class=\"header__all-category__list\">\n   <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/transport\">Транспорт</a> </li>\n
+        \                     <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/avtomobili_s_probegom\">Автомобили
+        с пробегом</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/novye_avtomobili\">Новые автомобили</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/mototsikly_i_mototehnika\">Мотоциклы
+        и мототехника</a> </li>\n    <li class=\"header__all-category__item \"> <a
+        class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/gruzoviki_i_spetstehnika\">Грузовики
+        и спецтехника</a> </li>\n    <li class=\"header__all-category__item \"> <a
+        class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/vodnyy_transport\">Водный
+        транспорт</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/zapchasti_i_aksessuary\">Запчасти
+        и аксессуары</a> </li>\n                                                                                                 </ul>\n
+        \ <ul class=\"header__all-category__list\">\n             <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/dlya_doma_i_dachi\">Для дома и дачи</a>
+        </li>\n                                                        <li class=\"header__all-category__item
+        \"> <a class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/bytovaya_tehnika\">Бытовая
+        техника</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/mebel_i_interer\">Мебель и интерьер</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/posuda_i_tovary_dlya_kuhni\">Посуда
+        и товары для кухни</a> </li>\n    <li class=\"header__all-category__item \">
+        <a class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/produkty_pitaniya\">Продукты
+        питания</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/remont_i_stroitelstvo\">Ремонт и строительство</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/rasteniya\">Растения</a> </li>\n                                                     </ul>\n
+        \ <ul class=\"header__all-category__list\">\n                     <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/dlya_biznesa\">Для бизнеса</a> </li>\n
+        \                                                                                                         <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/gotoviy_biznes\">Готовый бизнес</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/oborudovanie_dlya_biznesa\">Оборудование
+        для бизнеса</a> </li>\n   </ul>\n  </div>\n  <div class=\"header__all-category__collumn\">\n
+        \ <ul class=\"header__all-category__list\">\n     <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/nedvizhimost\">Недвижимость</a> </li>\n
+        \                               <li class=\"header__all-category__item \">
+        <a class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/kvartiry\">Квартиры</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/komnaty\">Комнаты</a> </li>\n    <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/doma_dachi_kottedzhi\">Дома, дачи,
+        коттеджи</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/zemelnye_uchastki\">Земельные участки</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/garazhi_i_mashinomesta\">Гаражи и
+        машиноместа</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/kommercheskaya_nedvizhimost\">Коммерческая
+        недвижимость</a> </li>\n    <li class=\"header__all-category__item \"> <a
+        class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/nedvizhimost_za_rubezhom\">Недвижимость
+        за рубежом</a> </li>\n                                                                                   </ul>\n
+        \ <ul class=\"header__all-category__list\">\n               <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/bytovaya_elektronika\">Бытовая электроника</a>
+        </li>\n                                                                  <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/audio_i_video\">Аудио и видео</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/igry_pristavki_i_programmy\">Игры,
+        приставки и программы</a> </li>\n    <li class=\"header__all-category__item
+        \"> <a class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/nastolnye_kompyutery\">Настольные
+        компьютеры</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/noutbuki\">Ноутбуки</a> </li>\n    <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/orgtehnika_i_rashodniki\">Оргтехника
+        и расходники</a> </li>\n    <li class=\"header__all-category__item \"> <a
+        class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/planshety_i_elektronnye_knigi\">Планшеты
+        и электронные книги</a> </li>\n    <li class=\"header__all-category__item
+        \"> <a class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/telefony\">Телефоны</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/tovary_dlya_kompyutera\">Товары для
+        компьютера</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/fototehnika\">Фототехника</a> </li>\n
+        \                                  </ul>\n  </div>\n  <div class=\"header__all-category__collumn\">\n
+        \ <ul class=\"header__all-category__list\">\n       <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/rabota\">Работа</a> </li>\n                                            <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/vakansii\">Вакансии</a> </li>\n    <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/rezume\">Резюме</a> </li>\n                                                                               </ul>\n
+        \ <ul class=\"header__all-category__list\">\n         <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/uslugi\">Услуги</a> </li>\n                                              <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/predlozheniya_uslug\">Предложения
+        услуг</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/zaprosy_na_uslugi\">Запросы на услуги</a>
+        </li>\n                                                                           </ul>\n
+        \ <ul class=\"header__all-category__list\">\n                 <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/hobbi_i_otdyh\">Хобби и отдых</a>
+        </li>\n                                                                                  <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/bilety_i_puteshestviya\">Билеты и
+        путешествия</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/velosipedy\">Велосипеды</a> </li>\n
+        \   <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/knigi_i_zhurnaly\">Книги и журналы</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/kollektsionirovanie\">Коллекционирование</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/muzykalnye_instrumenty\">Музыкальные
+        инструменты</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/ohota_i_rybalka\">Охота и рыбалка</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/sport_i_otdyh\">Спорт и отдых</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/znakomstva\">Знакомства</a> </li>\n
+        \                  </ul>\n  </div>\n  <div class=\"header__all-category__collumn\">\n
+        \ <ul class=\"header__all-category__list\">\n           <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/lichnye_veschi\">Личные вещи</a> </li>\n
+        \                                               <li class=\"header__all-category__item
+        \"> <a class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/odezhda_obuv_aksessuary\">Одежда,
+        обувь, аксессуары</a> </li>\n    <li class=\"header__all-category__item \">
+        <a class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/detskaya_odezhda_i_obuv\">Детская
+        одежда и обувь</a> </li>\n    <li class=\"header__all-category__item \"> <a
+        class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/tovary_dlya_detey_i_igrushki\">Товары
+        для детей и игрушки</a> </li>\n    <li class=\"header__all-category__item
+        \"> <a class=\"header__all-category__link\" href=\"//www.avito.ru/samarskaya_oblast/chasy_i_ukrasheniya\">Часы
+        и украшения</a> </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/krasota_i_zdorove\">Красота и здоровье</a>
+        </li>\n                                                                 </ul>\n
+        \ <ul class=\"header__all-category__list\">\n                   <li class=\"header__all-category__item
+        header__all-category__item_parent\"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/zhivotnye\">Животные</a> </li>\n                                                                                                <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/sobaki\">Собаки</a> </li>\n    <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/koshki\">Кошки</a> </li>\n    <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/ptitsy\">Птицы</a> </li>\n    <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/akvarium\">Аквариум</a> </li>\n    <li
+        class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/drugie_zhivotnye\">Другие животные</a>
+        </li>\n    <li class=\"header__all-category__item \"> <a class=\"header__all-category__link\"
+        href=\"//www.avito.ru/samarskaya_oblast/tovary_dlya_zhivotnyh\">Товары для
+        животных</a> </li>\n       </ul>\n  </div>\n  </div> </div> </div> </li> </ul>\n
+        \  <div class=\"header__add-item\">\n <a href=\"//www.avito.ru/additem\" class=\"btn-plain
+        btn-plain_blue\">Подать объявление</a> </div> </div> </div> </div>\n   <div
+        class=\"layout-internal col-12\">\n  \n<div class=\"b-search-form b-search-form_catalog
+        \"> <form id=\"search_form\" class=\"b-form search-form__form\"\n action=\"/search\"
+        method=\"post\" >\n   \n <div class=\"search-form__row search-form__row_1
+        clearfix\">\n  <div class=\"search-form__category\"> <div class=\"form-select\">\n
+        \  <select id=\"category\" name=\"category_id\"\n  > <option value=\"\">Любая
+        категория</option>\n    <option value=\"1\" class=\"opt-group\" >Транспорт</option>\n
+        \    <option value=\"9\" >Автомобили с пробегом</option>\n    <option value=\"109\"
+        >Новые автомобили</option>\n    <option value=\"14\" >Мотоциклы и мототехника</option>\n
+        \   <option value=\"81\" >Грузовики и спецтехника</option>\n    <option value=\"11\"
+        >Водный транспорт</option>\n    <option value=\"10\" >Запчасти и аксессуары</option>\n
+        \    <option value=\"4\" class=\"opt-group\" >Недвижимость</option>\n     <option
+        value=\"24\" >Квартиры</option>\n    <option value=\"23\" >Комнаты</option>\n
+        \   <option value=\"25\" >Дома, дачи, коттеджи</option>\n    <option value=\"26\"
+        >Земельные участки</option>\n    <option value=\"85\" >Гаражи и машиноместа</option>\n
+        \   <option value=\"42\" >Коммерческая недвижимость</option>\n    <option
+        value=\"86\" >Недвижимость за рубежом</option>\n     <option value=\"110\"
+        class=\"opt-group\" >Работа</option>\n     <option value=\"111\" >Вакансии</option>\n
+        \   <option value=\"112\" >Резюме</option>\n     <option value=\"113\" class=\"opt-group\"
+        >Услуги</option>\n     <option value=\"114\" >Предложения услуг</option>\n
+        \   <option value=\"115\" >Запросы на услуги</option>\n     <option value=\"5\"
+        class=\"opt-group\" >Личные вещи</option>\n     <option value=\"27\" >Одежда,
+        обувь, аксессуары</option>\n    <option value=\"29\" >Детская одежда и обувь</option>\n
+        \   <option value=\"30\" >Товары для детей и игрушки</option>\n    <option
+        value=\"28\" >Часы и украшения</option>\n    <option value=\"88\" >Красота
+        и здоровье</option>\n     <option value=\"2\" class=\"opt-group\" >Для дома
+        и дачи</option>\n     <option value=\"21\" >Бытовая техника</option>\n    <option
+        value=\"20\" >Мебель и интерьер</option>\n    <option value=\"87\" >Посуда
+        и товары для кухни</option>\n    <option value=\"82\" >Продукты питания</option>\n
+        \   <option value=\"19\" >Ремонт и строительство</option>\n    <option value=\"106\"
+        >Растения</option>\n     <option value=\"6\" class=\"opt-group\" >Бытовая
+        электроника</option>\n     <option value=\"32\" >Аудио и видео</option>\n
+        \   <option value=\"97\" >Игры, приставки и программы</option>\n    <option
+        value=\"31\" >Настольные компьютеры</option>\n    <option value=\"98\" >Ноутбуки</option>\n
+        \   <option value=\"99\" >Оргтехника и расходники</option>\n    <option value=\"96\"
+        >Планшеты и электронные книги</option>\n    <option value=\"84\" >Телефоны</option>\n
+        \   <option value=\"101\" >Товары для компьютера</option>\n    <option value=\"105\"
+        >Фототехника</option>\n     <option value=\"7\" class=\"opt-group\" >Хобби
+        и отдых</option>\n     <option value=\"33\" >Билеты и путешествия</option>\n
+        \   <option value=\"34\" >Велосипеды</option>\n    <option value=\"83\" >Книги
+        и журналы</option>\n    <option value=\"36\" >Коллекционирование</option>\n
+        \   <option value=\"38\" >Музыкальные инструменты</option>\n    <option value=\"102\"
+        >Охота и рыбалка</option>\n    <option value=\"39\" >Спорт и отдых</option>\n
+        \   <option value=\"103\" >Знакомства</option>\n     <option value=\"35\"
+        class=\"opt-group\" >Животные</option>\n     <option value=\"89\" >Собаки</option>\n
+        \   <option value=\"90\" >Кошки</option>\n    <option value=\"91\" >Птицы</option>\n
+        \   <option value=\"92\" >Аквариум</option>\n    <option value=\"93\" >Другие
+        животные</option>\n    <option value=\"94\" >Товары для животных</option>\n
+        \    <option value=\"8\" class=\"opt-group\" >Для бизнеса</option>\n     <option
+        value=\"116\" >Готовый бизнес</option>\n    <option value=\"40\" >Оборудование
+        для бизнеса</option>\n    </select> </div> </div>\n  <div class=\"search-form__submit\">
+        <input type=\"submit\" value=\"Найти\" class=\"search btn\" /> </div>\n                         <div
+        class=\"search-form__direction\"> <div id=\"directions\" class=\"form-select
+        param  hidden\"> <select name=\"[]\" id=\"directions-select\" class=\"directions\"
+        \ data-filter=\"1\"> <option data-prev-alias=\"\" value=\"\">Направление</option>\n
+        \ </select> <select multiple class=\"hidden-input-for-tab\" id=\"directions-multiple\">\n
+        \ <optgroup label=\"направление\" data-filter-name=\"Направление\" data-alias=\"road\"
+        class=\"hidden\">\n  </optgroup>\n  <optgroup label=\"метро\" data-filter-name=\"Станция
+        метро\" data-alias=\"metro\" class=\"hidden\">\n  </optgroup>\n  <optgroup
+        label=\"район\" data-filter-name=\"Район\" data-alias=\"district\" class=\"hidden\">\n
+        \ </optgroup>\n  </select> </div> </div>\n   <div class=\"search-form__location\">
+        <div class=\"form-select\"> <select id=\"region\" name=\"location_id\" data-city-id=\"\">\n
+        <option\n  data-parent-id=\"\"\n  value=\"621540\"\n  >По всей России</option><option\n
+        data-region=\"1\" data-parent-id=\"621540\"\n  value=\"652560\"\n  selected
+        >Самарская область</option><option disabled=\"disabled\" class=\"opt-group\">--
+        Города --</option><option\n  data-parent-id=\"652560\"\n  value=\"653040\"\n
+        \ >Самара</option><option\n  data-parent-id=\"652560\"\n  value=\"652600\"\n
+        \ >Безенчук</option><option\n  data-parent-id=\"652560\"\n  value=\"652730\"\n
+        \ >Жигулевск</option><option\n  data-parent-id=\"652560\"\n  value=\"652760\"\n
+        \ >Кинель</option><option\n  data-parent-id=\"652560\"\n  value=\"652810\"\n
+        \ >Красный Яр</option><option\n  data-parent-id=\"652560\"\n  value=\"652870\"\n
+        \ >Новокуйбышевск</option><option\n  data-parent-id=\"652560\"\n  value=\"652930\"\n
+        \ >Отрадный</option><option\n  data-parent-id=\"652560\"\n  value=\"652990\"\n
+        \ >Похвистнево</option><option\n  data-parent-id=\"652560\"\n  value=\"653120\"\n
+        \ >Сызрань</option><option\n  data-parent-id=\"652560\"\n  value=\"653140\"\n
+        \ >Тольятти</option><option\n  data-parent-id=\"652560\"\n  value=\"653200\"\n
+        \ >Чапаевск</option> <option value=\"0\" id=\"select-region\">Выбрать другой...</option>
+        </select> </div> </div>\n  <div class=\"search-form__key-words\"> <div id=\"search_holder\"
+        class=\"search-form__key-words__search-holder\"> <input id=\"search\"\n type=\"text\"
+        name=\"name\" value=\"ежик африканский\"\n placeholder=\"Поиск по объявлениям\"\n
+        autocomplete=\"off\"\n  spellcheck=\"false\" data-suggest=\"true\" maxlength=\"100\"/>
+        </div> </div> </div> <div class=\"search-form__row search-form__row_2   \"
+        id=\"pre-filters\"> <label for=\"match\"><input type=\"checkbox\" name=\"bt\"
+        id=\"match\"  class=\"form-input-checkbox\" />искать только в названиях</label>
+        <label for=\"images_exists\"><input type=\"checkbox\" name=\"i\" id=\"images_exists\"
+        \ class=\"form-input-checkbox\" />только с фото</label>\n   </div>\n  <div
+        class=\"filters\" id=\"search_filters\"  style=\"display: none;\">\n  </div>
+        </form> </div> </div>\n\n <div class=\"js-page layout-internal col-12 js-autosuggest__search-list-container\">
+        <div class=\"l-content clearfix\">\n   <script>avito.itemsStatUrlParams =
+        { t : '1425511229', x : 's9ves8468rkk8o4wwg8w0c48ws0ggo0' };</script>\n   <div
+        class=\"b-catalog-breadcrumbs\">\n  <span class=\"breadcrumb-link-active\"
+        >Все объявления в Самарской области</span>  <span class=\"breadcrumbs-link-count\">3</span>\n
+        \ </div>  <div class=\"catalog-counts\">\n  <div class=\"catalog-counts__section\">\n
+        \ \n <div class=\"catalog-counts__row clearfix\"> <ul>\n <li><a class=\"js-catalog-counts__link\"\n
+        \ href=\"/samarskaya_oblast/zhivotnye?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9\"\n
+        title=\"Покупка и продажа животных в Самарской области\"\n >Животные</a><span
+        class=\"c-2 catalog-counts__number\"> 3</span></li> </ul> <span class=\"catalog-counts__shadow\"></span>
+        </div> </div>\n   <div class=\"catalog-counts__section\">\n  \n <div class=\"catalog-counts__row
+        clearfix\"> <ul>\n <li><a class=\"js-catalog-counts__link\"\n  href=\"/samara?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9\"\n
+        title=\"\"\n >Самара</a><span class=\"c-2 catalog-counts__number\"> 3</span></li>
+        </ul> <span class=\"catalog-counts__shadow\"></span> </div> </div>\n  </div>\n
+        \       \n <div id=\"ads_ldr_top\" data-banner-code=\"ldr_top\" class=\"dfp
+        g_125 ad_1000x120\" data-dfpslot=\"/7870/AR/SearchAll/Root/Search/ldr_top\">
+        <div id=\"yandex_ad_R-110115-113\"></div> <script>\n var g_rtb_yandex_ldr_top_page_id
+        = \"R-110115-113\",\n yandexLdrTopCounterSlot = '6_R-110115-113-rtb'.replace(
+        'R-','' );\n </script>\n   <script>adsRequestCounter(yandexLdrTopCounterSlot,'r');(function(w,n){w[n]=w[n]||[];w[n].push(function(){Ya.Context.AdvManager.render({blockId:g_rtb_yandex_ldr_top_page_id,renderTo:\"yandex_ad_\"+g_rtb_yandex_ldr_top_page_id,async:false},function(){adsRequestCounter(yandexLdrTopCounterSlot,'p');if(googletag){adsRequestCounter(window.banners['ldr_top'].dfpSlotId,'r');googletag.cmd.push(function(){googletag.display('ads_ldr_top');});}});});document.write('<sc'+'ript
+        type=\"text/javascript\" src=\"//an.yandex.ru/system/context.js\"></sc'+'ript>');})(this,\"yandexContextSyncCallbacks\");</script>
+        \ </div>\n \n <div class=\"clearfix\"> <div class=\"catalog catalog_table\">\n
+        <div class=\"catalog-filters clearfix\">\n      <div class=\"catalog-filters-sort
+        form-select form-select_btn-white\"> <select class=\"js-sort-select\"> <option
+        selected data-default='1' value=\"4\">По дате</option> <option   value=\"1\">Дешевле</option>
+        <option   value=\"2\">Дороже</option> </select> </div>\n \n <div class=\"catalog-views
+        btn-white__group\">\n    <a href=\"/samarskaya_oblast?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&view=gallery\"
+        class=\"btn btn-white\" title=\"Показать большие фото\" rel=\"nofollow\">
+        <i class=\"i-catalog-view i-catalog-view_gallery\"></i> <span class=\"btn-white__shadow\"></span>
+        </a>\n    <span class=\"btn btn-white active\" title=\"Выводить списком с
+        фото\"> <i class=\"i-catalog-view i-catalog-view_table\"></i> <span class=\"btn-white__shadow\"></span>
+        </span>\n    <a href=\"/samarskaya_oblast?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&view=list\"
+        class=\"btn btn-white\" title=\"Выводить списком без фото\" rel=\"nofollow\">
+        <i class=\"i-catalog-view i-catalog-view_list\"></i> <span class=\"btn-white__shadow\"></span>
+        </a>\n   </div> <div class=\"btn-white__group\"><span class=\"btn btn-white
+        active\">\n Все\n <span class=\"btn-white__shadow\"></span> </span><a class=\"btn
+        btn-white\" href=\"/samarskaya_oblast?user=1&q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9\"
+        title=\"Объявления частных продавцов\" data-user=\"1\">\n Частные\n <span
+        class=\"btn-white__shadow\"></span> </a><a class=\"btn btn-white\" href=\"/samarskaya_oblast?user=2&q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9\"
+        title=\"Объявления компаний и магазинов\" data-user=\"2\">\n Компании\n <span
+        class=\"btn-white__shadow\"></span> </a></div> </div>      <div class=\"catalog-list
+        clearfix\"> <div class=\"js-catalog_before-ads\">\n                     \n<div
+        class=\"item item_table clearfix js-catalog-item-enum c-b-0\" id=\"i522033843\"
+        data-type=\"1\">\n \n <div class=\"b-photo\">\n         <a class=\"photo-wrapper\"
+        href=\"/samara/drugie_zhivotnye/afrikanskiy_karlikovyy_ezhik_522033843\"\n
+        title=\"Объявление &laquo;Африканский карликовый ежик&raquo; (с фотографией)\">\n
+        \  <img src=\"//58.img.avito.st/140x105/1463780358.jpg\" class=\"photo-count-show\"
+        alt=\"Африканский карликовый ежик\" />\n    <span class=\"photo-icons\"><i
+        class=\"i i-photo\">1</i></span>\n  </a>\n  \n </div>\n \n <div class=\"favorite\">\n
+        \ <a class=\"favorite-link js-favorite-toggle\"\n  href=\"/favorites/add/522033843\"\n
+        title=\"Добавить в избранное\"\n  >\n \n <i class=\"i i-favorites-big i-favorites-big_empty\"></i>\n
+        \ </a>\n  </div> <div class=\"description\"> <h3 class=\"title\"> <a href=\"/samara/drugie_zhivotnye/afrikanskiy_karlikovyy_ezhik_522033843\"
+        title=\"Африканский карликовый ежик в Самаре\">\n Африканский карликовый ежик</a>
+        </h3>\n  <div class=\"about\">\n  2&nbsp;500 руб.    </div>\n   \n <div class=\"data\">\n
+        \   <p>\n Другие животные  </p>\n   <p>Самара</p>\n  \n <div class=\"date
+        c-2\">\n 3 марта 16:36\n </div> </div>\n \n </div> </div>\n          \n<div
+        class=\"item item_table clearfix js-catalog-item-enum c-b-0\" id=\"i521311886\"
+        data-type=\"1\">\n \n <div class=\"b-photo\">\n         <a class=\"photo-wrapper\"
+        href=\"/samara/drugie_zhivotnye/afrikanskiy_karlikovyy_ezhik_521311886\"\n
+        title=\"Объявление &laquo;Африканский (карликовый) ежик&raquo; (2 фотографии)\">\n
+        \  <img src=\"//55.img.avito.st/140x105/1460977255.jpg\" class=\"photo-count-show\"
+        alt=\"Африканский (карликовый) ежик\" />\n    <span class=\"photo-icons\"><i
+        class=\"i i-photo\">2</i></span>\n  </a>\n  \n </div>\n \n <div class=\"favorite\">\n
+        \ <a class=\"favorite-link js-favorite-toggle\"\n  href=\"/favorites/add/521311886\"\n
+        title=\"Добавить в избранное\"\n  >\n \n <i class=\"i i-favorites-big i-favorites-big_empty\"></i>\n
+        \ </a>\n  </div> <div class=\"description\"> <h3 class=\"title\"> <a href=\"/samara/drugie_zhivotnye/afrikanskiy_karlikovyy_ezhik_521311886\"
+        title=\"Африканский (карликовый) ежик в Самаре\">\n Африканский (карликовый)
+        ежик</a> </h3>\n  <div class=\"about\">\n  4&nbsp;500 руб.    </div>\n   \n
+        <div class=\"data\">\n    <p>\n Другие животные  <span class=\"data-sep\">
+        | </span>  Компания\n    </p>\n   <p>Самара</p>\n  \n <div class=\"date c-2\">\n
+        2 марта 16:49\n </div> </div>\n \n </div> </div>\n          \n<div class=\"item
+        item_table clearfix js-catalog-item-enum c-b-0\" id=\"i70652309\" data-type=\"1\">\n
+        \n <div class=\"b-photo\">\n         <a class=\"photo-wrapper\" href=\"/samara/drugie_zhivotnye/prodaetsya_karlikovyy_afrikanskiy_ezhik_70652309\"\n
+        title=\"Объявление &laquo;Продается карликовый африканский ежик&raquo; (с
+        фотографией)\">\n   <img src=\"//12.img.avito.st/140x105/125778712.jpg\" class=\"photo-count-show\"
+        alt=\"Продается карликовый африканский ежик\" />\n    <span class=\"photo-icons\"><i
+        class=\"i i-photo\">1</i></span>\n  </a>\n  \n </div>\n \n <div class=\"favorite\">\n
+        \ <a class=\"favorite-link js-favorite-toggle\"\n  href=\"/favorites/add/70652309\"\n
+        title=\"Добавить в избранное\"\n  >\n \n <i class=\"i i-favorites-big i-favorites-big_empty\"></i>\n
+        \ </a>\n  </div> <div class=\"description\"> <h3 class=\"title\"> <a href=\"/samara/drugie_zhivotnye/prodaetsya_karlikovyy_afrikanskiy_ezhik_70652309\"
+        title=\"Продается карликовый африканский ежик в Самаре\">\n Продается карликовый
+        африканский ежик</a> </h3>\n  <div class=\"about\">\n  5&nbsp;000 руб.    </div>\n
+        \  \n <div class=\"data\">\n    <p>\n Другие животные  <span class=\"data-sep\">
+        | </span>  Компания\n    </p>\n   <p>Самара</p>\n  \n <div class=\"date c-2\">\n
+        14 февраля 12:36\n </div> </div>\n \n </div> </div>\n     </div>\n       <div
+        class=\"js-catalog_after-ads\">\n          </div> </div>\n    <div id=\"yandex-direct-org\">
+        <script>\n (function() {\n var qstring = 'ежик африканский - Доска бесплатных
+        объявлений от частных лиц и компаний в Самарской области',\n yandexDirectCounterSlot
+        = '6_106253-170-direct';\n function showYandexDirect(w, d, n, s, t) {\n adsRequestCounter(
+        yandexDirectCounterSlot, 'r' );\n w[n] = w[n] || [];\n w[n].push(function()
+        {\n Ya.Direct.insertInto(106253, \"yandex-direct-org\", {\n partner_id : 106253,\n
+        site_bg_color : 'FFFFFF',\n site_charset : 'utf-8',\n font_family : 'arial',\n
+        ad_format : 'direct',\n font_size : 1,\n type : 'flat',\n border_type : 'block',\n
+        limit : 3,\n title_font_size : 3,\n header_bg_color : 'FEEAC7',\n bg_color
+        : 'FFF',\n border_color : 'FFF',\n title_color : '008CC3',\n url_color : '808080',\n
+        text_color : '000000',\n hover_color : 'f06939',\n all_color : '808080',\n
+        favicon : false,\n stat_id : '170'\n },\n function () {\n adsRequestCounter(
+        yandexDirectCounterSlot, 'p' );\n }\n );\n });\n t = d.getElementsByTagName(\"script\")[0];\n
+        s = d.createElement(\"script\");\n s.src = \"//an.yandex.ru/system/context.js\";\n
+        s.type = \"text/javascript\";\n s.async = true;\n t.parentNode.insertBefore(s,
+        t);\n }\n showYandexDirect(window, document, \"yandex_context_callbacks\");\n
+        }());\n </script> </div>\n  <div class=\"js-pages\"></div>\n \n </div> <div
+        class=\"catalog-promo\">\n \n <div class=\"js-catalog-vips-container\">\n
+        \ <div class=\"vips\"> <h2 class=\"vips__header\">VIP-объявления</h2>\n \n
+        <div class=\"vip-item\">\n  <div class=\"vip-item__photo\">\n  <a href=\"/samara/avtomobili_s_probegom/chevrolet_aveo_2006_521396274\"
+        title=\"Объявление &laquo;Chevrolet Aveo, 2006&raquo;\"> <img src=\"//83.img.avito.st/240x180/1463593583.jpg\"
+        alt=\"Chevrolet Aveo, 2006\" /> </a>\n  </div>\n   \n<div class=\"vip-item__description\">
+        <h3 class=\"vip-item__header fader\"><a href=\"/samara/avtomobili_s_probegom/chevrolet_aveo_2006_521396274\"
+        title=\"Chevrolet Aveo, 2006 в Самаре\">\n Chevrolet Aveo,&nbsp;2006   </a></h3>\n
+        \ \n <div class=\"vip-item__options\">\n <p class=\"vip-item__price fader\">\n
+        \ <span class=\"vip-item__option\">220&nbsp;000 руб.</span>\n  \n <span class=\"vip-item__option\">1.2
+        МТ </span>\n  </p>\n     Самара  \n </div> </div>\n </div>\n \n <div class=\"vip-item\">\n
+        \ <div class=\"vip-item__photo\">\n  <a href=\"/samara/kvartiry/1-k_kvartira_44_m_1718_et._507890181\"
+        title=\"Объявление &laquo;1-к квартира, 44 м², 17/18 эт.&raquo;\"> <img src=\"//57.img.avito.st/240x180/1409632357.jpg\"
+        alt=\"1-к квартира, 44 м², 17/18 эт.\" /> </a>\n  </div>\n   \n<div class=\"vip-item__description\">
+        <h3 class=\"vip-item__header fader\"><a href=\"/samara/kvartiry/1-k_kvartira_44_m_1718_et._507890181\"
+        title=\"1-к квартира, 44 м², 17/18 эт. в Самаре\">\n  1-к квартира, 44 м²,
+        <span class=\"nobr\">17/18 эт.</span>  </a></h3>\n  \n <div class=\"vip-item__options\">\n
+        \ <span class=\"vip-item__option\">3&nbsp;560&nbsp;000 руб.</span>     Самара
+        \ \n </div> </div>\n </div>\n \n <div class=\"vip-item\">\n  <div class=\"vip-item__photo\">\n
+        \ <a href=\"/samara/posuda_i_tovary_dlya_kuhni/bolshaya_vaza_dlya_fruktov_520594155\"
+        title=\"Объявление &laquo;Большая ваза для фруктов&raquo;\"> <img src=\"//99.img.avito.st/240x180/1458296999.jpg\"
+        alt=\"Большая ваза для фруктов\" /> </a>\n  </div>\n   \n<div class=\"vip-item__description\">
+        <h3 class=\"vip-item__header fader\"><a href=\"/samara/posuda_i_tovary_dlya_kuhni/bolshaya_vaza_dlya_fruktov_520594155\"
+        title=\"Большая ваза для фруктов в Самаре\">\n  Большая ваза для фруктов  </a></h3>\n
+        \ \n <div class=\"vip-item__options\">\n  <p class=\"vip-item__price\">\n
+        \ <span class=\"vip-item__option\">800 руб.</span>\n  \n </p>\n    Самара
+        \ \n </div> </div>\n </div>\n   <!--noindex--><div class=\"vips__about\">
+        <a href=\"/info/usluga_vip_obyavleniya?plain\" class=\"link_plain c-2\" rel=\"nofollow\"
+        target=\"_blank\">Что такое VIP-объявления?</a> </div><!--/noindex-->\n  </div>\n
+        </div>\n <noindex> <div class=\"catalog-social\"> <div class=\"social-logo\">\n
+        <span class=\"b-logo\"> <span class=\"b-logo__img \">Avito</span>\n </span>
+        в социальных сетях\n </div> <div class=\"social-icons\"> <a class=\"social-icon
+        icon-vk\" href=\"/jump/s?to=http%3A%2F%2Fvk.com%2Fclub5755934\" target=\"_blank\"
+        title=\"Клуб Avito ВКонтакте\" rel=\"nofollow\">В</a> <a class=\"social-icon
+        icon-ok\" href=\"/jump/s?to=http%3A%2F%2Fwww.odnoklassniki.ru%2Favitoru\"
+        target=\"_blank\" title=\"Avito в Одноклассниках\" rel=\"nofollow\">ОК</a>
+        <a class=\"social-icon icon-fb\" href=\"/jump/s?to=https%3A%2F%2Fwww.facebook.com%2Favito.ru\"
+        target=\"_blank\" title=\"Avito в Facebook\" rel=\"nofollow\">F</a> <a class=\"social-icon
+        icon-tw\" href=\"/jump/s?to=https%3A%2F%2Ftwitter.com%2Favito_ru\" target=\"_blank\"
+        title=\"Avito в Twitter\" rel=\"nofollow\">T</a> <a class=\"social-icon icon-gp\"
+        href=\"/jump/s?to=https%3A%2F%2Fplus.google.com%2F%2Bavitoru%2Fposts\" target=\"_blank\"
+        title=\"Avito в Google+\" rel=\"nofollow\">G+</a> <a class=\"social-icon icon-lj\"
+        href=\"/jump/s?to=http%3A%2F%2Favito-news.livejournal.com\" target=\"_blank\"
+        title=\"Блог Avito в Livejournal\" rel=\"nofollow\">LJ</a> <a class=\"social-icon
+        icon-in\" href=\"/jump/s?to=http%3A%2F%2Finstagram.com%2Favitoru\" target=\"_blank\"
+        title=\"Avito в Instagram\" rel=\"nofollow\">Ins</a> <a class=\"social-icon
+        icon-yt\" href=\"/jump/s?to=http%3A%2F%2Fwww.youtube.com%2Fuser%2Favitotv\"
+        target=\"_blank\" title=\"Avito на YouTube\" rel=\"nofollow\">YT</a> </div>
+        </div> </noindex>\n         \n <div id=\"ads_vr_top\" data-banner-code=\"vr_top\"
+        class=\"dfp ad_vr_top js-ad_vr\"></div>\n              <div class=\"js-sticky\">
+        <div id=\"ads_vr_low\" data-banner-code=\"vr_low\" class=\"dfp\"> <div id=\"yandex_ad_R-110115-236\"></div>
+        <script>\n var g_rtb_yandex_vr_low_page_id = \"R-110115-236\",\n yandexVrLowCounterSlot
+        = '6_R-110115-236-rtb'.replace( 'R-','' );\n </script>\n   <script>adsRequestCounter(yandexVrLowCounterSlot,'r');(function(w,n){w[n]=w[n]||[];w[n].push(function(){Ya.Context.AdvManager.render({blockId:g_rtb_yandex_vr_low_page_id,renderTo:\"yandex_ad_\"+g_rtb_yandex_vr_low_page_id,async:false},function(){adsRequestCounter(yandexVrLowCounterSlot,'p');if(googletag){adsRequestCounter(window.banners['vr_low'].dfpSlotId,'r');googletag.cmd.push(function(){googletag.display('ads_vr_low');});}});});document.write('<sc'+'ript
+        type=\"text/javascript\" src=\"//an.yandex.ru/system/context.js\"></sc'+'ript>');})(this,\"yandexContextSyncCallbacks\");</script>
+        \n </div> </div>\n  </div> </div>\n      <div id=\"ads_ldr_low\" data-banner-code=\"ldr_low\"
+        class=\"dfp\"> <div id=\"yandex_ad_R-106253-109\"></div> <script>\n var g_rtb_yandex_ldr_low_page_id
+        = \"R-106253-109\",\n yandexLdrLowCounterSlot = '6_R-106253-109-rtb'.replace(
+        'R-','' );\n </script>\n   <script>adsRequestCounter(yandexLdrLowCounterSlot,'r');(function(w,n){w[n]=w[n]||[];w[n].push(function(){Ya.Context.AdvManager.render({blockId:g_rtb_yandex_ldr_low_page_id,renderTo:\"yandex_ad_\"+g_rtb_yandex_ldr_low_page_id,async:false},function(){adsRequestCounter(yandexLdrLowCounterSlot,'p');if(googletag){adsRequestCounter(window.banners['ldr_low'].dfpSlotId,'r');googletag.cmd.push(function(){googletag.display('ads_ldr_low');});}});});document.write('<sc'+'ript
+        type=\"text/javascript\" src=\"//an.yandex.ru/system/context.js\"></sc'+'ript>');})(this,\"yandexContextSyncCallbacks\");</script>
+        \ </div>\n   </div>\n  <div class=\"category-map\">\n       \n <dl class=\"category-map__section\">\n
+        \ \n <dt class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/transport\"
+        title=\"Объявления о продаже, Транспорт в Самарской области\">\n Транспорт\n
+        </a> </dt>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/avtomobili_s_probegom\"
+        title=\"Объявления о продаже, Автомобили с пробегом в Самарской области\">\n
+        Автомобили с пробегом\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/novye_avtomobili\" title=\"Объявления о продаже,
+        Новые автомобили в Самарской области\">\n Новые автомобили\n </a> </dd>\n
+        \ <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/mototsikly_i_mototehnika\"
+        title=\"Объявления о продаже, Мотоциклы и мототехника в Самарской области\">\n
+        Мотоциклы и мототехника\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/gruzoviki_i_spetstehnika\" title=\"Объявления
+        о продаже, Грузовики и спецтехника в Самарской области\">\n Грузовики и спецтехника\n
+        </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/vodnyy_transport\"
+        title=\"Объявления о продаже, Водный транспорт в Самарской области\">\n Водный
+        транспорт\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/zapchasti_i_aksessuary\"
+        title=\"Объявления о продаже, Запчасти и аксессуары в Самарской области\">\n
+        Запчасти и аксессуары\n </a> </dd>\n   </dl>\n    \n <dl class=\"category-map__section\">\n
+        \ \n <dt class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/nedvizhimost\"
+        title=\"Объявления о продаже, Недвижимость в Самарской области\">\n Недвижимость\n
+        </a> </dt>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/kvartiry\"
+        title=\"Объявления о продаже, Квартиры в Самарской области\">\n Квартиры\n
+        </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/komnaty\"
+        title=\"Объявления о продаже, Комнаты в Самарской области\">\n Комнаты\n </a>
+        </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/doma_dachi_kottedzhi\"
+        title=\"Объявления о продаже, Дома, дачи, коттеджи в Самарской области\">\n
+        Дома, дачи, коттеджи\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/zemelnye_uchastki\" title=\"Объявления о продаже,
+        Земельные участки в Самарской области\">\n Земельные участки\n </a> </dd>\n
+        \ <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/garazhi_i_mashinomesta\"
+        title=\"Объявления о продаже, Гаражи и машиноместа в Самарской области\">\n
+        Гаражи и машиноместа\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/kommercheskaya_nedvizhimost\" title=\"Объявления
+        о продаже, Коммерческая недвижимость в Самарской области\">\n Коммерческая
+        недвижимость\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/nedvizhimost_za_rubezhom\"
+        title=\"Объявления о продаже, Недвижимость за рубежом в Самарской области\">\n
+        Недвижимость за рубежом\n </a> </dd>\n   </dl>\n  \n <dl class=\"category-map__section\">\n
+        \ \n <dt class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/rabota\"
+        title=\"Объявления о продаже, Работа в Самарской области\">\n Работа\n </a>
+        </dt>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/vakansii\"
+        title=\"Объявления о продаже, Вакансии в Самарской области\">\n Вакансии\n
+        </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/rezume\"
+        title=\"Объявления о продаже, Резюме в Самарской области\">\n Резюме\n </a>
+        </dd>\n   \n <dt class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/uslugi\"
+        title=\"Объявления о продаже, Услуги в Самарской области\">\n Услуги\n </a>
+        </dt>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/predlozheniya_uslug\"
+        title=\"Объявления о продаже, Предложения услуг в Самарской области\">\n Предложения
+        услуг\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/zaprosy_na_uslugi\"
+        title=\"Объявления о продаже, Запросы на услуги в Самарской области\">\n Запросы
+        на услуги\n </a> </dd>\n   </dl>\n    \n <dl class=\"category-map__section\">\n
+        \ \n <dt class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/lichnye_veschi\"
+        title=\"Объявления о продаже, Личные вещи в Самарской области\">\n Личные
+        вещи\n </a> </dt>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/odezhda_obuv_aksessuary\"
+        title=\"Объявления о продаже, Одежда, обувь, аксессуары в Самарской области\">\n
+        Одежда, обувь, аксессуары\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/detskaya_odezhda_i_obuv\" title=\"Объявления
+        о продаже, Детская одежда и обувь в Самарской области\">\n Детская одежда
+        и обувь\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/tovary_dlya_detey_i_igrushki\"
+        title=\"Объявления о продаже, Товары для детей и игрушки в Самарской области\">\n
+        Товары для детей и игрушки\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/chasy_i_ukrasheniya\" title=\"Объявления о продаже,
+        Часы и украшения в Самарской области\">\n Часы и украшения\n </a> </dd>\n
+        \ <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/krasota_i_zdorove\"
+        title=\"Объявления о продаже, Красота и здоровье в Самарской области\">\n
+        Красота и здоровье\n </a> </dd>\n   </dl>\n          \n <dl class=\"category-map__section\">\n
+        \ \n <dt class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/dlya_doma_i_dachi\"
+        title=\"Объявления о продаже, Для дома и дачи в Самарской области\">\n Для
+        дома и дачи\n </a> </dt>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/bytovaya_tehnika\"
+        title=\"Объявления о продаже, Бытовая техника в Самарской области\">\n Бытовая
+        техника\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/mebel_i_interer\"
+        title=\"Объявления о продаже, Мебель и интерьер в Самарской области\">\n Мебель
+        и интерьер\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/posuda_i_tovary_dlya_kuhni\"
+        title=\"Объявления о продаже, Посуда и товары для кухни в Самарской области\">\n
+        Посуда и товары для кухни\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/produkty_pitaniya\" title=\"Объявления о продаже,
+        Продукты питания в Самарской области\">\n Продукты питания\n </a> </dd>\n
+        \ <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/remont_i_stroitelstvo\"
+        title=\"Объявления о продаже, Ремонт и строительство в Самарской области\">\n
+        Ремонт и строительство\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/rasteniya\" title=\"Объявления о продаже, Растения
+        в Самарской области\">\n Растения\n </a> </dd>\n   \n <dt class=\"category-map__category
+        category-map__root\"> <a href=\"/samarskaya_oblast/dlya_biznesa\" title=\"Объявления
+        о продаже, Для бизнеса в Самарской области\">\n Для бизнеса\n </a> </dt>\n
+        \ <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/gotoviy_biznes\"
+        title=\"Объявления о продаже, Готовый бизнес в Самарской области\">\n Готовый
+        бизнес\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/oborudovanie_dlya_biznesa\"
+        title=\"Объявления о продаже, Оборудование для бизнеса в Самарской области\">\n
+        Оборудование для бизнеса\n </a> </dd>\n   </dl>\n    \n <dl class=\"category-map__section\">\n
+        \ \n <dt class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/bytovaya_elektronika\"
+        title=\"Объявления о продаже, Бытовая электроника в Самарской области\">\n
+        Бытовая электроника\n </a> </dt>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/audio_i_video\" title=\"Объявления о продаже,
+        Аудио и видео в Самарской области\">\n Аудио и видео\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/igry_pristavki_i_programmy\" title=\"Объявления
+        о продаже, Игры, приставки и программы в Самарской области\">\n Игры, приставки
+        и программы\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/nastolnye_kompyutery\"
+        title=\"Объявления о продаже, Настольные компьютеры в Самарской области\">\n
+        Настольные компьютеры\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/noutbuki\" title=\"Объявления о продаже, Ноутбуки
+        в Самарской области\">\n Ноутбуки\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/orgtehnika_i_rashodniki\" title=\"Объявления
+        о продаже, Оргтехника и расходники в Самарской области\">\n Оргтехника и расходники\n
+        </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/planshety_i_elektronnye_knigi\"
+        title=\"Объявления о продаже, Планшеты и электронные книги в Самарской области\">\n
+        Планшеты и электронные книги\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/telefony\" title=\"Объявления о продаже, Телефоны
+        в Самарской области\">\n Телефоны\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/tovary_dlya_kompyutera\" title=\"Объявления о
+        продаже, Товары для компьютера в Самарской области\">\n Товары для компьютера\n
+        </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/fototehnika\"
+        title=\"Объявления о продаже, Фототехника в Самарской области\">\n Фототехника\n
+        </a> </dd>\n   </dl>\n    \n <dl class=\"category-map__section\">\n  \n <dt
+        class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/hobbi_i_otdyh\"
+        title=\"Объявления о продаже, Хобби и отдых в Самарской области\">\n Хобби
+        и отдых\n </a> </dt>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/bilety_i_puteshestviya\"
+        title=\"Объявления о продаже, Билеты и путешествия в Самарской области\">\n
+        Билеты и путешествия\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/velosipedy\" title=\"Объявления о продаже, Велосипеды
+        в Самарской области\">\n Велосипеды\n </a> </dd>\n  <dd class=\"category-map__category\">
+        <a href=\"/samarskaya_oblast/knigi_i_zhurnaly\" title=\"Объявления о продаже,
+        Книги и журналы в Самарской области\">\n Книги и журналы\n </a> </dd>\n  <dd
+        class=\"category-map__category\"> <a href=\"/samarskaya_oblast/kollektsionirovanie\"
+        title=\"Объявления о продаже, Коллекционирование в Самарской области\">\n
+        Коллекционирование\n </a> </dd>\n  <dd class=\"category-map__category\"> <a
+        href=\"/samarskaya_oblast/muzykalnye_instrumenty\" title=\"Объявления о продаже,
+        Музыкальные инструменты в Самарской области\">\n Музыкальные инструменты\n
+        </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/ohota_i_rybalka\"
+        title=\"Объявления о продаже, Охота и рыбалка в Самарской области\">\n Охота
+        и рыбалка\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/sport_i_otdyh\"
+        title=\"Объявления о продаже, Спорт и отдых в Самарской области\">\n Спорт
+        и отдых\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/znakomstva\"
+        title=\"Объявления о продаже, Знакомства в Самарской области\">\n Знакомства\n
+        </a> </dd>\n   </dl>\n    \n <dl class=\"category-map__section\">\n  \n <dt
+        class=\"category-map__category category-map__root\"> <a href=\"/samarskaya_oblast/zhivotnye\"
+        title=\"Объявления о продаже, Животные в Самарской области\">\n Животные\n
+        </a> </dt>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/sobaki\"
+        title=\"Объявления о продаже, Собаки в Самарской области\">\n Собаки\n </a>
+        </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/koshki\"
+        title=\"Объявления о продаже, Кошки в Самарской области\">\n Кошки\n </a>
+        </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/ptitsy\"
+        title=\"Объявления о продаже, Птицы в Самарской области\">\n Птицы\n </a>
+        </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/akvarium\"
+        title=\"Объявления о продаже, Аквариум в Самарской области\">\n Аквариум\n
+        </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/drugie_zhivotnye\"
+        title=\"Объявления о продаже, Другие животные в Самарской области\">\n Другие
+        животные\n </a> </dd>\n  <dd class=\"category-map__category\"> <a href=\"/samarskaya_oblast/tovary_dlya_zhivotnyh\"
+        title=\"Объявления о продаже, Товары для животных в Самарской области\">\n
+        Товары для животных\n </a> </dd>\n   </dl>\n        \n</div>\n  <div class=\"l-footer\">
+        <ul class=\"nav\"> <li><a href=\"//www.avito.ru/additem\" title=\"Подать объявление
+        бесплатно\">Подать объявление</a></li> <li><a href=\"//www.avito.ru/samarskaya_oblast/\">Объявления</a></li>
+        <li><a href=\"//support.avito.ru/hc/ru\">Помощь</a></li> <li><a href=\"//www.avito.ru/safety\">Безопасность</a></li>
+        <li><a href=\"//www.avito.ru/map\">Карта категорий</a></li> <li><a href=\"//www.avito.ru/company\">О
+        компании</a></li> <li><a href=\"//www.avito.ru/info/reklama_na_saite\" rel=\"nofollow\">Реклама
+        на сайте</a></li> <li><a href=\"//www.avito.ru/shops\">Магазины</a></li> <li><a
+        href=\"//www.avito.ru/company/job\">Вакансии</a></li> <li> <a href=\"//www.avito.ru/info/apps#iphone\"><strong>Мобильное
+        приложение</strong></a> </li> <li class=\"justify-helper\"></li> </ul> <div
+        class=\"about c-2\">\n  &copy;&nbsp;Avito&nbsp;&mdash;&nbsp;<a href=\"/samarskaya_oblast\">сайт
+        бесплатных объявлений Самарской области</a>. \n Использование сайта, в том
+        числе подача объявлений, означает согласие с\n <a href=\"//www.avito.ru/info/polzovatelskoe_soglashenie\">пользовательским
+        соглашением</a>.\n <br>Оплачивая услуги на сайте, вы принимаете <a href=\"//www.avito.ru/info/oferta\">оферту</a>.\n
+        \ <a href=\"//www.avito.ru/help/tech_browser\">Информация&nbsp;о&nbsp;cookies</a>\n
+        \ </div> <div class=\"counters\">\n  <a href='http://www.liveinternet.ru/click'
+        target=\"_blank\" id=\"li_button\" class=\"no-border\"></a>\n <script>!function(){document.getElementById(\"li_button\").innerHTML=\"<img
+        src='//counter.yadro.ru/hit?t26.1;r\"+escape(document.referrer)+(\"undefined\"==typeof
+        screen?\"\":\";s\"+screen.width+\"*\"+screen.height+\"*\"+(screen.colorDepth?screen.colorDepth:screen.pixelDepth))+\";u\"+escape(document.URL)+\";h\"+escape(document.title.substring(0,80))+\";\"+Math.random()+\"'
+        alt='' title='LiveInternet: показано число посетителей за сегодня' border=0
+        width=88 height=15>\"}();</script>  </div> </div>\n    <iframe src=\"//awaps.yandex.ru/0/9947/001001.htm\"
+        width=\"1\" height=\"1\"\n marginwidth=\"0\" marginheight=\"0\" hspace=\"0\"
+        vspace=\"0\" frameborder=\"0\"\n scrolling=\"no\" bordercolor=\"#000000\"\n
+        style=\"left: -9999px; position: absolute;\"></iframe>\n \n </div>\n       <script
+        src=\"//www.avito.st/s/cc/5b96367a2ae5fb62568873bceadd1ed9b02ceae4.js?356d3be\"></script>
+        \   <script src=\"//www.avito.st/s/cc/70129ed095e713bde3172bfaef3726de820fb863.js?0f53d8e\"></script>
+        \ <script src=\"//www.avito.st/s/cc/9af06c5f4cde3a676992a5178a5c2803e9286d4b.js?0d1f4cf\"></script>
+        \   <script src=\"//www.avito.st/s/cc/6c0004d68dabf8f8655f12d4402da2a9d9246238.js?81bdca8\"></script>\n
+        <div id=\"counters-invisible\" class=\"counters-invisible\">\n   <img src=\"//www.avito.ru/stat/u?1425511229\"
+        alt=\"\"/>\n      \n <script>\n  avito.tracking.trackGAUrl('\\x2Fga_search\\x3Flocation\\x3D652560\\x26root_location\\x3D621540\\x26category\\x3D0\\x26root_category\\x3D0\\x26isquery\\x3D1\\x26page\\x3D1');\n
+        \    avito.tracking.trackGAEvent('tracking', 'search', 'query', 0);\n  \n
+        if ( window.devicePixelRatio > 1 ) {\n avito.tracking.trackGAEvent('tracking',
+        'retina', 'catalog');\n }\n  </script>\n\n<script>\n        avito.tracking.trackCriteo(
+        10019, 0, [\n { event: \"viewList\", avito: \"1\", item: [522033843,521311886,70652309],
+        keywords: \"ежик африканский\" }\n ] );\n     function DM_prepClient(csid,client)
+        {\n client.DM_addEncToLoc(\"category\", 0);\n }\n     \n var _comscore = _comscore
+        || [];\n _comscore.push({ c1: \"2\", c2: \"9829393\", c4: document.location.href,
+        c5: \"SearchAll\" });\n (function() {\n var s = document.createElement(\"script\"),
+        el = document.getElementsByTagName(\"script\")[0]; s.async = true;\n s.src
+        = (document.location.protocol == \"https:\" ? \"https://sb\" : \"http://b\")
+        + \".scorecardresearch.com/beacon.js\";\n el.parentNode.insertBefore(s, el);\n
+        })();\n  \n</script>\n <noscript> <img src=\"https://sb.scorecardresearch.com/p?c1=2&c2=9829393&cv=2.0&c4=avito.ru/samarskaya_oblast?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9&c5=SearchAll&cj=1\"
+        /> </noscript>\n  <script type=\"text/javascript\">\n ( function() {\n var
+        countersContainer = document.getElementById( 'counters-invisible' ),\n counterImg
+        = document.createElement( 'img' );\n          var mmPixelUrl = '//pixel.mathtag.com/data/img?mt_id=413082&v2=652560';\n
+        var segments = avito.dfp && avito.dfp.getSegments() || '';\n if (segments)
+        {\n for (var i in segments) {\n segments[i] = '' + segments[i];\n while (segments[i].length
+        < 3) {\n segments[i] = '0' + segments[i];\n }\n }\n mmPixelUrl += '&s4=' +
+        segments.join(';')\n }\n counterImg.src = mmPixelUrl;\n countersContainer.appendChild(
+        counterImg );\n         mmPixelUrl = 'https://advombat.ru/0.gif?pid=AVITO&id=';\n
+        counterImg = document.createElement( 'img' );\n counterImg.src = mmPixelUrl;\n
+        countersContainer.appendChild( counterImg );\n   }() );\n </script>\n       <img
+        src=\"//dmg.digitaltarget.ru/1/36/v/x?a=36&e=1x1rq98t.zlfkif.epuhtmzaks&c=plid:36.dsid=36.puid:1x1rq98t.zlfkif.epuhtmzaks.segid:&i=1425511229\"
+        width=\"1\" height=\"1\" alt=\"\" />\n       \n <script>\n var img = new Image();\n
+        img.src = '//www.tns-counter.ru/V13a***R>' + document.referrer.replace(/\\*/g,'%2a')
+        + '*avito_ru/ru/CP1251/tmsec=avito_0/' + Math.round(Math.random() * 1000000000);\n
+        </script> <noscript><img src=\"//www.tns-counter.ru/V13a****avito_ru/ru/CP1251/tmsec=avito_0/\"
+        width=\"1\" height=\"1\" alt=\"\" /></noscript>\n   <div id=\"sspicy_adslot_273\"></div>
+        <script>\n (function (p, w) {\n (w[p] = w[p] || []).push({\n id: 273,\n //
+        u_age - user age; 0 - undefined\n // u_gen - user gender; 0 - undefined, 1
+        - male, 2 - female\n u_age: 0,\n u_gen: 0\n });\n }('sspicy_adslots', window));\n
+        </script> <script>\n (function (d, t) {\n var p = d.createElement(t),\n s
+        = d.getElementsByTagName(t)[0];\n p.async = true;\n p.src = '//static.sspicy.ru/theme/sspicy/adshow.js';\n
+        s.parentNode.insertBefore(p, s);\n })(document, 'script');\n </script>\n   <script
+        src=\"//dfp1.advertone.ru/dfp.js\" async></script>\n                                         </div>\n
+        \  <script src=\"//www.avito.st/s/cc/8e6a5165b5566f9e08d63a8f4bf5069ac62bceb6.js?95e0011\"></script>
+        \ <script src=\"//www.avito.st/s/cc/3ec47f4f260ce964ebcd1ca0016d8e6a28e7ac4f.js?b76d820\"></script>
+        <script src=\"//www.avito.st/s/cc/83fc6b616f1fad64e62cdfb3320682529372ac6c.js?8f8222c\"></script>
+        \ <div class=\"b-google-remarketing\">\n <script>var google_conversion_id=987009030,google_conversion_label=\"f8JaCLLjvAQQhqDS1gM\",google_custom_params=window.google_tag_params,google_remarketing_only=!0;</script><script
+        type=\"text/javascript\" src=\"//www.googleadservices.com/pagead/conversion.js\"></script>
+        <noscript> <div style=\"display:inline;\"> <img height=\"1\" width=\"1\" style=\"border-style:none;\"
+        alt=\"\" src=\"//googleads.g.doubleclick.net/pagead/viewthroughconversion/987009030/?value=0&amp;label=f8JaCLLjvAQQhqDS1gM&amp;guid=ON&amp;script=0\"/>
+        </div> </noscript> </div>\n    \n</body> </html>\n"
+    http_version: 
+  recorded_at: Tue, 03 Mar 2015 21:00:00 GMT
+recorded_with: VCR 2.9.3
