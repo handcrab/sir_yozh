@@ -74,3 +74,8 @@ group :development, :test do
   gem 'spring-commands-cucumber'
 end
 
+group :test do
+  gem 'webmock'
+  gem 'vcr'
+  gem 'timecop'
+end
