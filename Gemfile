@@ -49,6 +49,8 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'puma'
 gem 'newrelic_rpm'
 
+gem 'whenever', require: false
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
@@ -68,10 +70,10 @@ group :development, :test do
   gem 'factory_girl_rails'
   
   gem 'guard-rspec' # guard :rspec, cmd:"spring rspec"
-  gem 'guard-cucumber' # guard init cucumber
+  # gem 'guard-cucumber' # guard init cucumber
 
   gem 'spring-commands-rspec'
-  gem 'spring-commands-cucumber'
+  # gem 'spring-commands-cucumber'
 end
 
 group :test do
