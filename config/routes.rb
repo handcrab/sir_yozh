@@ -19,6 +19,9 @@ Rails.application.routes.draw do
   get 'tags/:tag/posts', to: 'posts#tagged', as: :tag_posts
   
   get 'posts' => 'posts#index'
+
+  mount Resque::Server.new, at: '/resque'
+  
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

@@ -49,6 +49,11 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'puma'
 gem 'newrelic_rpm'
 
+gem 'resque', require: 'resque/server'
+#, '~> 2.0.0.pre.1', github: 'resque/resque'
+gem 'resque-scheduler', require: 'resque/scheduler/server'
+gem 'foreman'
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
