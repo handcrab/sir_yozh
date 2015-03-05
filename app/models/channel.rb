@@ -28,9 +28,11 @@ class Channel < ActiveRecord::Base
     crawler = Crawler.new source_url, cache: cached_post    
     posts = if crawler
       crawler.run 
-    else
-      []
+    # else
+    #   []
     end
+
+    return [] if posts.present?
 
     # TODO
     unless posts.empty?
@@ -40,11 +42,30 @@ class Channel < ActiveRecord::Base
       end      
       self.posts.create posts.sort_by{|post| post[:published_at]} #unless posts.empty?
     end
+  end
 
+  # => [] of post attributes
+  def get_posts
+    crawler = Crawler.new source_url, cache: cached_post    
+    posts = if crawler
+      crawler.run     
+    end
+
+    return [] unless posts.present?
+
+    posts.map! do |post|
+      post.merge! channel_id: id
+      post.with_indifferent_access.slice *Post.attribute_names
+    end.sort_by{|post| post[:published_at]}    
+  end
+
+  def self.fetch_all_posts
+    posts_arr = all.inject([]) { |posts, channel| posts + channel.get_posts }    
+    Post.create posts_arr
   end
 
   def cached_post
-    cache = posts.last 
+    cache = posts.last # find by max Time
     offset_date = Time.now - setup.shift_days.to_i.days
     # если posts.last.nil? пропустить записи старше offset_date
     tmp_post = Post.new published_at: offset_date
