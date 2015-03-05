@@ -8,8 +8,12 @@ ru:
   title: Ёж деловой
   feed: rss-лента
   
+  validations:
+    invalid_url: Неверный формат ссылки
+
   flash:
     error: Ошибка
+    queue: Запрос в очереди на обработку
     create:
       success: Подписка создана
     update:

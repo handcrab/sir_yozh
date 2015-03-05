@@ -5,6 +5,7 @@ class PostsController < ApplicationController
 
   def index 
     current_user.channels.each(&:fetch) if params[:fetch]
+    
     @posts = current_user.posts.newest_on_top
 
     respond_to do |format|
@@ -22,7 +23,9 @@ class PostsController < ApplicationController
     @tag = params[:tag]
     # channels = Channel.published_and_personal_for(current_user).tagged_with(params[:tag]).pluck(:id)
     channels = @channels.tagged_with(params[:tag]) #.pluck(:id)
+
     channels.each(&:fetch) if params[:fetch]
+
     channels = channels.pluck(:id)
     @posts = Post.where('channel_id IN (?)', channels).newest_on_top
 

@@ -21,6 +21,7 @@ module ChannelsHelper
   end
 
   def atom_url channel
-    channel_posts_path channel, format: :atom, fetch: true, token: get_token(channel)
+    # channel_posts_path channel, format: :atom, fetch: true, token: get_token(channel)
+    channel_posts_path channel, format: :atom, token: get_token(channel)
   end 
 end

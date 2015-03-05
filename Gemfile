@@ -49,11 +49,10 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'puma'
 gem 'newrelic_rpm'
 
-# gem 'delayed_job'
 gem 'delayed_job_active_record'
-gem "delayed_job_web"
+gem 'delayed_job_web'
+gem 'daemons'
 gem 'foreman'
-# gem "daemons"
 gem 'clockwork'
 
 

@@ -24,9 +24,9 @@ class ChannelsController < ApplicationController
   # GET /channels/1.json
   def show
     @channel = Channel.find params[:id]
-    @channel.fetch
-    # @channel.posts.create posts.sort_by{|post| post[:published_at]} unless posts.empty?
-    # @channel.reload
+    flash.now[:notice] = t('flash.queue')
+    # @channel.delay.fetch
+    Channel.delay.fetch_by_id @channel.id 
   end
 
   # GET /channels/new

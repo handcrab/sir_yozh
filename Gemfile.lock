@@ -70,6 +70,7 @@ GEM
       gherkin (~> 2.12)
       multi_json (>= 1.7.5, < 2.0)
       multi_test (>= 0.1.2)
+    daemons (1.1.9)
     database_cleaner (1.4.0)
     debug_inspector (0.0.2)
     debugger-linecache (1.2.0)
@@ -337,6 +338,7 @@ DEPENDENCIES
   byebug
   clockwork
   coffee-rails (~> 4.1.0)
+  daemons
   database_cleaner
   delayed_job_active_record
   delayed_job_web

@@ -59,6 +59,11 @@ class Channel < ActiveRecord::Base
     end.sort_by{|post| post[:published_at]}    
   end
 
+  def self.fetch_by_id id
+    posts_arr = find(id).get_posts
+    Post.create posts_arr
+  end
+
   def self.fetch_all_posts
     posts_arr = all.inject([]) { |posts, channel| posts + channel.get_posts }    
     Post.create posts_arr
@@ -93,7 +98,7 @@ class Channel < ActiveRecord::Base
   def is_uri_valid
       URI source_url    
     rescue
-      errors.add(:source_url, "Invalid URI")
+      errors.add(:source_url, t('validations.invalid_url'))
   end
 
   def destroy_posts
