@@ -4,7 +4,10 @@ class PostsController < ApplicationController
   before_action :set_public_feed, except: :index
 
   def index 
-    current_user.channels.each(&:fetch) if params[:fetch]    
+    # current_user.channels.each(&:fetch) if params[:fetch]    
+    # current_user.channels.delay.each(&:fetch) if params[:fetch]
+    current_user.channels.each {|ch| ch.delay.fetch} if params[:fetch]
+    
     @posts = current_user.posts.newest_on_top
 
     respond_to do |format|
@@ -35,7 +38,7 @@ class PostsController < ApplicationController
     # channel = Channel.published_and_personal_for(current_user).find_by id: params[:id]
         
     if channel
-      channel.fetch if params[:fetch]
+      channel.delay.fetch if params[:fetch]
       @posts = channel.posts.newest_on_top
 
       render :index

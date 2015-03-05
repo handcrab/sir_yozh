@@ -19,6 +19,8 @@ Rails.application.routes.draw do
   get 'tags/:tag/posts', to: 'posts#tagged', as: :tag_posts
   
   get 'posts' => 'posts#index'
+
+  match "/delayed_job" => DelayedJobWeb, anchor: false, via: [:get, :post]
   # The priority is based upon order of creation: first created -> highest priority.
   # See how all your routes lay out with "rake routes".
 

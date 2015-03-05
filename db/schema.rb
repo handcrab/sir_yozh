@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150302094224) do
+ActiveRecord::Schema.define(version: 20150305144735) do
 
   create_table "channels", force: :cascade do |t|
     t.string   "title"
@@ -24,6 +24,22 @@ ActiveRecord::Schema.define(version: 20150302094224) do
 
   add_index "channels", ["source_url"], name: "index_channels_on_source_url"
   add_index "channels", ["user_id"], name: "index_channels_on_user_id"
+
+  create_table "delayed_jobs", force: :cascade do |t|
+    t.integer  "priority",   default: 0, null: false
+    t.integer  "attempts",   default: 0, null: false
+    t.text     "handler",                null: false
+    t.text     "last_error"
+    t.datetime "run_at"
+    t.datetime "locked_at"
+    t.datetime "failed_at"
+    t.string   "locked_by"
+    t.string   "queue"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "delayed_jobs", ["priority", "run_at"], name: "delayed_jobs_priority"
 
   create_table "posts", force: :cascade do |t|
     t.string   "title"

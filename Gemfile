@@ -49,6 +49,12 @@ gem 'acts-as-taggable-on', '~> 3.4'
 gem 'puma'
 gem 'newrelic_rpm'
 
+# gem 'delayed_job'
+gem 'delayed_job_active_record'
+gem "delayed_job_web"
+gem 'foreman'
+# gem "daemons"
+
 group :development, :test do
   # Call 'byebug' anywhere in the code to stop execution and get a debugger console
   gem 'byebug'
