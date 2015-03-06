@@ -11,6 +11,7 @@ class PostsController < ApplicationController
     respond_to do |format|
       format.html
       format.atom { render layout: false }
+      # format.js { render 'index.coffee' }
     end
   end
 
@@ -36,16 +37,33 @@ class PostsController < ApplicationController
   def channel_index
     channel = @channels.find_by id: params[:id]
     # channel = Channel.published_and_personal_for(current_user).find_by id: params[:id]
-        
-    if channel
-      channel.delay.fetch if params[:fetch]
-      @posts = channel.posts.newest_on_top
+    channel.delay.fetch if params[:fetch]    
+    # if channel
+    #   channel.delay.fetch if params[:fetch]
+    #   @posts = channel.posts.newest_on_top
 
-      render :index
-    else
-      msg = t('devise.failure.unauthenticated')
-      redirect_to root_path, alert: msg unless channel
-    end    
+    #   render :index
+    # else
+    #   msg = t('devise.failure.unauthenticated')
+    #   redirect_to root_path, alert: msg
+    # end
+
+    respond_to do |format|
+      if channel        
+        @posts = channel.posts.newest_on_top
+
+        format.html { render :index }  
+        format.js { render 'index.coffee' } 
+        #{ render :channel_index }
+      else
+        msg = t('devise.failure.unauthenticated')
+        format.html { redirect_to root_path, alert: msg }
+        format.js { head :unauthorized }
+      end
+    end
+    #   format.html
+    #   format.js
+    # end
   end
 
   private

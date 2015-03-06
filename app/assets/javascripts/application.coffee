@@ -16,21 +16,31 @@
 # = require turbolinks
 # = require_tree .
 
+window.PostsUpdater = class PostsUpdater
+  # constructor: -> @url = ''
+  fetchPosts: ->
+    # $.get({url: $('#posts').data('url').toString(), dataType: 'script'})
+    $.ajax
+      url: $('#posts.channel-posts').data('url').toString()
+      type: 'get'
+      dataType: 'script'
+
+  update: ->
+    # @url = $('#posts').data('url').toString()
+    if $('#posts.channel-posts').data('url')
+      setTimeout @fetchPosts, 5000
+      setInterval @fetchPosts, 30000
+
+
 showProgressBar = -> $('.progress').show()
 hideProgressBar = -> $('.progress').hide()
-# setCardsHeights = ->
-#   heights = $(".card").map -> $(@).height()
-#   max_height = Math.max.apply null, heights.get() 
-#   $(".card").height max_height
 
-# history change
-# window.onpopstate = (event)->     
-#   hideProgressBar()
+# turbolinks: history change
+# window.onpopstate = (event)->
 $(document).on 'page:restore', ->
   hideProgressBar()
 
-init = ->
-  # $(".button-collapse").sideNav()
+init = ->  
   $('.fetch').on 'click', ->
     showProgressBar() #.toggleClass('hide')
   $('.show-posts').on 'click', ->
@@ -42,8 +52,6 @@ init = ->
  
   $(".button-collapse").sideNav()
   
-  # setCardsHeights()
-
   # popup flash msg
   $('#alert').ready -> 
     msg = $('#alert .message').data('notice')
@@ -52,7 +60,7 @@ init = ->
       $('#alert').hide()
       toast msg, 4000
 
-  # TODO
+  # fix cards vertical stack
   # $('#posts .col:nth-child(3n)').css({clear: 'left'})
   # $(window).resize ->
   #   viewportWidth = $(window).width()    
@@ -60,8 +68,12 @@ init = ->
   # if viewportWidth <= 600 
   # else if viewportWidth <= 992 and viewportWidth > 600
   #   # $('#posts .col:nth-child(4n)').toggleClass 'clear-left'
+  
+  # setCardsHeights = ->
+  #   heights = $(".card").map -> $(@).height()
+  #   max_height = Math.max.apply null, heights.get() 
+  #   $(".card").height max_height
 
 $(document).ready init
 $(document).on 'page:load', ->
   init()
-  # $('.progress').hide()

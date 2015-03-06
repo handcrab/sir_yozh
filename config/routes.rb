@@ -3,12 +3,12 @@ Rails.application.routes.draw do
 
   devise_for :users
     
+  get 'channels/:id/posts', to: 'posts#channel_index', as: 'channel_posts'
   get 'channels/personal' => 'channels#personal'
   resources :channels do
     patch 'toggle_public', on: :member
     # get 'posts', on: :member, to: 'posts#channel_index', as: 'channel_posts'
   end
-  get 'channels/:id/posts', to: 'posts#channel_index', as: 'channel_posts'
   
   authenticated :user do
     root to: 'channels#personal', as: :authenticated_root
