@@ -54,6 +54,23 @@ footer
   
   .brand-logo
     margin-left: 60px  
+    // position: relative
+
+    &:hover      
+      &:after
+        content: ""
+        
+        font-family: "Material-Design-Icons"
+        font-style: normal
+        font-weight: normal
+        font-variant: normal
+        text-transform: none
+
+        display: block
+        position: absolute      
+        top: 0
+        right: -2.5rem
+      
 
 body
   background-image: image_url('yozh.png')
@@ -193,4 +210,30 @@ a[href^="http://www.avito.ru"], a[href^="https://www.avito.ru"]
     @extend .lime
     // @extend .red    
     // @extend .darken-4
-    // @include links      
+    // @include links
+
+@media only screen and (max-width: 600px)
+  .brand-logo
+    margin-left: 0 !important
+    font-size: 16px !important
+    line-height: 1.25
+  .toast
+    line-height: 1.25
+
+  .channel-row-stripes
+    a[href^="http://www.avito.ru"], a[href^="https://www.avito.ru"]  
+      &:before
+        display: none
+
+    .tags .mdi-maps-local-offer
+      display: none
+    
+    .show-posts
+      // text-indent: -9999px  !important
+      font-size: 0            
+      .mdi-action-view-list
+        font-size: 25px
+    
+    .badge
+      float: none
+      // display: none      
