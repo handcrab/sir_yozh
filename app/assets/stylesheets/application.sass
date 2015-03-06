@@ -37,6 +37,7 @@ footer
 .btn
   @include links
 
+// fix: vertical stacking
 #posts
   // .col:nth-child(3n)
   .col:nth-child(3n+4)
@@ -52,7 +53,7 @@ footer
   background-position: -25px -8px  
   
   .brand-logo
-    margin-left: 60px
+    margin-left: 60px  
 
 body
   background-image: image_url('yozh.png')
@@ -81,7 +82,7 @@ body
   // border: 1px solid black
   @extend .z-depth-1
   padding: 20px
-
+  
   .tags
     padding: 10px 0
 
@@ -89,9 +90,65 @@ body
     // border-top: 1px dotted silver
     // padding-top: 10px
     // justify-content: flex-end
-    float: right
-    a
-      margin: 10px
+    .action
+      float: right
+      // float: left
+      display: inline-block
+      a
+        margin-left: 10px
+
+.channel-row  
+  margin: 10px auto
+  // padding-bottom: 40px
+  .row
+    margin-bottom: 0
+
+.channel-row-stripes
+  margin: 0 auto 
+  padding: 20px 0
+
+  h5
+    font-size: 14px
+    font-weight: normal
+    word-wrap: break-word
+  .tags a
+    word-wrap: break-word
+
+  &:nth-child(odd)
+    background-color: $table-striped-color
+  &:nth-child(1)
+    border-top: 1px solid #D0D0D0
+  &:hover
+    background-color: darken($table-striped-color, 5%)
+
+  .actions
+    text-align: right
+
+    .action
+      // float: right
+      margin-left: 20px
+    .tags 
+      .mdi-maps-local-offer
+        display: none
+      a
+        font-size: 80%
+
+  // a[href^="http://www.avito.ru"], a[href^="https://www.avito.ru"]
+  //   position: relative
+  //   &:before
+  //     display: none
+
+  //   &:hover
+  //     &:before 
+  //       display: block
+  //       position: absolute
+  //       left: -20px
+  //       width: 16px
+  //       height: 16px
+  //       // margin-right: 5px
+  //       content: ""
+  //       background: image_url("logo-avito-small.svg") no-repeat 0 0
+  //       background-size: 100%
 
 .settings-report
   padding: 10px 20px
@@ -123,7 +180,7 @@ a[href^="http://www.avito.ru"], a[href^="https://www.avito.ru"]
     height: 16px
     margin-right: 5px
     content: ""
-    background: url("logo-avito-small.svg") no-repeat 0 0
+    background: image_url("logo-avito-small.svg") no-repeat 0 0
     background-size: 100%
 
 .hide
@@ -136,4 +193,4 @@ a[href^="http://www.avito.ru"], a[href^="https://www.avito.ru"]
     @extend .lime
     // @extend .red    
     // @extend .darken-4
-    // @include links
+    // @include links      
