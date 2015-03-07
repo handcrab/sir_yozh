@@ -18,6 +18,7 @@
 - Фильтр предложений (просмотр)
 - pagination
 - improve form errors
+- stop words
 
 # Запуск
 ```bash

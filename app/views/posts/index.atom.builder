@@ -13,7 +13,7 @@ atom_feed language: 'ru-RU' do |feed|
     }
 
     feed.entry(post, feed_entry_options) do |entry|
-      entry.title post.title
+      entry.title "#{post.title} | #{number_to_currency post.price}"
       # entry.url post.source_url
       # entry.content post.description, type: 'html' 
       # entry.content image_tag(display_image post.picture_url), type: 'html'
