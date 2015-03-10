@@ -54,6 +54,7 @@ class PostsController < ApplicationController
 
         format.html { render :index }  
         format.js { render 'index.coffee' } 
+        format.atom { render :index}
         #{ render :channel_index }
       else
         msg = t('devise.failure.unauthenticated')

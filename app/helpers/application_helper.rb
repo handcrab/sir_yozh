@@ -35,21 +35,19 @@ module ApplicationHelper
     rescue nil 
   end
 
-  # !!! monkey patch :monkey_face:
+  # patch :monkey_face:
   def auto_discovery_link_tag(type = :rss, url_options = {}, tag_options = {})
     if !(type == :rss || type == :atom) && tag_options[:type].blank?
       raise ArgumentError.new("You should pass :type tag_option key explicitly, because you have passed #{type} type other than :rss or :atom.")
     end
 
-    tag(
-      "link",
+    tag_options.merge!({
       "rel"   => tag_options[:rel] || "alternate",
       "type"  => tag_options[:type] || Mime::Type.lookup_by_extension(type.to_s).to_s,
       "title" => tag_options[:title] || type.to_s.upcase,
-      "href"  => url_options.is_a?(Hash) ? url_for(url_options.merge(:only_path => false)) : url_options,
-      # 'data-no-turbolink' => true
-      'data-turbolinks-track' => false
-    )
-  end
+      "href"  => url_options.is_a?(Hash) ? url_for(url_options.merge(:only_path => false)) : url_options
+    })
 
+    tag("link", tag_options)
+  end
 end

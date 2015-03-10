@@ -1,5 +1,5 @@
 = content_for :head do
-  = auto_discovery_link_tag(:atom, atom_link(request))
+  = auto_discovery_link_tag(:atom, atom_link(request), data: {'turbolinks-track' => true})
 
 h2= t('.title')
 - if @tag
