@@ -6,7 +6,7 @@ html
     = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
     = javascript_include_tag 'application', 'data-turbolinks-track' => true
     meta(name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no")
-    
+
     = csrf_meta_tags
     = yield :head
 
@@ -16,7 +16,7 @@ body
       - #.container
       .nav-wrapper
         - # image_tag 'yozh-logo.svg', class: 'logo'
-        = link_to t('.appname', default: 'Sir Yozh').mb_chars.upcase, root_path, class: 'brand-logo left'      
+        = link_to t('.appname', default: 'Sir Yozh').mb_chars.upcase, root_path, class: 'brand-logo left'
 
         = render partial: 'shared/nav_menu', locals: {options: {class: 'right hide-on-med-and-down', id: 'nav-mobile'}}
         = render partial: 'shared/nav_menu', locals: {options: {class: 'side-nav', id: 'slide-out'}}

@@ -9,7 +9,7 @@ class ChannelsController < ApplicationController
     if params[:tag]
       @tag = params[:tag]
       # @channels = Channel.tagged_with params[:tag]
-      @channels = Channel.published_and_personal_for(current_user).tagged_with params[:tag]        
+      @channels = Channel.published_and_personal_for(current_user).tagged_with params[:tag]
     else
       @channels = Channel.published
     end
@@ -26,16 +26,16 @@ class ChannelsController < ApplicationController
     @channel = Channel.find params[:id]
     flash.now[:notice] = t('flash.queue')
     # @channel.delay.fetch
-    Channel.delay.fetch_by_id @channel.id 
+    Channel.delay.fetch_by_id @channel.id
   end
 
   # GET /channels/new
   def new
     @channel = current_user.channels.build
     # @setup = @channel.setup.new
-    #Channel.new
+    # Channel.new
     @channel.build_setup
-    #.setup = Setting.new
+    # .setup = Setting.new
   end
 
   # GET /channels/1/edit
@@ -92,21 +92,21 @@ class ChannelsController < ApplicationController
   end
 
   private
-    # Use callbacks to share common setup or constraints between actions.
-    def set_channel
-      @channel = Channel.find params[:id]
-    end
 
-    # Never trust parameters from the scary internet, only allow the white list through.
-    def channel_params
-      params.require(:channel).permit(:title, :source_url, :public, :tag_list, 
-        setup_attributes: [:max_price, :shift_days])
-    end
+  # Use callbacks to share common setup or constraints between actions.
+  def set_channel
+    @channel = Channel.find params[:id]
+  end
 
-    def authorize_user
-      @channel = current_user.channels.find_by id: params[:id]
+  def channel_params
+    params.require(:channel).permit :title, :source_url, :public, :tag_list,
+      setup_attributes: [:max_price, :shift_days]
+  end
 
-      msg = t('devise.failure.unauthenticated')
-      redirect_to root_path, alert: msg unless @channel
-    end
+  def authorize_user
+    @channel = current_user.channels.find_by id: params[:id]
+
+    msg = t('devise.failure.unauthenticated')
+    redirect_to root_path, alert: msg unless @channel
+  end
 end

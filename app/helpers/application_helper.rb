@@ -22,17 +22,15 @@ module ApplicationHelper
     query_str = '?'
     query_str += query unless query.empty?
 
-    if current_user
-      query_str += "&token=#{current_user.token}"
-    end
+    query_str += "&token=#{current_user.token}" if current_user
 
     "http://#{request.host_with_port}#{page}.atom#{query_str}"
   end
 
   def get_token channel
     # unless channel.public?
-    token = current_user.token if channel.user == current_user    
-    rescue nil 
+    return nil unless current_user
+    current_user.token if channel.user == current_user
   end
 
   # patch :monkey_face:

@@ -1,13 +1,13 @@
 article.card
   .card-content
-    span.card-title.black-text= link_to @channel.title, @channel.source_url    
-    = render partial: 'tags', locals: {tags: @channel.tags}    
-  
+    span.card-title.black-text= link_to @channel.title, @channel.source_url
+    = render partial: 'tags', locals: {tags: @channel.tags}
+
   .settings-report 
     = setup_report_str @channel
-    
+
     span.badge #{ @channel.posts.count }
-    
+
   .card-action
     - if @channel.user == current_user
       = link_to toggle_public_channel_path(@channel), method: :patch do
@@ -24,7 +24,7 @@ article.card
   = t(:feed)
   i.mdi-maps-local-library.left
 
-.row#posts.channel-posts(data-url="#{channel_posts_path @channel}")  
+.row#posts.channel-posts(data-url="#{channel_posts_path @channel}")
   = render @channel.posts.newest_on_top
 
 

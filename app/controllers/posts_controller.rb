@@ -3,9 +3,9 @@ class PostsController < ApplicationController
   # before_action :fetch_posts
   before_action :set_public_feed, except: :index
 
-  def index 
+  def index
     current_user.channels.each(&:fetch) if params[:fetch]
-    
+
     @posts = current_user.posts.newest_on_top
 
     respond_to do |format|
@@ -23,7 +23,7 @@ class PostsController < ApplicationController
     # @posts = Post.where('channel_id IN (?)', channels).newest_on_top
     @tag = params[:tag]
     # channels = Channel.published_and_personal_for(current_user).tagged_with(params[:tag]).pluck(:id)
-    channels = @channels.tagged_with(params[:tag]) #.pluck(:id)
+    channels = @channels.tagged_with params[:tag]
 
     channels.each(&:fetch) if params[:fetch]
 
@@ -37,7 +37,7 @@ class PostsController < ApplicationController
   def channel_index
     channel = @channels.find_by id: params[:id]
     # channel = Channel.published_and_personal_for(current_user).find_by id: params[:id]
-    channel.delay.fetch if params[:fetch]    
+    channel.delay.fetch if params[:fetch]
     # if channel
     #   channel.delay.fetch if params[:fetch]
     #   @posts = channel.posts.newest_on_top
@@ -49,33 +49,29 @@ class PostsController < ApplicationController
     # end
 
     respond_to do |format|
-      if channel        
+      if channel
         @posts = channel.posts.newest_on_top
 
-        format.html { render :index }  
-        format.js { render 'index.coffee' } 
-        format.atom { render :index}
-        #{ render :channel_index }
+        format.html { render :index }
+        format.js   { render 'index.coffee' }
+        format.atom { render :index }
+        # { render :channel_index }
       else
         msg = t('devise.failure.unauthenticated')
         format.html { redirect_to root_path, alert: msg }
         format.js { head :unauthorized }
       end
     end
-    #   format.html
-    #   format.js
-    # end
   end
 
   private
+
   def set_public_feed
     # channel = Channel.published_and_personal_for(current_user).find_by id: params[:id]
-    if params[:token]
-      user = User.find_by token: params[:token]
-    end
+    user = User.find_by(token: params[:token]) if params[:token]
     user ||= current_user
-    # all public channels
-    @channels = Channel.published_and_personal_for user
+
+    @channels = Channel.published_and_personal_for user # all public channels
 
     msg = t('devise.failure.unauthenticated')
     redirect_to root_path, alert: msg if @channels.empty?

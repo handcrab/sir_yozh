@@ -6,11 +6,12 @@ class User < ActiveRecord::Base
   has_many :channels, dependent: :destroy
   has_many :posts, through: :channels
 
-  after_create :get_token
+  after_create :make_token
 
   private
-  def get_token
+
+  def make_token
     salt =  Rails.application.class.parent_name
-    self.update token: Digest::SHA1.hexdigest(email + created_at.to_s + salt)
+    update token: Digest::SHA1.hexdigest(email + created_at.to_s + salt)
   end
 end

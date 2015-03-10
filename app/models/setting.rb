@@ -4,8 +4,6 @@ class Setting < ActiveRecord::Base
   after_save :destroy_channel_posts_on_setup_change
 
   def destroy_channel_posts_on_setup_change
-    if tunable.instance_of? Channel
-      tunable.posts.destroy_all
-    end
+    tunable.posts.destroy_all if tunable.instance_of? Channel
   end
 end

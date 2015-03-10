@@ -1,9 +1,9 @@
 .col.l4.m4.s12
   article.card(itemscope itemtype="http://schema.org/Product")
-    .card-content    
+    .card-content
       span.card-title.black-text
       p(itemprop="name")= link_to post.title, post.source_url
-      
+
       p= formatted_date post.published_at
       .post-cover= image_tag display_image(post.picture_url)
       p(itemprop="offers" itemscope itemtype="http://schema.org/Offer")

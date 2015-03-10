@@ -11,10 +11,10 @@ table.striped.hoverable
         td = link_to channel.title, channel.source_url
         td = render partial: 'tags', locals: {tags: channel.tags}
         td.posts-badge 
-          = link_to channel, class: 'show-posts' do          
+          = link_to channel, class: 'show-posts' do
             = Channel.human_attribute_name :posts
             i.mdi-action-view-list.left
-          
+
           span.badge #{display_post_count channel}
         td = link_to_edit channel
         td = link_to_delete channel

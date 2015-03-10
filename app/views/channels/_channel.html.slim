@@ -1,28 +1,12 @@
-/ article.channel.channel-row.row
-/   h5.title= link_to channel.title, channel.source_url
-  
-/   .col.l11.m11.s12
-/     .posts-badge.row    
-/       = link_to channel, class: 'show-posts' do          
-/         = Channel.human_attribute_name :posts
-/         i.mdi-action-view-list.left    
-/       span.badge #{display_post_count channel}
-/     .row
-/       = render partial: 'tags', locals: {tags: channel.tags}
-
-/   .actions.col.l1.m1.s12
-/     .action= link_to_edit channel
-/     .action= link_to_delete channel
-
-.row.channel-row-stripes.valign-wrapper  
+.row.channel-row-stripes.valign-wrapper
   .col.l4.m4.s4.valign
     h5= link_to channel.title, channel.source_url
-  
+
   .col.l4.m4.s5.valign
     = render partial: 'tags', locals: {tags: channel.tags}
-  
+
   .col.l2.m2.s2.valign
-    = link_to channel, class: 'show-posts' do          
+    = link_to channel, class: 'show-posts' do
       = Channel.human_attribute_name :posts
       i.mdi-action-view-list.left    
     span.badge #{display_post_count channel}
