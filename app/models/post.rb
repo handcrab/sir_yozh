@@ -4,6 +4,7 @@ class Post < ActiveRecord::Base
   validate :by_settings
 
   scope :newest_on_top, -> { order published_at: :desc }
+  scope :older_than, -> (post) { where 'published_at < ?', post.published_at }
 
   private
 

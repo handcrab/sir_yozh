@@ -24,4 +24,5 @@ include Clockwork
 #   every(1.day, 'midnight.job', :at => '00:00')
 # end
 
+every(2.hours, 'Destroy outdated posts') { Channel.delay.destroy_outdated_posts }
 every(2.hours, 'Fetch all posts') { Channel.delay.fetch_all_posts }

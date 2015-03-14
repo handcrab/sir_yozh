@@ -63,17 +63,19 @@ class Channel < ActiveRecord::Base
     Post.create posts_arr
   end
 
-  def cached_post
-    cache = posts.last # find by max Time
-    offset_date = Time.now - setup.shift_days.to_i.days
-    # если posts.last.nil? пропустить записи старше offset_date
-    tmp_post = Post.new published_at: offset_date
-    cache ||= tmp_post
+  def destroy_outdated_posts
+    posts.older_than(cached_post).destroy_all
+  end
 
-    # если posts.last в кэше, но старше offset_date
-    # ??? сразу вернуть tmp_post
-    cache = tmp_post if offset_date > cache.published_at
-    cache
+  def self.destroy_outdated_posts
+    posts_arr = all.inject([]) do |posts, channel|
+      posts + channel.posts.older_than(channel.cached_post).pluck(:id)
+    end
+    Post.destroy posts_arr
+  end
+
+  def cached_post
+    Post.new published_at: Time.now - setup.shift_days.to_i.days
   end
 
   private
