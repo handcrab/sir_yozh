@@ -13,6 +13,8 @@ class Channel < ActiveRecord::Base
   validates :source_url, presence: true
   validate :source_url, :uri_valid?
 
+  before_validation :format_url
+
   before_save :generate_title
   after_update :destroy_posts_on_source_url_change
   # after_update :destroy_posts_on_setup_change
@@ -77,21 +79,21 @@ class Channel < ActiveRecord::Base
   private
 
   def generate_title
-    return title unless title.strip.empty?
+    return title if title && !title.strip.empty?
     url = URI source_url
     begin
-      str = URI.unescape url.query
+      str = URI.decode url.query
       str = str.scan(/[^&;]+?=([^&;]*)/).join('; ').mb_chars.titleize.to_s
     rescue
-      str = url.host
+      str = URI.decode url.host
     end
     update title: str
   end
 
   def uri_valid?
     URI source_url
-    rescue
-    errors.add :source_url, t('validations.invalid_url')
+  rescue
+    errors.add :source_url, I18n.t('validations.invalid_url')
   end
 
   def destroy_posts
@@ -100,5 +102,10 @@ class Channel < ActiveRecord::Base
 
   def destroy_posts_on_source_url_change
     destroy_posts unless source_url_was == source_url
+  end
+
+  def format_url
+    return if source_url =~ URI::DEFAULT_PARSER.regexp[:ABS_URI]
+    self.source_url = URI.encode source_url
   end
 end
