@@ -75,7 +75,14 @@ class Channel < ActiveRecord::Base
   end
 
   def cached_post
-    Post.new published_at: Time.now - setup.shift_days.to_i.days
+    cache = posts.last # find by max Time
+    offset_date = Time.now - setup.shift_days.to_i.days
+    # если posts.last.nil? пропустить записи старше offset_date
+    tmp_post = Post.new published_at: offset_date
+    cache ||= tmp_post
+    # если posts.last в кэше, но старше offset_date
+    cache = tmp_post if offset_date > cache.published_at
+    cache
   end
 
   private

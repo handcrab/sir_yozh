@@ -14,5 +14,10 @@ class Post < ActiveRecord::Base
     if price.to_i > max_price && max_price > 0
       errors.add(:expiration_date, 'rejected by channel setup')
     end
+
+    # stop_found = channel.setup.stop_words.any? { |sw| title.include? sw }
+    if title =~ channel.setup.stop_words_regex
+      errors.add(:stop_words, 'rejected by channel setup')
+    end
   end
 end

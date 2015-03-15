@@ -100,7 +100,7 @@ class ChannelsController < ApplicationController
 
   def channel_params
     params.require(:channel).permit :title, :source_url, :public, :tag_list,
-      setup_attributes: [:max_price, :shift_days]
+      setup_attributes: [:max_price, :shift_days, :stop_words]
   end
 
   def authorize_user

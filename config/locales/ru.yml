@@ -98,7 +98,7 @@ ru:
       setting:
         max_price: Цена (максимум)
         shift_days: Новизна (дней)
-
+        stop_words: Стоп-слова (через запятую)
       post:
         title: Заголовок
         source_url: Источник

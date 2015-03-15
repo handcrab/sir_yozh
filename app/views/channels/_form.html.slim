@@ -40,6 +40,11 @@
       = s_f.number_field :shift_days
       = s_f.label :shift_days, class: 'active'
 
+    .input-field
+      = s_f.text_area :stop_words, cols: 2, class: 'materialize-textarea', 
+        value: s_f.object.stop_words_str
+      = s_f.label :stop_words, class: 'active'
+
     - #.input-field
     - # f.check_box :force_fetch
 
