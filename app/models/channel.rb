@@ -21,17 +21,6 @@ class Channel < ActiveRecord::Base
 
   # => posts
   def fetch
-    # crawler = Crawler.new source_url, cache: cached_post
-    # posts = crawler.run if crawler
-
-    # return [] unless posts.present?
-
-    # # drop extra attributes
-    # posts.map! do |post|
-    #   post.with_indifferent_access.slice(*Post.attribute_names)
-    # end
-    # self.posts.create posts.sort_by { |post| post[:published_at] }
-    # # unless posts.empty?
     self.class.fetch_by_id id
   end
 
