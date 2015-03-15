@@ -41,12 +41,9 @@
       = s_f.label :shift_days, class: 'active'
 
     .input-field
-      = s_f.text_area :stop_words, cols: 2, class: 'materialize-textarea', 
+      = s_f.text_area :stop_words, cols: 2, class: 'materialize-textarea',
         value: s_f.object.stop_words_str
       = s_f.label :stop_words, class: 'active'
-
-    - #.input-field
-    - # f.check_box :force_fetch
 
   .actions.valign-wrapper
     = link_to channels_path, class: "waves-effect waves-teal btn-flat"

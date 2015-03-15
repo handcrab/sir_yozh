@@ -3,7 +3,6 @@ class Setting < ActiveRecord::Base
   serialize :stop_words, Array
 
   after_save :destroy_channel_posts_on_setup_change
-  # before_save :prepare_stop_words
 
   def stop_words=(value)
     value = value.split(',').map(&:strip)
@@ -28,8 +27,4 @@ class Setting < ActiveRecord::Base
   def destroy_channel_posts_on_setup_change
     tunable.posts.destroy_all if tunable.instance_of? Channel
   end
-
-  # def prepare_stop_words
-  #   self.stop_words = stop_words.split(',').map(&:strip)
-  # end
 end

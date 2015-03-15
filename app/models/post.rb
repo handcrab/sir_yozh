@@ -10,14 +10,22 @@ class Post < ActiveRecord::Base
 
   def by_settings
     return true unless channel.setup
-    max_price = channel.setup.max_price.to_i
-    if price.to_i > max_price && max_price > 0
+
+    if price_is_bigger?
       errors.add(:expiration_date, 'rejected by channel setup')
     end
 
-    # stop_found = channel.setup.stop_words.any? { |sw| title.include? sw }
-    if title =~ channel.setup.stop_words_regex
+    if title_with_stopwords?
       errors.add(:stop_words, 'rejected by channel setup')
     end
+  end
+
+  def title_with_stopwords?
+    title =~ channel.setup.stop_words_regex
+  end
+
+  def price_is_bigger?
+    max_price = channel.setup.max_price.to_i
+    price.to_i > max_price && max_price > 0
   end
 end

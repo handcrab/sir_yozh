@@ -14,14 +14,11 @@ module ApplicationHelper
 
   # TODO
   def atom_link request
-    # request.original_url+'.atom'
     page = request.env['PATH_INFO']
     query = request.env['QUERY_STRING']
-    # query = query.empty? ? '' : '?'+query
-    # url.include?('?') ? '&' : '?'
+
     query_str = '?'
     query_str += query unless query.empty?
-
     query_str += "&token=#{current_user.token}" if current_user
 
     "http://#{request.host_with_port}#{page}.atom#{query_str}"
@@ -34,6 +31,7 @@ module ApplicationHelper
   end
 
   # patch :monkey_face:
+  # fix: auto-discovery link + turbolinks
   def auto_discovery_link_tag(type = :rss, url_options = {}, tag_options = {})
     if !(type == :rss || type == :atom) && tag_options[:type].blank?
       raise ArgumentError.new("You should pass :type tag_option key explicitly, because you have passed #{type} type other than :rss or :atom.")

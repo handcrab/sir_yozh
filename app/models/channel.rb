@@ -2,42 +2,37 @@ class Channel < ActiveRecord::Base
   belongs_to :user
   has_many :posts, dependent: :destroy
   has_one :setup, as: :tunable, class_name: 'Setting', dependent: :destroy
-  # ??? association callbacks
-  # , after_add: :destroy_posts_on_setup_change
+
   accepts_nested_attributes_for :setup
 
-  # ??? reject in-valid attributes for has_many association
-  # accepts_nested_attributes_for :posts, reject_if: -> {Post.new(attributes).valid?}
   acts_as_taggable
 
   validates :source_url, presence: true
   validate :source_url, :uri_valid?
 
   before_validation :format_url
-
   before_save :generate_title
   after_update :destroy_posts_on_source_url_change
-  # after_update :destroy_posts_on_setup_change
 
   scope :published, -> { where public: true }
-  # scope :published_and_personal_for, ->(user) {}
   def self.published_and_personal_for user
     where 'public = ? OR (user_id = ? AND public = ?)', true, user, false
   end
 
   # => posts
   def fetch
-    crawler = Crawler.new source_url, cache: cached_post
-    posts = crawler.run if crawler
+    # crawler = Crawler.new source_url, cache: cached_post
+    # posts = crawler.run if crawler
 
-    return [] unless posts.present?
+    # return [] unless posts.present?
 
-    # drop extra attributes
-    posts.map! do |post|
-      post.with_indifferent_access.slice(*Post.attribute_names)
-    end
-    self.posts.create posts.sort_by { |post| post[:published_at] }
-    # unless posts.empty?
+    # # drop extra attributes
+    # posts.map! do |post|
+    #   post.with_indifferent_access.slice(*Post.attribute_names)
+    # end
+    # self.posts.create posts.sort_by { |post| post[:published_at] }
+    # # unless posts.empty?
+    self.class.fetch_by_id id
   end
 
   # => [] of post attributes
@@ -49,6 +44,7 @@ class Channel < ActiveRecord::Base
 
     posts.map! do |post|
       post.merge! channel_id: id
+      # drop extra attributes
       post.with_indifferent_access.slice(*Post.attribute_names)
     end.sort_by { |post| post[:published_at] }
   end
@@ -76,12 +72,13 @@ class Channel < ActiveRecord::Base
 
   def cached_post
     cache = posts.last # find by max Time
+
     offset_date = Time.now - setup.shift_days.to_i.days
-    # если posts.last.nil? пропустить записи старше offset_date
-    tmp_post = Post.new published_at: offset_date
-    cache ||= tmp_post
-    # если posts.last в кэше, но старше offset_date
-    cache = tmp_post if offset_date > cache.published_at
+    offset_post = Post.new published_at: offset_date
+    # posts.last.nil? skip posts older than offset_date
+    cache ||= offset_post
+    # is posts.last older than offset_date
+    cache = offset_post if offset_date > cache.published_at
     cache
   end
 
@@ -90,13 +87,19 @@ class Channel < ActiveRecord::Base
   def generate_title
     return title if title && !title.strip.empty?
     url = URI source_url
-    begin
-      str = URI.decode url.query
-      str = str.scan(/[^&;]+?=([^&;]*)/).join('; ').mb_chars.titleize.to_s
-    rescue
-      str = URI.decode url.host
-    end
+
+    str = if url.query
+            title_from_query url.query
+          else
+            URI.decode url.host
+          end
     update title: str
+  end
+
+  def title_from_query query
+    URI.decode(query)
+      .scan(/[^&;]+?=([^&;]*)/).join('; ')
+      .mb_chars.titleize.to_s
   end
 
   def uri_valid?
