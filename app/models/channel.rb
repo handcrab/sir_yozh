@@ -49,12 +49,12 @@ class Channel < ActiveRecord::Base
   end
 
   def destroy_outdated_posts
-    posts.older_than(cached_post).destroy_all
+    posts.older_than(offset_post).destroy_all
   end
 
   def self.destroy_outdated_posts
     posts_arr = all.inject([]) do |posts, channel|
-      posts + channel.posts.older_than(channel.cached_post).pluck(:id)
+      posts + channel.posts.older_than(channel.offset_post).pluck(:id)
     end
     Post.destroy posts_arr
   end
@@ -62,13 +62,17 @@ class Channel < ActiveRecord::Base
   def cached_post
     cache = posts.last # find by max Time
 
-    offset_date = Time.now - setup.shift_days.to_i.days
-    offset_post = Post.new published_at: offset_date
+    offset = offset_post
     # posts.last.nil? skip posts older than offset_date
-    cache ||= offset_post
+    cache ||= offset
     # is posts.last older than offset_date
-    cache = offset_post if offset_date > cache.published_at
+    cache = offset if offset.published_at > cache.published_at
     cache
+  end
+
+  def offset_post
+    offset_date = Time.now - setup.shift_days.to_i.days
+    Post.new published_at: offset_date
   end
 
   private
