@@ -22,8 +22,7 @@ class ChannelsController < ApplicationController
   # GET /channels/1
   def show
     @channel = Channel.find params[:id]
-    flash.now[:notice] = t('flash.queue')
-    # @channel.delay.fetch
+    flash.now[:notice] = t 'flash.queue'
     Channel.delay.fetch_by_id @channel.id
   end
 
@@ -51,9 +50,9 @@ class ChannelsController < ApplicationController
   # PATCH/PUT /channels/1
   def update
     if @channel.update channel_params
-      format.html { redirect_to @channel, notice: t('flash.update.success') }
+      redirect_to @channel, notice: t('flash.update.success')
     else
-      format.html { render :edit }
+      render :edit
     end
   end
 
