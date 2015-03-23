@@ -16,8 +16,9 @@ class Setting < ActiveRecord::Base
   def stop_words_regex
     return nil if stop_words.empty?
 
+    word_boundary = /^|$|[\s\p{P}]/ # start/end of the str, or a punctuation
     regex_str = stop_words.inject('') do |str, sw|
-      str + "(^|\\s+)#{sw}($|\\s+)|"
+      str + "#{word_boundary}(#{sw})#{word_boundary}|"
     end
     /#{regex_str[0..-2]}/i # remove last '|'
   end
