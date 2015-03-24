@@ -15,6 +15,7 @@ module Features
     def when_i_visit url
       visit url
     end
+    alias_method :and_i_am_on, :when_i_visit
 
     def and_i_am_an_authenticated_user username
       visit root_path

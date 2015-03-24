@@ -29,11 +29,10 @@ ru:
         my_posts: Мои предложения
         all_channels: Все подписки
         
-        user_profile: Профиль        
+        user_profile: Профиль
         sign_in: 'Вход'
         sign_up: 'Регистрация'
         sign_out: 'Выход'
-        
 
   # VIEWS
   channels:
@@ -41,14 +40,14 @@ ru:
       title: Подписки
       edit: Изменить
       destroy: Удалить
-      new_channel: Добавить подписку      
+      new_channel: Добавить подписку
       confirm:
         destroy: 'Удалить подписку "%{channel}"?'
     edit:
       title: Изменение подписки
       back: Отмена
       confirm:
-        destroy: Удалить эту подписку?    
+        destroy: Удалить эту подписку?
     new:
       title: Добавление подписки
       back: Отмена
@@ -65,7 +64,7 @@ ru:
       private: Приватно
       back: Отмена
       submit: Сохранить
-  
+
   posts:
     index:
       title: Предложения
@@ -113,4 +112,4 @@ ru:
         password: 'Пароль'
         password_confirmation: 'Подтверждение пароля'
         current_password: 'Текущий пароль'
-        remember_me: 'запомнить меня'        
+        remember_me: 'запомнить меня'

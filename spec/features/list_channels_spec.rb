@@ -39,8 +39,8 @@ RSpec.feature 'list of channels' do
 
   # steps
   def then_i_should_see_the_list_of_public_channels
-    wishes = page.all '.channels .channel-row-stripes'
-    expect(wishes.size).to eq 2
+    channels = page.all '.channels .channel-row-stripes'
+    expect(channels.size).to eq 2
     find_link @author_public_channel.title
     find_link @public_channel.title
   end
@@ -50,21 +50,9 @@ RSpec.feature 'list of channels' do
     expect(page).not_to have_content @private_channel.title
   end
 
-  def and_i_am_an_authenticated_user username
-    visit root_path
-    user = attributes_for username
-    click_link I18n.t('layouts.application.menu.sign_in'), match: :first
-
-    fill_in 'user_email', with: user[:email]
-    fill_in 'user_password', with: user[:password]
-    find('[type="submit"]').click
-  end
-  alias_method :given_i_am_an_authenticated_user,
-               :and_i_am_an_authenticated_user
-
   def then_i_should_see_the_list_of_my_channels
-    wishes = page.all('.channels .channel-row-stripes')
-    expect(wishes.size).to eq @vasia.channels.count # 2
+    channels = page.all('.channels .channel-row-stripes')
+    expect(channels.size).to eq @vasia.channels.count # 2
   end
 
   def and_i_should_not_see_other_users_private_channels
@@ -76,8 +64,8 @@ RSpec.feature 'list of channels' do
   end
 
   # def then_i_should_see_the_list_of_public_and_my_channels
-  #   wishes = page.all('.channels .channel-row-stripes')
-  #   expect(wishes.size).to eq 3
+  #   channels = page.all('.channels .channel-row-stripes')
+  #   expect(channels.size).to eq 3
   # end
 
   def all_controls
