@@ -30,9 +30,9 @@ ru:
         all_channels: Все подписки
         
         user_profile: Профиль
-        sign_in: 'Вход'
-        sign_up: 'Регистрация'
-        sign_out: 'Выход'
+        sign_in: Вход
+        sign_up: Регистрация
+        sign_out: Выход
 
   # VIEWS
   channels:

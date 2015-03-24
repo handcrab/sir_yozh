@@ -59,10 +59,6 @@ RSpec.feature 'list of channels' do
     expect(page).not_to have_content @private_channel.title
   end
 
-  def then_i_should_see_sign_up_form
-    expect(page).to have_css 'form#new_user'
-  end
-
   # def then_i_should_see_the_list_of_public_and_my_channels
   #   channels = page.all('.channels .channel-row-stripes')
   #   expect(channels.size).to eq 3

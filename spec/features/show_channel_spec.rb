@@ -36,10 +36,6 @@ RSpec.feature 'show channel page' do
     expect(page).not_to have_css '.card-action a'
   end
 
-  def and_i_should_see_the_channel_controls
-    expect(page).to have_css '.card-action a'
-  end
-
   def and_i_should_see_the_channel_posts
     expect(page).to have_css '#posts'
 

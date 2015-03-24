@@ -24,13 +24,9 @@ FactoryGirl.define do
       source_url 'https://www.avito.ru/samarskaya_oblast?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9'
     end
 
-    #   create_table "channels", force: :cascade do |t|
-    #   t.string   "title"
-    #   t.text     "source_url", limit: 2000,                null: false
-    #   t.datetime "created_at",                             null: false
-    #   t.datetime "updated_at",                             null: false
-    #   t.integer  "user_id"
-    #   t.boolean  "public",                  default: true
-    # end
+    factory :new_channel do
+      title 'новая подписка'
+      source_url 'https://www.avito.ru/samarskaya_oblast?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9'
+    end
   end
 end

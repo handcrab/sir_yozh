@@ -1,3 +1,3 @@
 RSpec.configure do |config|
-  config.include Features::Helpers, type: :feature
+  config.include Features::Steps, type: :feature
 end
