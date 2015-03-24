@@ -14,6 +14,7 @@
     - доступ к приватным лентам по ключу пользователя
 
 # TODO
+- improve stop-words feature
 - Фильтр предложений (просмотр)
 - pagination
 - improve form errors
