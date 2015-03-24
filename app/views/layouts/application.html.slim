@@ -10,30 +10,30 @@ html
     = csrf_meta_tags
     = yield :head
 
-body
-  header
-    nav.top-nav
-      - #.container
-      .nav-wrapper
-        - # image_tag 'yozh-logo.svg', class: 'logo'
-        = link_to t('.appname', default: 'Sir Yozh').mb_chars.upcase, root_path, class: 'brand-logo left'
+  body
+    header
+      nav.top-nav
+        - #.container
+        .nav-wrapper
+          - # image_tag 'yozh-logo.svg', class: 'logo'
+          = link_to t('.appname', default: 'Sir Yozh').mb_chars.upcase, root_path, class: 'brand-logo left'
 
-        = render partial: 'shared/nav_menu', locals: {options: {class: 'right hide-on-med-and-down', id: 'nav-mobile'}}
-        = render partial: 'shared/nav_menu', locals: {options: {class: 'side-nav', id: 'slide-out'}}
-        a.button-collapse(href="#" data-activates="slide-out")
-          i.mdi-navigation-menu
+          = render partial: 'shared/nav_menu', locals: {options: {class: 'right hide-on-med-and-down', id: 'nav-mobile'}}
+          = render partial: 'shared/nav_menu', locals: {options: {class: 'side-nav', id: 'slide-out'}}
+          a.button-collapse(href="#" data-activates="slide-out")
+            i.mdi-navigation-menu
 
-  main.container
-    .row
-      .col.s10.offset-s1
-      
-        .progress.hide
-          .indeterminate
+    main.container
+      .row
+        .col.s10.offset-s1
+        
+          .progress.hide
+            .indeterminate
 
-        - flash.each do |name, msg|
-          .card-panel.teal#alert.alert.alert-info
-            span.white-text.message(data-notice="#{msg}")= msg
+          - flash.each do |name, msg|
+            .card-panel.teal#alert.alert.alert-info
+              span.white-text.message(data-notice="#{msg}")= msg
 
-        = yield
+          = yield
 
-  footer
+    footer

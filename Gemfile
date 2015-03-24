@@ -59,14 +59,16 @@ group :development, :test do
   gem 'rspec-its'
   gem 'shoulda-matchers'
   # gem 'cucumber-rails', require: false
+  gem 'capybara'
   gem 'database_cleaner'
   gem 'factory_girl_rails'
 
   gem 'guard-rspec' # guard :rspec, cmd:"spring rspec"
-  gem 'guard-cucumber' # guard init cucumber
+  # gem 'guard-cucumber' # guard init cucumber
 
-  gem 'spring-commands-rspec'
-  gem 'spring-commands-cucumber'
+  gem 'spring-commands-rspec' 
+  # bundle exec spring binstub rspec
+  # spring stop
 end
 
 group :test do

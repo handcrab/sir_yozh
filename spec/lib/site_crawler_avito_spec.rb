@@ -27,7 +27,7 @@ RSpec.describe SiteCrawler::Avito do
       expect(date.min).to eq 36
 
       date_str = "Сегодня 5:02" # 4 марта
-      date = subject.parse_date date_str      
+      date = subject.parse_date date_str
       expect(date.day).to eq 4
       expect(date.hour).to eq 5
       expect(date.min).to eq 2
@@ -36,7 +36,7 @@ RSpec.describe SiteCrawler::Avito do
       date = subject.parse_date date_str
 
       expect(date.day).to eq 14
-      expect(date.month).to eq 2      
+      expect(date.month).to eq 2
     end
   end
 
@@ -100,28 +100,28 @@ RSpec.describe SiteCrawler::Avito do
     context 'page with pagination' do
       # 4 pages
       let(:yozh_yozh_url)   { 'https://www.avito.ru/rossiya?q=%D0%B5%D0%B6%D0%B8%D0%BA+%D0%B0%D1%84%D1%80%D0%B8%D0%BA%D0%B0%D0%BD%D1%81%D0%BA%D0%B8%D0%B9' }
-      let(:yozh_multi_page) { Mechanize.new.get yozh_yozh_url }      
+      let(:yozh_multi_page) { Mechanize.new.get yozh_yozh_url }
       let(:last_item_date)  { Date.new 2015, 1, 6 }
 
-      it 'returns all items if no cache given' do        
+      it 'returns all items if no cache given' do
         VCR.use_cassette(yozhiki_cassete) do
           # def parse_pages current_page, args={}, cache=nil
           # default_args = {paginate: true, cooldown: 1, items: []}
           @items = subject.parse_pages yozh_multi_page
         end
         expect(@items.size).to eq 171
-        expect(@items.last[:published_at].to_date).to eq last_item_date      
+        expect(@items.last[:published_at].to_date).to eq last_item_date
       end 
 
 
-      context 'if cache is given' do       
+      context 'if cache is given' do
         # cached item is on the same page
         it "returns items that are not older than cache" do
-          Timecop.freeze Time.local(2015, 3, 5, 12, 0)      
+          Timecop.freeze Time.local(2015, 3, 5, 12, 0)
           cache = stub_model Post, published_at: Time.now - 1.day
           #Time.new(2015, 2, 25) # Y, m, d
 
-          VCR.use_cassette(yozhiki_cassete) do             
+          VCR.use_cassette(yozhiki_cassete) do
             @items = subject.parse_pages yozh_multi_page, {}, cache
           end 
           
