@@ -11,7 +11,7 @@ RSpec.feature 'create channel' do
     then_i_should_see_sign_up_form
   end
 
-  scenario 'as authenticade user' do
+  scenario 'as authenticated user' do
     given_i_am_an_authenticated_user :vasia
     and_i_am_on root_path
     when_i_click_on_add_channel_link
