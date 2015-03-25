@@ -36,15 +36,23 @@ RSpec.feature 'show channel page' do
     expect(page).not_to have_css '.card-action a'
   end
 
+  def i_should_see_counter_with amount
+    counter = page.find('.posts-count')
+    expect(counter.text.to_i).to eq amount
+  end
+
+  def i_should_see_n_posts amount
+    posts = page.all '#posts .post'
+    expect(posts.size).to eq amount # 2
+  end
+
   def and_i_should_see_the_channel_posts
     expect(page).to have_css '#posts'
 
     user_posts = @public_channel.posts
-    counter = page.find('.posts-count').text.to_i
-    expect(counter).to eq user_posts.size
 
-    posts = page.all '#posts .post'
-    expect(posts.size).to eq user_posts.size # 2
+    i_should_see_counter_with user_posts.size
+    i_should_see_n_posts user_posts.size
 
     expect(page).to have_link user_posts.first.title,
                               href: user_posts.first.source_url
