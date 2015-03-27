@@ -8,7 +8,7 @@ module ApplicationHelper
   end
 
   def display_post_count channel
-    count = channel.posts.count
+    count = channel.posts_count # posts.count
     count.zero? ? '' : count.to_s
   end
 

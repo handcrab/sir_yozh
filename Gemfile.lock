@@ -44,6 +44,9 @@ GEM
     binding_of_caller (0.7.2)
       debug_inspector (>= 0.0.1)
     builder (3.2.2)
+    bullet (4.14.4)
+      activesupport (>= 3.0.0)
+      uniform_notifier (>= 1.6.0)
     byebug (3.5.1)
       columnize (~> 0.8)
       debugger-linecache (~> 1.2)
@@ -307,6 +310,7 @@ GEM
     unf (0.1.4)
       unf_ext
     unf_ext (0.0.6)
+    uniform_notifier (1.8.0)
     vcr (2.9.3)
     warden (1.2.3)
       rack (>= 1.0)
@@ -327,6 +331,7 @@ PLATFORMS
 
 DEPENDENCIES
   acts-as-taggable-on (~> 3.4)
+  bullet
   byebug
   capybara
   clockwork

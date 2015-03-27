@@ -69,6 +69,7 @@ group :development, :test do
   gem 'spring-commands-rspec' 
   # bundle exec spring binstub rspec
   # spring stop
+  gem 'bullet' # n+1
 end
 
 group :test do

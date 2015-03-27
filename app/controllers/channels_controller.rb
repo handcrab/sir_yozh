@@ -7,15 +7,16 @@ class ChannelsController < ApplicationController
   def index
     if params[:tag]
       @tag = params[:tag]
-      # @channels = Channel.tagged_with params[:tag]
-      @channels = Channel.published_and_personal_for(current_user).tagged_with params[:tag]
+      @channels = Channel.published_and_personal_for(current_user)
+                         .tagged_with params[:tag]
     else
       @channels = Channel.published
     end
+    @channels = @channels.with_posts_count.includes(:tags, :user)
   end
 
   def personal
-    @channels = current_user.channels
+    @channels = current_user.channels.with_posts_count.includes(:tags)
     render :index
   end
 
