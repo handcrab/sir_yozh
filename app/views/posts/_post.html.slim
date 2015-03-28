@@ -2,7 +2,7 @@
   article.card(itemscope itemtype="http://schema.org/Product")
     .card-content
       span.card-title.black-text
-      p(itemprop="name")= link_to post.title, post.source_url
+      p(itemprop="name")= link_to post.title, post.source_url, rel: 'nofollow'
 
       p= formatted_date post.published_at
       .post-cover= image_tag display_image(post.picture_url)

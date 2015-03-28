@@ -185,6 +185,8 @@ GEM
     puma (2.11.1)
       rack (>= 1.1, < 2.0)
     rack (1.6.0)
+    rack-mini-profiler (0.9.3)
+      rack (>= 1.1.3)
     rack-protection (1.5.3)
       rack
     rack-test (0.6.3)
@@ -353,6 +355,7 @@ DEPENDENCIES
   mechanize
   newrelic_rpm
   puma
+  rack-mini-profiler
   rails (= 4.2.0)
   rails-i18n
   rspec-activemodel-mocks

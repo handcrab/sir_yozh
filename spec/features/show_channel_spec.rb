@@ -49,7 +49,7 @@ RSpec.feature 'show channel page' do
   def and_i_should_see_the_channel_posts
     expect(page).to have_css '#posts'
 
-    user_posts = @public_channel.posts
+    user_posts = @public_channel.reload.posts
 
     i_should_see_counter_with user_posts.size
     i_should_see_n_posts user_posts.size

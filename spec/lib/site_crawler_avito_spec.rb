@@ -19,7 +19,7 @@ RSpec.describe SiteCrawler::Avito do
 
       date_str = " Вчера 16:36" # 3 марта
       date = subject.parse_date date_str
-      
+
       expect(date.day).to eq 3
       expect(date.month).to eq 3
       expect(date.year).to eq 2015
@@ -48,7 +48,7 @@ RSpec.describe SiteCrawler::Avito do
       end
 
       expect(items.size).to eq 3
-   
+
       # oldest = last
       expect(items.last[:title]).to eq 'Продается карликовый африканский ежик'
       expect(items.last[:price]).to eq 5000
@@ -67,26 +67,25 @@ RSpec.describe SiteCrawler::Avito do
     before :each do
       @items = []
     end
-    
+
     context 'a single page of items (no pagination found)' do
       let(:first_item_date)  { Date.new 2015, 3, 4 }
       let(:second_item_date) { Date.new 2015, 3, 2 }
       let(:last_item_date)   { Date.new 2015, 2, 14 }
-      
 
-      it 'returns all items on the page if no cache given' do        
-        VCR.use_cassette(yozh_cassete) do        
+      it 'returns all items on the page if no cache given' do
+        VCR.use_cassette(yozh_cassete) do
           @items = subject.parse_pages yozh_page
         end
         expect(@items.size).to eq 3
-        expect(@items.last[:published_at].to_date).to eq last_item_date      
+        expect(@items.last[:published_at].to_date).to eq last_item_date
       end 
 
-      it "returns items that are not older than cache" do      
+      it "returns items that are not older than cache" do
         # items = []
         cache = stub_model Post, published_at: Time.new(2015, 2, 25) # Y, m, d
 
-        VCR.use_cassette(yozh_cassete) do             
+        VCR.use_cassette(yozh_cassete) do
           @items = subject.parse_pages yozh_page, {}, cache
         end    
         expect(@items.size).to eq 2
@@ -111,8 +110,7 @@ RSpec.describe SiteCrawler::Avito do
         end
         expect(@items.size).to eq 171
         expect(@items.last[:published_at].to_date).to eq last_item_date
-      end 
-
+      end
 
       context 'if cache is given' do
         # cached item is on the same page
@@ -123,8 +121,8 @@ RSpec.describe SiteCrawler::Avito do
 
           VCR.use_cassette(yozhiki_cassete) do
             @items = subject.parse_pages yozh_multi_page, {}, cache
-          end 
-          
+          end
+
           # item[:published_at]: 2015-03-04 06:28:00 +0300
           # cache.published_at: 2015-03-04 12:00:00 +0300
           # CACHE FOUND: new page items 7
@@ -136,12 +134,12 @@ RSpec.describe SiteCrawler::Avito do
 
         # context 'cached item is not on the same page' do
         it "returns items that are not older than cache" do
-          Timecop.freeze Time.local(2015, 3, 5)      
+          Timecop.freeze Time.local(2015, 3, 5)
           cache = stub_model Post, published_at: Time.new(2015, 2, 16, 16, 00)
 
-          VCR.use_cassette(yozhiki_cassete) do             
+          VCR.use_cassette(yozhiki_cassete) do
             @items = subject.parse_pages yozh_multi_page, {}, cache
-          end 
+          end
 
           expect(@items.size).to eq 106
           # expect(@items.last[:published_at]).to eq Time.new(2015, 2, 16, 18, 36)
@@ -153,11 +151,11 @@ RSpec.describe SiteCrawler::Avito do
         end
 
         it "returns all items if cache not found" do
-          Timecop.freeze Time.local(2015, 3, 5, 12, 0)      
+          Timecop.freeze Time.local(2015, 3, 5, 12, 0)
           cache = stub_model Post, published_at: Time.now - 6.months
-          VCR.use_cassette(yozhiki_cassete) do             
+          VCR.use_cassette(yozhiki_cassete) do
             @items = subject.parse_pages yozh_multi_page, {}, cache
-          end 
+          end
           expect(@items.size).to eq 171
         end
 
@@ -165,33 +163,33 @@ RSpec.describe SiteCrawler::Avito do
 
       context 'pages with sticked items' do
         it "returns all the items if no cache given" do
-          Timecop.freeze Time.local(2015, 3, 5, 12)      
+          Timecop.freeze Time.local(2015, 3, 5, 12)
           #cache = stub_model Post, published_at: (Time.now - 4.days)
 
-          VCR.use_cassette('avito/kvartiry_page') do  
+          VCR.use_cassette('avito/kvartiry_page') do
             url = 'https://www.avito.ru/samara/kvartiry/sdam/na_dlitelnyy_srok/1-komnatnye?p=3'
             pg = Mechanize.new.get url
             @items = subject.parse_pages pg, {paginate: false} #, cache
           end 
 
           expect(@items.size).to eq 54
-        end   
+        end
 
         it "drops sticked items that older than cache" do
-          Timecop.freeze Time.local(2015, 3, 5, 12)      
+          Timecop.freeze Time.local(2015, 3, 5, 12)
           cache = stub_model Post, published_at: (Time.now - 1.day)
-          
-          VCR.use_cassette('avito/kvartiry_page') do   
+
+          VCR.use_cassette('avito/kvartiry_page') do
             url = 'https://www.avito.ru/samara/kvartiry/sdam/na_dlitelnyy_srok/1-komnatnye?p=3'
             # url = 'https://www.avito.ru/samara/kvartiry/sdam/na_dlitelnyy_srok/1-komnatnye'
             pg = Mechanize.new.get url
             @items = subject.parse_pages pg, {paginate: false}, cache
-          end 
-          
+          end
+
           # STICKED ITEMS: 11
           # 3 old sticks
           expect(@items.size).to eq 51
-        end    
+        end
       end
 
     end

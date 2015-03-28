@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20150328191839) do
+ActiveRecord::Schema.define(version: 20150328201946) do
 
   create_table "channels", force: :cascade do |t|
     t.string   "title"
@@ -23,6 +23,7 @@ ActiveRecord::Schema.define(version: 20150328191839) do
     t.integer  "posts_count",              default: 0,    null: false
   end
 
+  add_index "channels", ["public"], name: "index_channels_on_public"
   add_index "channels", ["source_url"], name: "index_channels_on_source_url"
   add_index "channels", ["user_id"], name: "index_channels_on_user_id"
 
@@ -55,6 +56,7 @@ ActiveRecord::Schema.define(version: 20150328191839) do
   end
 
   add_index "posts", ["channel_id"], name: "index_posts_on_channel_id"
+  add_index "posts", ["published_at"], name: "index_posts_on_published_at"
 
   create_table "settings", force: :cascade do |t|
     t.string   "max_price",                 default: "5000"

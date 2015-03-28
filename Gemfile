@@ -72,8 +72,9 @@ group :development, :test do
 
   gem 'bullet' # n+1
   # gem 'lol_dba' # rake db:find_indexes
-  # gem 'rack-mini-profiler'
-  # gem 'flamegraph'
+  gem 'rack-mini-profiler'
+  # gem 'flamegraph' # ?pp=flamegraph
+  # gem 'meta_request' # rails panel
 end
 
 group :test do
