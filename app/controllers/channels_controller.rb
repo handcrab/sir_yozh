@@ -12,11 +12,13 @@ class ChannelsController < ApplicationController
     else
       @channels = Channel.published
     end
-    @channels = @channels.with_posts_count.includes(:tags, :user)
+    # @channels = @channels.with_posts_count.includes(:tags, :user)
+    @channels = @channels.includes(:tags, :user)
   end
 
   def personal
-    @channels = current_user.channels.with_posts_count.includes(:tags)
+    # @channels = current_user.channels.with_posts_count.includes(:tags)
+    @channels = current_user.channels.includes(:tags)
     render :index
   end
 

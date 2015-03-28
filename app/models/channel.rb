@@ -19,11 +19,11 @@ class Channel < ActiveRecord::Base
     where 'public = ? OR (user_id = ? AND public = ?)', true, user, false
   end
 
-  def self.with_posts_count
-    select('channels.*, COUNT(posts.id) AS posts_count')
-      .joins('LEFT JOIN posts ON posts.channel_id = channels.id')
-      .group('channels.id')
-  end
+  # def self.with_posts_count
+  #   select('channels.*, COUNT(posts.id) AS posts_count')
+  #     .joins('LEFT JOIN posts ON posts.channel_id = channels.id')
+  #     .group('channels.id')
+  # end
 
   # => posts
   def fetch

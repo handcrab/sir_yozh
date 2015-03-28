@@ -1,5 +1,5 @@
 class Post < ActiveRecord::Base
-  belongs_to :channel
+  belongs_to :channel, counter_cache: true
   # validates_presence_of :title
   validate :by_settings
 

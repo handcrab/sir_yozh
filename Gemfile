@@ -69,7 +69,11 @@ group :development, :test do
   gem 'spring-commands-rspec' 
   # bundle exec spring binstub rspec
   # spring stop
+
   gem 'bullet' # n+1
+  # gem 'lol_dba' # rake db:find_indexes
+  # gem 'rack-mini-profiler'
+  # gem 'flamegraph'
 end
 
 group :test do
