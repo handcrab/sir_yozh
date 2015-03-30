@@ -37,12 +37,14 @@ module ApplicationHelper
       raise ArgumentError.new("You should pass :type tag_option key explicitly, because you have passed #{type} type other than :rss or :atom.")
     end
 
-    tag_options.merge!({
+    tag_options = tag_options.with_indifferent_access
+    default_tag_options = {
       "rel"   => tag_options[:rel] || "alternate",
       "type"  => tag_options[:type] || Mime::Type.lookup_by_extension(type.to_s).to_s,
       "title" => tag_options[:title] || type.to_s.upcase,
       "href"  => url_options.is_a?(Hash) ? url_for(url_options.merge(:only_path => false)) : url_options
-    })
+    }
+    tag_options = default_tag_options.reverse_merge tag_options
 
     tag("link", tag_options)
   end
